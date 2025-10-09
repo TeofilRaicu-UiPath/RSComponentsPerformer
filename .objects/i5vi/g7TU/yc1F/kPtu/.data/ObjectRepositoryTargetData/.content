@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="UeoHezm-VE6rMVEuEBg1zw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start" CVScreenId="84ca3ea0-76b9-44d9-8473-274c16a52ced" DesignTimeRectangle="693, 263, 46, 14" ElementType="InputBox" FullSelectorArgument="&lt;webctrl sapweb-lsid='sysid' /&gt;" Guid="972c5885-da95-4d2e-a0c9-4ac76b47dc7e" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="1d81aedafe847d920f71f5f539021fc0.png" xmlns="">0EZn1Ixc-R0eAgNF8hq61bg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

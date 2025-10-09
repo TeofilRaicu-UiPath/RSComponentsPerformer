@@ -1,0 +1,276 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_SAPWindow" Type="InArgument(ui:Window)" />
+    <x:Property Name="out_Success" Type="InArgument(x:Boolean)" />
+    <x:Property Name="out_Message" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:Main.out_Success>
+    <InArgument x:TypeArguments="x:Boolean" />
+  </this:Main.out_Success>
+  <this:Main.out_Message>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Main.out_Message>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2754,1187</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1816,1858" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch sap logout" sap:VirtualizedContainerService.HintSize="600,1835" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="562,1584" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="d0749057-2d96-4266-a766-1acc3a3b78a9" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="528,1367" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click log off" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="494,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="d0749057-2d96-4266-a766-1acc3a3b78a9" Version="V3">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crmcmp_hdr/bspwdapplication.do?saprole=ZCTP_AGENT" DesignTimeRectangle="2052, 83, 46, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' type='' tag='A' class='th-l-logofflink' aaname='Log Off' check:text='Log Off' /&gt;" Guid="3d8e8891-72fa-493a-be15-9920d697c273" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAATCAYAAADSz14iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVEhL7VXBDYMwDGQbBmCYigW6Q6ZADIH64s0EfFiir4oXH168cAOxTQgphSpAqXqSP7bj88WO4sFJ0bYtNE0DdV1DVVVwWiEm/kK+DYOQRwp+cAVPFOjYAyVEoeTseMkm/AVcOB5DJj33RHC+n5R91oFCsMEwhTt6uAfNR01fcnTYzkkcJiQTkisQED3QQcjj0U1vI4RyyIxcfeSeiK2ECvZmFDAma4/q9b6birENF7FcyCRuNGPEuQlbs7Nc47rOJ6IKjldB9y0l7HGkENtO6yTT+IyQFTHnQvTbJ+i+pYSE4x77JG4UNOLUwCshfB7/hh5UQzvzuRCLcREzxxDNzUvzk3R2IgrvP8T1QpwDCV9N2DHcCcHd5pvC6dGubw2nE1EPWLOdptFhw9XaFz8iBOAJGfE36Y5qDFcAAAAASUVORK5CYII=" InformativeScreenshot="19f83612665de4364e2ff77412f1337b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="494,533" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="5dec98f0-4040-4aa1-a517-566799f952af" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,244" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,182" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5dec98f0-4040-4aa1-a517-566799f952af" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="wpgnQsTaCkaWJh96-M6lLQ" DesignTimeRectangle="937, 173, 68, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='vcp1ascs.ebs.ecomp.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='vcp1ascs.ebs.ecomp.com says' role='dialog' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;ctrl name='OK' role='push button' automationid='' matching:name='fuzzy' fuzzylevel:name='0.0' matching:automationid='fuzzy' fuzzylevel:automationid='0.0' check:text='OK' /&gt;" Guid="b1a5deb6-de25-4159-820b-e7ed898d1c69" ImageBase64="" InformativeScreenshot="d0b191b66fb1a20b38ed92f9b13536d6.png" Reference="LwYOhlgeok64kz6xgXYPNA/PfhUDc1JpEehWpa0zgyT8w" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='* - Work - Microsoft​ Edg*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="119, 39, 1746, 1039" BrowserType="Edge" ContentHash="gbnf_paG20Kwbl_Gm1YwFQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="5173bfcf2cb2634aaba8ab138cb8b955.jpg" Reference="LwYOhlgeok64kz6xgXYPNA/dWG_3aK2J0KP_VCpPB1ZyA" Selector="&lt;html app='msedge.exe' title='*' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(*==)/bc/bsp/sap/crm_ui_start/default.htm" Version="V2" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+                <uix:NCheckState DisplayName="Check App State 'Log On'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="494,426" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="d0749057-2d96-4266-a766-1acc3a3b78a9" Timeout="10" Version="V3">
+                  <uix:NCheckState.IfExists>
+                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </Sequence>
+                  </uix:NCheckState.IfExists>
+                  <uix:NCheckState.IfNotExists>
+                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Throw Exception="[New Exception(&quot;Log in unsuccesfull&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                    </Sequence>
+                  </uix:NCheckState.IfNotExists>
+                  <uix:NCheckState.Target>
+                    <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start/default.htm" DesignTimeRectangle="1197, 367, 55, 16" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl sapweb-lsid='LOGON_BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl sapweb-lsid='LOGON_BUTTON' tag='DIV' type='' class='lsButton lsButton--base lsTbarBtnStd urInlineMetricTop urNoUserSelect urBtnRadius lsButton--active lsButton--hoverable lsButton--focusable lsButton--up lsButton--design-emphasized lsButton--default' aaname='' check:innerText='Log On' /&gt;" Guid="59d372d6-88e8-4314-9b6f-26d43a67a953" InformativeScreenshot="b951fa6db3b08e4187272641ba4a9b7b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1RekE1T1RrM01qQmZYMTlmTkY5Zk1USTRBZ1ZSZTRXLUg5Q2JwSnFBcnBZaFBRPT0=)' title='Logon' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                  </uix:NCheckState.Target>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </uix:NCheckState>
+                <ui:MultipleAssign DisplayName="Multiple Assign success" sap:VirtualizedContainerService.HintSize="494,157" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                  <ui:MultipleAssign.AssignOperations>
+                    <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                      <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                        <ui:AssignOperation.To>
+                          <OutArgument x:TypeArguments="x:String">[out_Message]</OutArgument>
+                        </ui:AssignOperation.To>
+                        <ui:AssignOperation.Value>
+                          <InArgument x:TypeArguments="x:String">Success log out SAP</InArgument>
+                        </ui:AssignOperation.Value>
+                      </ui:AssignOperation>
+                    </scg:List>
+                  </ui:MultipleAssign.AssignOperations>
+                </ui:MultipleAssign>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="818, 228, 2116, 1032" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="bdcc7787ae747e4f8ef8a13c76b47dbf.jpg" Selector="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='*' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(*==)/bc/bsp/sap/crm_ui_start/default.htm" />
+          </uix:NApplicationCard.TargetApp>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="566,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="457,366" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message error log out" sap:VirtualizedContainerService.HintSize="423,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Unable to log out SAP&quot;]" />
+              <ui:LogMessage DisplayName="Log Message exception" sap:VirtualizedContainerService.HintSize="423,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[exception.Message]" />
+              <ui:MultipleAssign DisplayName="Multiple Assign error" sap:VirtualizedContainerService.HintSize="423,132" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_Message]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">Unable to log out SAP</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

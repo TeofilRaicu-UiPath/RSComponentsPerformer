@@ -1,0 +1,170 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "boolDiscontinued&Sequence_1",
+        "boolInvalidStockNum&Sequence_1",
+        "dtItems&Sequence_1",
+        "boolPoAlreadyExist&Sequence_1",
+        "intSapRowNum&Sequence_1",
+        "strOrderNumber&Sequence_1",
+        "boolAvalibilityCheck&Sequence_7",
+        "boolSameDeliveryDate&Sequence_2",
+        "strSAPNetPrice&Sequence_2",
+        "boolPriceDiscripancy&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_intNumOfRetries",
+        "in_tsRetryInterval",
+        "in_intTimeout10",
+        "in_strSapApplicationPath",
+        "in_intTimeout5000",
+        "in_strCountry",
+        "in_intTimeout3",
+        "in_strPoNum",
+        "in_strFormCountry",
+        "in_strOrderFormURL",
+        "strCustomerEmailAddress"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP_CreateAccountOrder_CheckDeliveryDate.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSequenceName&Sequence_1",
+        "dateDeliveryDate&Sequence_8",
+        "strDeliveryDate&Flowchart_1",
+        "dateLastDateFoMonth&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_strNewDeliveryDate",
+        "in_strPODeliveryDate",
+        "out_boolSameDeliveryDate",
+        "in_intNumOfRetries",
+        "in_tsRetryInterval",
+        "in_intTimeout10",
+        "in_strSapApplicationPath",
+        "in_intRowNum",
+        "in_strCountry"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP_CreateAccountOrder_EnterDetails.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSustitutionReason&Flowchart_1",
+        "boolPopSustitutionReason&Flowchart_1",
+        "strSequenceName&Sequence_1",
+        "strSapStatusBarMessage&Sequence_8",
+        "strSAPUN&Sequence_8",
+        "strSAPNetPrice&Sequence_8",
+        "strSAPDeliveryDate&Sequence_8",
+        "dateDeliveryDate&Sequence_8",
+        "dateSapFirstDate&Sequence_8",
+        "strQuanitity&Sequence_18",
+        "dbDifference&Sequence_30",
+        "strSapStatusBarMessage&Sequence_9"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strDeliveryBlock",
+        "in_strLineResonForInvalidStockNum",
+        "in_strOrderResonForInvalidStockNum",
+        "in_intTimeout3",
+        "out_boolAvalibilityCheck",
+        "in_intRowNum",
+        "in_strNewDeliveryDate",
+        "in_intNumOfRetries",
+        "in_tsRetryInterval",
+        "in_intTimeout10",
+        "in_strSapApplicationPath",
+        "in_strArticle",
+        "in_strQuantity",
+        "in_intTimeout5000",
+        "in_strTotalPrice",
+        "in_strCountry",
+        "in_strDummyStockNumber"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SAP_CreateAccountOrder_AddArtical.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSapStatusBarMessage&Sequence_9",
+        "strSequenceName&Sequence_1",
+        "strSapStatusBarMessage&Sequence_8",
+        "strSAPUN&Sequence_8",
+        "strSAPNetPrice&Sequence_8",
+        "strSAPDeliveryDate&Sequence_8",
+        "dateDeliveryDate&Sequence_8",
+        "dateSapFirstDate&Sequence_8",
+        "boolPopSustitutionReason&Flowchart_1",
+        "strSustitutionReason&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_intNumOfRetries",
+        "in_tsRetryInterval",
+        "in_intTimeout10",
+        "in_strSapApplicationPath",
+        "in_strArticle",
+        "in_strQuantity",
+        "in_intTimeout5000",
+        "in_strTotalPrice",
+        "in_strCountry",
+        "in_strDummyStockNumber",
+        "in_strNewDeliveryDate",
+        "in_intRowNum",
+        "out_boolAvalibilityCheck",
+        "in_intTimeout3",
+        "in_strOrderResonForInvalidStockNum",
+        "in_strLineResonForInvalidStockNum",
+        "in_strDeliveryBlock"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "test.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "outlookMail&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "argument1"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Outlook_MoveEmail.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "strSequenceName&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_strOutlookAccount",
+        "in_FolderToMove",
+        "in_outlookEmailMessage",
+        "in_intNumOfRetries",
+        "in_tsRetryInterval"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

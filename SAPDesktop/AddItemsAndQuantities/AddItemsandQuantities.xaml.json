@@ -1,0 +1,141 @@
+{
+  "DisplayName": "Main",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_intNumOfRetries",
+      "DisplayName": "in_intNumOfRetries",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "2",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_tsRetryInterval",
+      "DisplayName": "in_tsRetryInterval",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "00:00:05",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_intTimeout10",
+      "DisplayName": "in_intTimeout10",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "10",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_strSapApplicationPath",
+      "DisplayName": "in_strSapApplicationPath",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "C:\\Program Files (x86)\\SAP\\FrontEnd\\SAPgui\\saplogon.exe",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_intTimeout5000",
+      "DisplayName": "in_intTimeout5000",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "5000",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_strCountry",
+      "DisplayName": "in_strCountry",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_intTimeout3",
+      "DisplayName": "in_intTimeout3",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "3",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_strPoNum",
+      "DisplayName": "in_strPoNum",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_strFormCountry",
+      "DisplayName": "in_strFormCountry",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": "Germany",
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_strOrderFormURL",
+      "DisplayName": "in_strOrderFormURL",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "strCustomerEmailAddress",
+      "DisplayName": "strCustomerEmailAddress",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

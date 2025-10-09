@@ -1,0 +1,210 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DataFabric" this:DataFabric.in_QueueRefference="GB_09.15.2025 01.37.07_1_1-3" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="clr-namespace:PO_Processing_Perfomer;assembly=DataService.PO_Processing_Perfomer" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:upr="clr-namespace:UiPath.Platform.ResourceHandling;assembly=UiPath.Platform" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_QueueRefference" Type="InArgument(x:String)" />
+    <x:Property Name="out_EmailRecepient" Type="OutArgument(x:String)" />
+    <x:Property Name="out_JsonObject" Type="OutArgument(njl:JObject)" />
+    <x:Property Name="out_ProductFields" Type="OutArgument(sd:DataTable)" />
+    <x:Property Name="out_EmailId" Type="OutArgument(x:String)" />
+    <x:Property Name="out_EmailDestination" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>DataFabric_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>PO_Processing_Perfomer</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>UiPath.Platform</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>DataService.PO_Processing_Perfomer</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.CodedWorkflows</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DataFabric" sap:VirtualizedContainerService.HintSize="1816,1336" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IList(p:PurchaseOrderAttachments)" Name="AttachmentRecord" />
+      <Variable x:TypeArguments="scg:IList(p:PurchaseOrderEmail)" Name="EmailRecord" />
+      <Variable x:TypeArguments="x:Int64" Name="totalRecords" />
+      <Variable x:TypeArguments="upr:ILocalResource" Name="JsonTXT" />
+      <Variable x:TypeArguments="x:String" Name="TotalFieldsTxt" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uda:QueryEntityRecords x:TypeArguments="p:PurchaseOrderAttachments" ContinueOnError="False" DisplayName="Query Entity Records sttachments" EntityId="79b7c448-a08c-f011-b3cd-002248a1642d" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[AttachmentRecord]" QueriedEntityId="79b7c448-a08c-f011-b3cd-002248a1642d" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100" TotalRecords="[totalRecords]">
+      <uda:QueryEntityRecords.FilterArguments>
+        <uda:FilterArgument FilterActivityType="{x:Null}">
+          <uda:FilterArgument.Filter>
+            <uda:GroupFilter Index="0" Operator="AND">
+              <uda:GroupFilter.Filters>
+                <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                  <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="PostDUReference" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                </scg:List>
+              </uda:GroupFilter.Filters>
+              <uda:GroupFilter.Groups>
+                <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+              </uda:GroupFilter.Groups>
+            </uda:GroupFilter>
+          </uda:FilterArgument.Filter>
+        </uda:FilterArgument>
+      </uda:QueryEntityRecords.FilterArguments>
+      <uda:QueryEntityRecords.FilterValues>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">[in_QueueRefference]</InArgument>
+        </scg:List>
+      </uda:QueryEntityRecords.FilterValues>
+    </uda:QueryEntityRecords>
+    <uda:DownloadFileFromRecordField x:TypeArguments="p:PurchaseOrderAttachments" FilePath="{x:Null}" ContinueOnError="False" DisplayName="Download File from Record Field" DownloadedFileResource="[JsonTXT]" EntityId="79b7c448-a08c-f011-b3cd-002248a1642d" Field="JsonFinalFields" sap:VirtualizedContainerService.HintSize="434,223" sap2010:WorkflowViewState.IdRef="DownloadFileFromRecordField`1_1" RecordId="[AttachmentRecord(0).Id]" TimeoutInMs="30000" />
+    <ui:ReadTextFile FileName="{x:Null}" Content="[TotalFieldsTxt]" DisplayName="Read Text File" File="[JsonTXT]" sap:VirtualizedContainerService.HintSize="434,124" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Get Product Fields from DU - Invoke Workflow File (Helpers\JsonToTable\Get Product Fields from DU.xaml)" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Helpers\JsonToTable\Get Product Fields from DU.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_JsonString">[TotalFieldsTxt]</InArgument>
+        <OutArgument x:TypeArguments="njl:JObject" x:Key="out_JsonObject">[out_JsonObject]</OutArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtProductFields">[out_ProductFields]</OutArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[JsonTXT.FullName]" />
+    <uda:QueryEntityRecords x:TypeArguments="p:PurchaseOrderEmail" OutputRecords="{x:Null}" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Email Records" EntityId="8ab7c448-a08c-f011-b3cd-002248a1642d" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="434,172" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" QueriedEntityId="8ab7c448-a08c-f011-b3cd-002248a1642d" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+      <uda:QueryEntityRecords.FilterArguments>
+        <uda:FilterArgument FilterActivityType="{x:Null}">
+          <uda:FilterArgument.Filter>
+            <uda:GroupFilter Index="0" Operator="AND">
+              <uda:GroupFilter.Filters>
+                <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                  <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="PreDUReference" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="contains" ValueIndex="0" />
+                </scg:List>
+              </uda:GroupFilter.Filters>
+              <uda:GroupFilter.Groups>
+                <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+              </uda:GroupFilter.Groups>
+            </uda:GroupFilter>
+          </uda:FilterArgument.Filter>
+        </uda:FilterArgument>
+      </uda:QueryEntityRecords.FilterArguments>
+      <uda:QueryEntityRecords.FilterValues>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">[AttachmentRecord(0).PreDUReference.ToString]</InArgument>
+        </scg:List>
+      </uda:QueryEntityRecords.FilterValues>
+    </uda:QueryEntityRecords>
+    <Assign DisplayName="Assign out_EmailRecepient" sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_EmailRecepient]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[AttachmentRecord(0).PreDUReference.EmailSender]</InArgument>
+      </Assign.Value>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_EmailId]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[AttachmentRecord(0).PreDUReference.EmailID]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_EmailDestination]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[AttachmentRecord(0).PreDUReference.EmailRecipient]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

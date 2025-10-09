@@ -1,0 +1,50 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "VendorException&Sequence_1",
+        "PostalCode&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "AccountExcpetionsString&Sequence_1",
+        "AccountExceptions&Sequence_1",
+        "ResultsReturned&Sequence_4"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "io_Window",
+        "in_PostCode",
+        "in_Vendor",
+        "in_Name",
+        "in_Email"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SearchCustomerCriteria.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ResultsReturned&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_PostCode",
+        "in_Window",
+        "in_Vendor",
+        "in_Name",
+        "out_ExtractDataTable",
+        "in_ExceptionAccounts"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

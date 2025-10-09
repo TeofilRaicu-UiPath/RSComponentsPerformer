@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "resources": [
+    {
+      "resource": "queue",
+      "metadata": {
+        "folderPath": {
+          "defaultValue": "Projects/CM PO Order Management",
+          "isExpression": false,
+          "displayName": "Folder Path"
+        },
+        "name": {
+          "defaultValue": "OrderManagement_PostDU_test",
+          "isExpression": false,
+          "displayName": "Queue name"
+        },
+        "BindingsVersion": {
+          "defaultValue": "2.2",
+          "isExpression": false
+        }
+      }
+    }
+  ]
+}

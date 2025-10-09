@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge Order related emails",
+  "Type": "Screen",
+  "Id": "2Tqki08khECC77XcshC0IA",
+  "Reference": "Jr_8XDlrBkKIemrP6GIZ6Q/2Tqki08khECC77XcshC0IA",
+  "ParentRef": "Jr_8XDlrBkKIemrP6GIZ6Q/pNpbbfAAHUOE7GFC4Cesjg",
+  "Created": "2025-09-01T11:30:16.8736663Z",
+  "Updated": "2025-09-01T11:30:16.8736663Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.13.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

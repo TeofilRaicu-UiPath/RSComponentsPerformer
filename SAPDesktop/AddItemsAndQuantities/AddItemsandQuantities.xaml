@@ -1,0 +1,573 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.in_intNumOfRetries="2" this:Main.in_tsRetryInterval="00:00:05" this:Main.in_intTimeout10="10" this:Main.in_strSapApplicationPath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" this:Main.in_intTimeout5000="5000" this:Main.in_strCountry="FR" this:Main.in_intTimeout3="2" this:Main.in_strPoNum="513332" this:Main.in_strFormCountry="Germany" this:Main.in_strOrderFormURL="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=SI8Lc8sPbU-c-lsjBrr4URNb7dr0Vd9HpxQlGXmfi5dURDdLTjFERkRSNVNMRFBUNEcwMEgzTVFYNyQlQCN0PWcu" this:Main.strCustomerEmailAddress="test@test.com" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_intNumOfRetries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_tsRetryInterval" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="in_intTimeout10" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strSapApplicationPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_intTimeout5000" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strCountry" Type="InArgument(x:String)" />
+    <x:Property Name="in_intTimeout3" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strPoNum" Type="InArgument(x:String)" />
+    <x:Property Name="in_strFormCountry" Type="InArgument(x:String)" />
+    <x:Property Name="in_strOrderFormURL" Type="InArgument(x:String)" />
+    <x:Property Name="strCustomerEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_dtItems" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="io_SAPDesktop" Type="InArgument(ui:Window)" />
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="out_OrderNumber" Type="OutArgument(x:String)" />
+    <x:Property Name="in_ExactPriceMatch" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1790,3459" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="boolDiscontinued" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolInvalidStockNum" />
+      <Variable x:TypeArguments="x:Boolean" Name="boolPoAlreadyExist" />
+      <Variable x:TypeArguments="x:Int32" Name="intSapRowNum" />
+      <Variable x:TypeArguments="x:String" Name="strOrderNumber" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Assign SapRowNum" sap:VirtualizedContainerService.HintSize="633,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[intSapRowNum]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">0</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="633,84" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktop]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,302" sap2010:WorkflowViewState.IdRef="Sequence_12">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="strSapStatusBarMessage" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,240" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(f3)][u(hk)]" Version="V5">
+              <uix:NKeyboardShortcuts.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NKeyboardShortcuts.VerifyOptions>
+            </uix:NKeyboardShortcuts>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="S7zGL7nFKkW_f2ZNHjowlg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="a487f53d1bd1a9e9527f42af261cc809.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/pVGlVRVl_ky5CU44iAhQog" Selector="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" Version="V1" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtItems]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633,2570" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="599,2374" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="boolAvalibilityCheck" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_strCountry]" sap:VirtualizedContainerService.HintSize="565,214" sap2010:WorkflowViewState.IdRef="Switch`1_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="AddArtical - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddArtical.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddArtical.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strArticle">[CurrentRow(0).toString]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout5000">[in_intTimeout5000]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolDiscontinued">[boolDiscontinued]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolInvalidStockNum">[boolInvalidStockNum]</OutArgument>
+                  <InArgument x:TypeArguments="ui:Window" x:Key="io_SAPApplication">[io_SAPDesktop]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_dummyArticleId">1600000083</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectOrderIncomplete">True</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="AddArtical - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddArtical.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddArtical.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strArticle">[CurrentRow(0).toString]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout5000">[in_intTimeout5000]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolDiscontinued">[boolDiscontinued]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolInvalidStockNum">[boolInvalidStockNum]</OutArgument>
+                  <InArgument x:TypeArguments="ui:Window" x:Key="io_SAPApplication">[io_SAPDesktop]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_dummyArticleId">2000093931</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectOrderIncomplete">False</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" DisplayName="AddArtical - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddArtical.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddArtical.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                  <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_strArticle">[CurrentRow(0).toString]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout5000">[in_intTimeout5000]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolDiscontinued">[boolDiscontinued]</OutArgument>
+                  <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolInvalidStockNum">[boolInvalidStockNum]</OutArgument>
+                  <InArgument x:TypeArguments="ui:Window" x:Key="io_SAPApplication">[io_SAPDesktop]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_dummyArticleId">2000093931</InArgument>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectOrderIncomplete">False</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Switch>
+            <If Condition="[Not boolDiscontinued And Not boolInvalidStockNum]" sap:VirtualizedContainerService.HintSize="565,1995" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="531,1597" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="boolSameDeliveryDate" />
+                    <Variable x:TypeArguments="x:String" Name="strSAPNetPrice" />
+                    <Variable x:TypeArguments="x:Boolean" Name="boolPriceDiscripancy" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddQuantity - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddQuantity.xaml)" sap:VirtualizedContainerService.HintSize="497,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddQuantity.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strQuantity">[CurrentRow(1).ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout5000">[in_intTimeout5000]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                      <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolAvalibilityCheck">[boolAvalibilityCheck]</OutArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                      <InArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktop">[io_SAPDesktop]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_strCountry]" sap:VirtualizedContainerService.HintSize="497,214" sap2010:WorkflowViewState.IdRef="Switch`1_9">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="CheckPrice - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckPrice.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckPrice.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strTotalPrice">[CurrentRow(4).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_strSAPNetPrice">[strSAPNetPrice]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolPriceDiscripancy">[boolPriceDiscripancy]</OutArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktop">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExactPriceMatch">[in_ExactPriceMatch]</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectImportantPriceDifference">True</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="CheckPrice - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckPrice.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckPrice.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strTotalPrice">[CurrentRow(4).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_strSAPNetPrice">[strSAPNetPrice]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolPriceDiscripancy">[boolPriceDiscripancy]</OutArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktop">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExactPriceMatch">False</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectImportantPriceDifference">False</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" DisplayName="CheckPrice - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckPrice.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckPrice.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strTotalPrice">[CurrentRow(4).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:String" x:Key="out_strSAPNetPrice">[strSAPNetPrice]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolPriceDiscripancy">[boolPriceDiscripancy]</OutArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktop">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExactPriceMatch">[in_ExactPriceMatch]</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectImportantPriceDifference">True</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Switch>
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch country check date" Expression="[in_strCountry]" sap:VirtualizedContainerService.HintSize="497,236" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSameDeliveryDate">[boolSameDeliveryDate]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strPODeliveryDate">[CurrentRow(3).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktopWindow">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToNextMonday">False</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday">True</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSameDeliveryDate">[boolSameDeliveryDate]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strPODeliveryDate">[CurrentRow(3).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktopWindow">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToNextMonday">True</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday">False</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSameDeliveryDate">[boolSameDeliveryDate]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strPODeliveryDate">[CurrentRow(3).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktopWindow">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToNextMonday" />
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday" />
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="IE" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                      <ui:InvokeWorkflowFile.Arguments>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                        <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intRowNum">[intSapRowNum]</InArgument>
+                        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_boolSameDeliveryDate">[boolSameDeliveryDate]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_strPODeliveryDate">[CurrentRow(3).ToString]</InArgument>
+                        <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout3">[in_intTimeout3]</InArgument>
+                        <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktopWindow">[io_SAPDesktop]</InOutArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToNextMonday">True</InArgument>
+                        <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday">False</InArgument>
+                      </ui:InvokeWorkflowFile.Arguments>
+                    </ui:InvokeWorkflowFile>
+                  </Switch>
+                  <If Condition="[boolSameDeliveryDate]" DisplayName="If lSameDeliveryDate (BE)" sap:VirtualizedContainerService.HintSize="497,432" sap2010:WorkflowViewState.IdRef="If_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Throw DisplayName="Throw BE" Exception="[new BusinessRuleException(&quot;Same-day request outside allowed window&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <If Condition="[boolPriceDiscripancy]" DisplayName="If PriceDiscripancy" sap:VirtualizedContainerService.HintSize="497,478" sap2010:WorkflowViewState.IdRef="If_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OrderForm_PriceDiscrepancy - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\OrderForm_PriceDiscrepancy.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\OrderForm_PriceDiscrepancy.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                            <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                            <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strCountry">[in_strFormCountry]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strOrderFormURL">[in_Config("OrderFormUrl").ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strQuantity">[CurrentRow(1).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strArticalNumber">[CurrentRow(0).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strCustomerPrice">[CurrentRow(4).ToString]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strOrderPrice">[strSAPNetPrice]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strRSOrderNumber">[strOrderNumber]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strCustomerPO">[in_strPoNum]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_strCustomerEmailAddress">[strCustomerEmailAddress]</InArgument>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_DoNotSave">[CBool(in_Config("PO_SAP_DONOTSAVE").toString)]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="531,228" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="OrderForm_MissingOrInvalidArticleNumbers - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\OrderForm_MissingOrInvalidArticleNumbers.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\OrderForm_MissingOrInvalidArticleNumbers.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+                      <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strCountry">[in_strFormCountry]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strOrderFormURL">[in_Config("OrderFormUrl").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strRSOrderNumber">[strOrderNumber]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strCustomerPO">[in_strPoNum]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strLineNumber">[intSapRowNum.toString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_strCustomerEmailAddress">[strCustomerEmailAddress]</InArgument>
+                      <InArgument x:TypeArguments="x:Boolean" x:Key="in_DoNotSave">[CBool(in_Config("PO_SAP_DONOTSAVE").toString)]</InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Else>
+            </If>
+            <Assign sap:VirtualizedContainerService.HintSize="565,105" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[intSapRowNum]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[if(boolAvalibilityCheck,intSapRowNum+2,intSapRowNum+1)]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:ForEachRow>
+    <If Condition="[not CBool(in_Config(&quot;PO_SAP_IGNOREANYSAVING&quot;).toString)]" sap:VirtualizedContainerService.HintSize="633,563" sap2010:WorkflowViewState.IdRef="If_5">
+      <If.Then>
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,228" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SaveTheOrder - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\SaveTheOrder.xaml)" sap:VirtualizedContainerService.HintSize="382,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\SaveTheOrder.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
+              <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
+              <InArgument x:TypeArguments="x:Int32" x:Key="in_intTimeout10">[in_intTimeout10]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="out_strOrderNumber">[strOrderNumber]</OutArgument>
+              <InOutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktopWindow">[io_SAPDesktop]</InOutArgument>
+              <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_4">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[strOrderNumber]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">123455</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Else>
+    </If>
+    <Assign sap:VirtualizedContainerService.HintSize="633,105" sap2010:WorkflowViewState.IdRef="Assign_3">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[out_OrderNumber]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[strOrderNumber]</InArgument>
+      </Assign.Value>
+    </Assign>
+  </Sequence>
+</Activity>

@@ -1,0 +1,932 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SAP_CreateAccountOrder_EnterPONumber" this:SAP_CreateAccountOrder_EnterPONumber.in_intNumOfRetries="2" this:SAP_CreateAccountOrder_EnterPONumber.in_tsRetryInterval="00:00:05" this:SAP_CreateAccountOrder_EnterPONumber.in_intTimeout10="10" this:SAP_CreateAccountOrder_EnterPONumber.in_strTotalPrice="63.09" this:SAP_CreateAccountOrder_EnterPONumber.in_intRowNum="0" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_intNumOfRetries" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_tsRetryInterval" Type="InArgument(x:TimeSpan)" />
+    <x:Property Name="in_intTimeout10" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_strTotalPrice" Type="InArgument(x:String)" />
+    <x:Property Name="in_intRowNum" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_strSAPNetPrice" Type="OutArgument(x:String)" />
+    <x:Property Name="out_boolPriceDiscripancy" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="io_SAPDesktop" Type="InOutArgument(ui:Window)" />
+    <x:Property Name="in_ExactPriceMatch" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_SelectImportantPriceDifference" Type="InArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>SAP_CreateAccountOrder_EnterPONumber_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.Core.Activities.SAP</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Globalization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence sap2010:Annotation.AnnotationText="Description : CheckPrice" DisplayName="SAP_CreateAccountOrder_CheckPrice" sap:VirtualizedContainerService.HintSize="1446,1751" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="SAP_CreateAccountOrder_CheckPrice" Name="strSequenceName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message Start Sequence " sap:VirtualizedContainerService.HintSize="808,84" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strSequenceName+&quot; Is Started&quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:LogMessage>
+    <TryCatch DisplayName="Try Catch Enter Details" sap:VirtualizedContainerService.HintSize="808,1538" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <TryCatch.Try>
+        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1256" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
+          <ui:RetryScope.ActivityBody>
+            <ActivityAction>
+              <Sequence DisplayName="Action Type Po Number" sap:VirtualizedContainerService.HintSize="736,1055" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,995" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,912" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktop]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
+                    <uix:NApplicationCard.Body>
+                      <ActivityAction x:TypeArguments="x:Object">
+                        <ActivityAction.Argument>
+                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                        </ActivityAction.Argument>
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="634,712" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="strSAPNetPrice" />
+                            <Variable x:TypeArguments="s:DateTime" Name="dateDeliveryDate" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Flowchart sap:VirtualizedContainerService.HintSize="600,650" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                            <Flowchart.Variables>
+                              <Variable x:TypeArguments="x:Double" Name="dbDifference" />
+                            </Flowchart.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                <av:Point x:Key="ShapeLocation">275,35</av:Point>
+                                <av:Size x:Key="ShapeSize">50,50</av:Size>
+                                <av:PointCollection x:Key="ConnectorLocation">300,85 300,135</av:PointCollection>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Flowchart.StartNode>
+                              <x:Reference>__ReferenceID10</x:Reference>
+                            </Flowchart.StartNode>
+                            <FlowStep x:Name="__ReferenceID10" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">245,135</av:Point>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,205 300,280</av:PointCollection>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NGetText DisplayName="Get Text 'Net Price'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" TextString="[out_strSAPNetPrice]" Timeout="[in_intTimeout10]" Version="V4">
+                                <uix:NGetText.Target>
+                                  <uix:TargetAnchorable DesignTimeRectangle="651, 554, 151, 20" ElementType="Text" FullSelectorArgument="[string.Format(&quot;&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='{0}' colTooltip='Net value' idx='2' /&gt;&quot;, in_intRowNum)]" Guid="650e04f2-3f00-4439-9861-cdb1e3716baa" ImageBase64="" InformativeScreenshot="fdb615e7f4308c3fe8d002ee8a0dce0a.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                </uix:NGetText.Target>
+                              </uix:NGetText>
+                              <FlowStep.Next>
+                                <FlowDecision x:Name="__ReferenceID6" Condition="[in_ExactPriceMatch]" DisplayName="Exact price match should be checked" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_10">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <av:Point x:Key="ShapeLocation">270,280</av:Point>
+                                      <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                      <av:PointCollection x:Key="TrueConnector">330,310 700,310 700,340</av:PointCollection>
+                                      <av:PointCollection x:Key="FalseConnector">270,310 220,310 220,450</av:PointCollection>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <FlowDecision.True>
+                                    <FlowDecision x:Name="__ReferenceID7" Condition="[CDbl(out_strSAPNetPrice) = CDbl(in_strTotalPrice)]" DisplayName="Price Match" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">670,340</av:Point>
+                                          <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">730,370 910,370 910,435</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">670,370 610,370 610,435</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_5">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">855,435</av:Point>
+                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Price Match Exactly" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_79" Level="Info" Message="[&quot;Price match is exact&quot;]" />
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID9" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">555,435</av:Point>
+                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="Price do not match" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,173" sap2010:WorkflowViewState.IdRef="LogMessage_80" Level="Warn" Message="[&quot;The Price Difference : &quot; +dbDifference.ToString]" />
+                                            <Assign DisplayName="Assign boolPriceDiscripancy" sap:VirtualizedContainerService.HintSize="484,114" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Boolean">[out_boolPriceDiscripancy]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <Sequence DisplayName="Sequence select failure" sap:VirtualizedContainerService.HintSize="484,1124" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_84" Level="Info" Message="[&quot;Start To Select The Reason for Rejection  '47', Order Resaon '702' , Delivery block 'ZJ' For Price Discrpency (for FR)&quot;]" />
+                                              <uix:NSelectItem DisplayName="Select Item 'ComboBox Reason for rej…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NSelectItem_27" Item="Awaiting customer confirmation" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                <uix:NSelectItem.Items>
+                                                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                    <x:String>Lead Time Unacceptable</x:String>
+                                                    <x:String>Back Order Prohibit</x:String>
+                                                    <x:String>Too Expensive</x:String>
+                                                    <x:String>Duplicated Line</x:String>
+                                                    <x:String>Replaced By Production Packaging Article</x:String>
+                                                    <x:String>Production Pack Article Not Supported</x:String>
+                                                    <x:String>Credit Limit Exceeded</x:String>
+                                                    <x:String>Credit Card Authorisation Declined</x:String>
+                                                    <x:String>Forward Order No Longer Required</x:String>
+                                                    <x:String>Failed to Release Item on Time</x:String>
+                                                    <x:String>Class 2 Hazard Cannot Export</x:String>
+                                                    <x:String>Do not Market Article</x:String>
+                                                    <x:String>Export Licence Unobtainable</x:String>
+                                                    <x:String>Export Prohibited</x:String>
+                                                    <x:String>Export Restricted</x:String>
+                                                    <x:String>Cannot Ship by Preferred Method</x:String>
+                                                    <x:String>Catalogue Error</x:String>
+                                                    <x:String>Article Discontinued</x:String>
+                                                    <x:String>Kit Prohibited for XBF</x:String>
+                                                    <x:String>Country of Origin Prohibited</x:String>
+                                                    <x:String>Specific Country of Origin Required</x:String>
+                                                    <x:String>Product Oversized for Shipping</x:String>
+                                                    <x:String>Product Overweight for Shipping</x:String>
+                                                    <x:String>Unable to Supply Requested Article</x:String>
+                                                    <x:String>Unable to Meet Delivery Requirements</x:String>
+                                                    <x:String>Warranty Repair</x:String>
+                                                    <x:String>Vendor restriction</x:String>
+                                                    <x:String>Contract Cancelled</x:String>
+                                                    <x:String>Dummy Article Replaced</x:String>
+                                                    <x:String>Lead time unacceptable, no alternative</x:String>
+                                                    <x:String>Lead time unacceptable, alt. not ok</x:String>
+                                                    <x:String>Lead time unacceptable, alternative ok  </x:String>
+                                                    <x:String>Alternative not suitable</x:String>
+                                                    <x:String>Z002 Discontinued referral not suitable</x:String>
+                                                    <x:String>Awaiting customer confirmation</x:String>
+                                                    <x:String>Payment Card: Authorisation unobtainable</x:String>
+                                                    <x:String>Incorrect SSM Quantity for Article</x:String>
+                                                    <x:String>Article Entered not known</x:String>
+                                                    <x:String>Request for Credit Refused</x:String>
+                                                    <x:String>MSDS missing for Article (Set by system)</x:String>
+                                                    <x:String>Article Entered excluded</x:String>
+                                                    <x:String>Surcharge Unacceptable</x:String>
+                                                    <x:String>Article/BOM data error. (Set by system)</x:String>
+                                                    <x:String>Test order</x:String>
+                                                    <x:String>Sales Order Migration</x:String>
+                                                    <x:String>Customer cancelled – no carrier service</x:String>
+                                                    <x:String>MTO - MTS Rejection</x:String>
+                                                    <x:String>Rejected By Batch Aged Or Disco</x:String>
+                                                    <x:String xml:space="preserve">Article Disc. -   E-Com Customer Advised</x:String>
+                                                    <x:String xml:space="preserve"> </x:String>
+                                                  </scg:List>
+                                                </uix:NSelectItem.Items>
+                                                <uix:NSelectItem.Target>
+                                                  <uix:TargetAnchorable DesignTimeRectangle="694, 554, 144, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="[string.Format(&quot;&lt;sap colTooltip='Reason for rejection' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='{0}' /&gt;&quot;, in_intRowNum)]" Guid="2a0ead1a-eea9-4d24-ba93-e62574622e30" InformativeScreenshot="6e6401ebe23355594ce42707fb7c5538.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                </uix:NSelectItem.Target>
+                                              </uix:NSelectItem>
+                                              <If Condition="[in_SelectImportantPriceDifference]" DisplayName="If select important price difference" sap:VirtualizedContainerService.HintSize="450,499" sap2010:WorkflowViewState.IdRef="If_2">
+                                                <If.Then>
+                                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_84">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <uix:NSelectItem DisplayName="Select Item 'ComboBox Delivery block…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NSelectItem_28" Item="Important Price Diff" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                      <uix:NSelectItem.Items>
+                                                        <scg:List x:TypeArguments="x:String" Capacity="44">
+                                                          <x:String>Credit limit</x:String>
+                                                          <x:String>Incomplete COO Req</x:String>
+                                                          <x:String>Waiting Pay Card inf</x:String>
+                                                          <x:String>Lego Ed: &gt; 5 units</x:String>
+                                                          <x:String>Order value negative</x:String>
+                                                          <x:String>Planning Block</x:String>
+                                                          <x:String>Training block</x:String>
+                                                          <x:String>VAT Block</x:String>
+                                                          <x:String>Order Incomplete</x:String>
+                                                          <x:String>ATP/SOPL/XBF Problem</x:String>
+                                                          <x:String>Letter of Credit</x:String>
+                                                          <x:String>SpendControlExceeded</x:String>
+                                                          <x:String>Invalid Cost Centre</x:String>
+                                                          <x:String>New Calibration Sale</x:String>
+                                                          <x:String>ITCPurchasingManager</x:String>
+                                                          <x:String>BV Stock Problem</x:String>
+                                                          <x:String>BV Export Order</x:String>
+                                                          <x:String>Carrier Details</x:String>
+                                                          <x:String>Service Restriction</x:String>
+                                                          <x:String>EDI Problem</x:String>
+                                                          <x:String>Trade Boycott</x:String>
+                                                          <x:String>Check Accessories</x:String>
+                                                          <x:String>SpendCtlBVPasswdFail</x:String>
+                                                          <x:String>SpendCtlContExceeded</x:String>
+                                                          <x:String>PI required</x:String>
+                                                          <x:String>Reference mistake</x:String>
+                                                          <x:String>Sales unit problem</x:String>
+                                                          <x:String>Important Price Diff</x:String>
+                                                          <x:String>Referal</x:String>
+                                                          <x:String>No DG for couriers</x:String>
+                                                          <x:String>BV Missing EAN No</x:String>
+                                                          <x:String>Ship Complete</x:String>
+                                                          <x:String>Destination Country</x:String>
+                                                          <x:String>Prod Pack (Loc 0002)</x:String>
+                                                          <x:String>Lithium Article Blck</x:String>
+                                                          <x:String>Error fromCarr.Resp.</x:String>
+                                                          <x:String>Customer cancelled</x:String>
+                                                          <x:String>Error - Label Call</x:String>
+                                                          <x:String>Fraud Investigation</x:String>
+                                                          <x:String>VAT Block</x:String>
+                                                          <x:String>Post-Brexit Delivery</x:String>
+                                                          <x:String>SO MIG - with ATP</x:String>
+                                                          <x:String>SO MIG - bus.block</x:String>
+                                                          <x:String xml:space="preserve"> </x:String>
+                                                        </scg:List>
+                                                      </uix:NSelectItem.Items>
+                                                      <uix:NSelectItem.Target>
+                                                        <uix:TargetAnchorable ContentHash="PJFnWHgpQ02QdfNVH22N5A" DesignTimeRectangle="151, 357, 153, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/ssubHEADER_FRAME:SAPMV45A:4440/cmbVBAK-LIFSK' /&gt;" Guid="d44b2f68-529e-44d5-b911-00a705284ffc" InformativeScreenshot="ea40456d4815eb4aff34f2cc2654493c.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/AgmYF-pyAUKmaMqrsNZ-cw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                      </uix:NSelectItem.Target>
+                                                    </uix:NSelectItem>
+                                                  </Sequence>
+                                                </If.Then>
+                                                <If.Else>
+                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_85">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                  </Sequence>
+                                                </If.Else>
+                                              </If>
+                                              <uix:NSelectItem DisplayName="Select Item 'ComboBox Order reason (…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,180" sap2010:WorkflowViewState.IdRef="NSelectItem_29" Item="GSBS TEMPLATE - price discrepancy" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                <uix:NSelectItem.Items>
+                                                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                    <x:String>Delay - Goods returned</x:String>
+                                                    <x:String>Lost-audited (damage moved to type-prod)</x:String>
+                                                    <x:String>Delivered to incorrect address</x:String>
+                                                    <x:String>Carrier delay - reimburse services</x:String>
+                                                    <x:String>Invoicing error (name, address, customer</x:String>
+                                                    <x:String>Incorrect services invoiced</x:String>
+                                                    <x:String>Discount error</x:String>
+                                                    <x:String>Pricing error</x:String>
+                                                    <x:String>VAT error</x:String>
+                                                    <x:String>Goodwill gesture</x:String>
+                                                    <x:String>Annual rebates</x:String>
+                                                    <x:String>Handling charge refund</x:String>
+                                                    <x:String>Retention of title</x:String>
+                                                    <x:String>Write off irretrievable debt</x:String>
+                                                    <x:String>Marketing initiative voucher</x:String>
+                                                    <x:String>Order cancelled prior to desp./collect</x:String>
+                                                    <x:String>Freight Cost Re-Imbursement</x:String>
+                                                    <x:String>Difference of price</x:String>
+                                                    <x:String>Invalid / discontinued items on order</x:String>
+                                                    <x:String>High Value Order - HV1</x:String>
+                                                    <x:String>Delivery-Irretrievable debt write off</x:String>
+                                                    <x:String>Invoice-Irretrievable debt write off</x:String>
+                                                    <x:String>Fraud-Irretrievable debt write off</x:String>
+                                                    <x:String>Eproc/Einvoice-Irretrievable debt write</x:String>
+                                                    <x:String>Sales representative visit</x:String>
+                                                    <x:String>Customer internal process</x:String>
+                                                    <x:String>General quote</x:String>
+                                                    <x:String>Customer request to tender</x:String>
+                                                    <x:String>Price and Availability Check</x:String>
+                                                    <x:String>Terms and Conditions of Quote not met</x:String>
+                                                    <x:String>SSC Query/Other</x:String>
+                                                    <x:String>Vendor Buyback - Return to Vendor</x:String>
+                                                    <x:String>Vendor Buyback - Scrap Stock</x:String>
+                                                    <x:String>Calibration Service Provided</x:String>
+                                                    <x:String>Demonstration Complete - Stock returned</x:String>
+                                                    <x:String>Demonstration Stk Purchased by Customer</x:String>
+                                                    <x:String>Warranty Repair</x:String>
+                                                    <x:String>Maintenance Solution - Contracts</x:String>
+                                                    <x:String>Maintenance Solution - Products</x:String>
+                                                    <x:String>GSBS EMAIL TO SALES - price discrepancy</x:String>
+                                                    <x:String>GSBS TEMPLATE - price discrepancy</x:String>
+                                                    <x:String>GSBS TEMPLATE - missing/invalid stock no</x:String>
+                                                    <x:String>GSBS TEMPLATE - quantity/pack size query</x:String>
+                                                    <x:String>GSBS TEMPLATE - other</x:String>
+                                                    <x:String>FOC Samples - Marketing</x:String>
+                                                    <x:String>FOC Samples - Field Sales</x:String>
+                                                    <x:String>FOC Samples - Customer Service</x:String>
+                                                    <x:String>FOC Samples - Telesales</x:String>
+                                                    <x:String>FOC Samples - Technical Support</x:String>
+                                                    <x:String xml:space="preserve"> </x:String>
+                                                  </scg:List>
+                                                </uix:NSelectItem.Items>
+                                                <uix:NSelectItem.Target>
+                                                  <uix:TargetAnchorable DesignTimeRectangle="151, 489, 300, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/ssubHEADER_FRAME:SAPMV45A:4440/cmbVBAK-AUGRU' /&gt;" Guid="b47a5568-9e95-4254-af46-20f3357056aa" InformativeScreenshot="f92b95acce7a0d17a465069428b143cd.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                </uix:NSelectItem.Target>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </uix:NSelectItem>
+                                            </Sequence>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowDecision.True>
+                                  <FlowDecision.False>
+                                    <FlowDecision x:Name="__ReferenceID0" Condition="[CDbl(out_strSAPNetPrice) &gt;CDbl(in_strTotalPrice)]" DisplayName="Validate Net Price In Sap " sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          <av:Point x:Key="ShapeLocation">190,450</av:Point>
+                                          <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                          <av:PointCollection x:Key="TrueConnector">250,480 295,480</av:PointCollection>
+                                          <av:PointCollection x:Key="FalseConnector">190,480 155,480</av:PointCollection>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <FlowDecision.True>
+                                        <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">295,445</av:Point>
+                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">350,515 350,570</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="SAP  Price &gt; Net Price In Po" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="LogMessage_60" Level="Info" Message="[&quot;SAP Price : &quot;+out_strSAPNetPrice+&quot;  is Higher than the Invoice (PDF/PO) Price : &quot;+in_strTotalPrice +&quot; So Start To calculate the price difference in percentage terms&quot;]" />
+                                            <Assign DisplayName="Assign Difference" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:Double">[dbDifference]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:Double">[(CDbl(out_strSAPNetPrice) - CDbl(in_strTotalPrice)) / CDbl(in_strTotalPrice) *100]</InArgument>
+                                              </Assign.Value>
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </Assign>
+                                          </Sequence>
+                                          <FlowStep.Next>
+                                            <FlowDecision x:Name="__ReferenceID2" Condition="[dbDifference&gt;15]" DisplayName="Decision check the Difference " sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_9">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">320,570</av:Point>
+                                                  <av:Size x:Key="ShapeSize">60,60</av:Size>
+                                                  <av:PointCollection x:Key="TrueConnector">380,600 425,600</av:PointCollection>
+                                                  <av:PointCollection x:Key="FalseConnector">320,600 265,600</av:PointCollection>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <FlowDecision.True>
+                                                <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">425,565</av:Point>
+                                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Sequence DisplayName="Difference &gt;15" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Warn" Message="[&quot;The Price Difference : &quot; +dbDifference.ToString+&quot; is &gt; 15% &quot;]" />
+                                                    <Assign DisplayName="Assign boolPriceDiscripancy" sap:VirtualizedContainerService.HintSize="450,114" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Boolean">[out_boolPriceDiscripancy]</OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                                      </Assign.Value>
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Assign>
+                                                    <Sequence DisplayName="Sequence select failure" sap:VirtualizedContainerService.HintSize="450,410" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="LogMessage_74" Level="Info" Message="[&quot;Start To Select The Reason for Rejection  '47', Order Resaon '702' , Delivery block 'ZJ' For Price Discrpency (for FR)&quot;]">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </ui:LogMessage>
+                                                      <uix:NSelectItem DisplayName="Select Item 'ComboBox Reason for rej…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="NSelectItem_8" Item="Awaiting customer confirmation" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                        <uix:NSelectItem.Items>
+                                                          <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                            <x:String>Lead Time Unacceptable</x:String>
+                                                            <x:String>Back Order Prohibit</x:String>
+                                                            <x:String>Too Expensive</x:String>
+                                                            <x:String>Duplicated Line</x:String>
+                                                            <x:String>Replaced By Production Packaging Article</x:String>
+                                                            <x:String>Production Pack Article Not Supported</x:String>
+                                                            <x:String>Credit Limit Exceeded</x:String>
+                                                            <x:String>Credit Card Authorisation Declined</x:String>
+                                                            <x:String>Forward Order No Longer Required</x:String>
+                                                            <x:String>Failed to Release Item on Time</x:String>
+                                                            <x:String>Class 2 Hazard Cannot Export</x:String>
+                                                            <x:String>Do not Market Article</x:String>
+                                                            <x:String>Export Licence Unobtainable</x:String>
+                                                            <x:String>Export Prohibited</x:String>
+                                                            <x:String>Export Restricted</x:String>
+                                                            <x:String>Cannot Ship by Preferred Method</x:String>
+                                                            <x:String>Catalogue Error</x:String>
+                                                            <x:String>Article Discontinued</x:String>
+                                                            <x:String>Kit Prohibited for XBF</x:String>
+                                                            <x:String>Country of Origin Prohibited</x:String>
+                                                            <x:String>Specific Country of Origin Required</x:String>
+                                                            <x:String>Product Oversized for Shipping</x:String>
+                                                            <x:String>Product Overweight for Shipping</x:String>
+                                                            <x:String>Unable to Supply Requested Article</x:String>
+                                                            <x:String>Unable to Meet Delivery Requirements</x:String>
+                                                            <x:String>Warranty Repair</x:String>
+                                                            <x:String>Vendor restriction</x:String>
+                                                            <x:String>Contract Cancelled</x:String>
+                                                            <x:String>Dummy Article Replaced</x:String>
+                                                            <x:String>Lead time unacceptable, no alternative</x:String>
+                                                            <x:String>Lead time unacceptable, alt. not ok</x:String>
+                                                            <x:String>Lead time unacceptable, alternative ok  </x:String>
+                                                            <x:String>Alternative not suitable</x:String>
+                                                            <x:String>Z002 Discontinued referral not suitable</x:String>
+                                                            <x:String>Awaiting customer confirmation</x:String>
+                                                            <x:String>Payment Card: Authorisation unobtainable</x:String>
+                                                            <x:String>Incorrect SSM Quantity for Article</x:String>
+                                                            <x:String>Article Entered not known</x:String>
+                                                            <x:String>Request for Credit Refused</x:String>
+                                                            <x:String>MSDS missing for Article (Set by system)</x:String>
+                                                            <x:String>Article Entered excluded</x:String>
+                                                            <x:String>Surcharge Unacceptable</x:String>
+                                                            <x:String>Article/BOM data error. (Set by system)</x:String>
+                                                            <x:String>Test order</x:String>
+                                                            <x:String>Sales Order Migration</x:String>
+                                                            <x:String>Customer cancelled – no carrier service</x:String>
+                                                            <x:String>MTO - MTS Rejection</x:String>
+                                                            <x:String>Rejected By Batch Aged Or Disco</x:String>
+                                                            <x:String xml:space="preserve">Article Disc. -   E-Com Customer Advised</x:String>
+                                                            <x:String xml:space="preserve"> </x:String>
+                                                          </scg:List>
+                                                        </uix:NSelectItem.Items>
+                                                        <uix:NSelectItem.Target>
+                                                          <uix:TargetAnchorable DesignTimeRectangle="694, 554, 144, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="[string.Format(&quot;&lt;sap colTooltip='Reason for rejection' id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/tblSAPMV45ATCTRL_U_ERF_AUFTRAG' tableRow='{0}' /&gt;&quot;, in_intRowNum)]" Guid="2a0ead1a-eea9-4d24-ba93-e62574622e30" InformativeScreenshot="6e6401ebe23355594ce42707fb7c5538.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                        </uix:NSelectItem.Target>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </uix:NSelectItem>
+                                                      <If Condition="[in_SelectImportantPriceDifference]" DisplayName="If select important price difference" sap:VirtualizedContainerService.HintSize="416,84" sap2010:WorkflowViewState.IdRef="If_1">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <If.Then>
+                                                          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_81">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <uix:NSelectItem DisplayName="Select Item 'ComboBox Delivery block…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NSelectItem_9" Item="Important Price Diff" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                              <uix:NSelectItem.Items>
+                                                                <scg:List x:TypeArguments="x:String" Capacity="44">
+                                                                  <x:String>Credit limit</x:String>
+                                                                  <x:String>Incomplete COO Req</x:String>
+                                                                  <x:String>Waiting Pay Card inf</x:String>
+                                                                  <x:String>Lego Ed: &gt; 5 units</x:String>
+                                                                  <x:String>Order value negative</x:String>
+                                                                  <x:String>Planning Block</x:String>
+                                                                  <x:String>Training block</x:String>
+                                                                  <x:String>VAT Block</x:String>
+                                                                  <x:String>Order Incomplete</x:String>
+                                                                  <x:String>ATP/SOPL/XBF Problem</x:String>
+                                                                  <x:String>Letter of Credit</x:String>
+                                                                  <x:String>SpendControlExceeded</x:String>
+                                                                  <x:String>Invalid Cost Centre</x:String>
+                                                                  <x:String>New Calibration Sale</x:String>
+                                                                  <x:String>ITCPurchasingManager</x:String>
+                                                                  <x:String>BV Stock Problem</x:String>
+                                                                  <x:String>BV Export Order</x:String>
+                                                                  <x:String>Carrier Details</x:String>
+                                                                  <x:String>Service Restriction</x:String>
+                                                                  <x:String>EDI Problem</x:String>
+                                                                  <x:String>Trade Boycott</x:String>
+                                                                  <x:String>Check Accessories</x:String>
+                                                                  <x:String>SpendCtlBVPasswdFail</x:String>
+                                                                  <x:String>SpendCtlContExceeded</x:String>
+                                                                  <x:String>PI required</x:String>
+                                                                  <x:String>Reference mistake</x:String>
+                                                                  <x:String>Sales unit problem</x:String>
+                                                                  <x:String>Important Price Diff</x:String>
+                                                                  <x:String>Referal</x:String>
+                                                                  <x:String>No DG for couriers</x:String>
+                                                                  <x:String>BV Missing EAN No</x:String>
+                                                                  <x:String>Ship Complete</x:String>
+                                                                  <x:String>Destination Country</x:String>
+                                                                  <x:String>Prod Pack (Loc 0002)</x:String>
+                                                                  <x:String>Lithium Article Blck</x:String>
+                                                                  <x:String>Error fromCarr.Resp.</x:String>
+                                                                  <x:String>Customer cancelled</x:String>
+                                                                  <x:String>Error - Label Call</x:String>
+                                                                  <x:String>Fraud Investigation</x:String>
+                                                                  <x:String>VAT Block</x:String>
+                                                                  <x:String>Post-Brexit Delivery</x:String>
+                                                                  <x:String>SO MIG - with ATP</x:String>
+                                                                  <x:String>SO MIG - bus.block</x:String>
+                                                                  <x:String xml:space="preserve"> </x:String>
+                                                                </scg:List>
+                                                              </uix:NSelectItem.Items>
+                                                              <uix:NSelectItem.Target>
+                                                                <uix:TargetAnchorable ContentHash="PJFnWHgpQ02QdfNVH22N5A" DesignTimeRectangle="151, 357, 153, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/ssubHEADER_FRAME:SAPMV45A:4440/cmbVBAK-LIFSK' /&gt;" Guid="d44b2f68-529e-44d5-b911-00a705284ffc" InformativeScreenshot="ea40456d4815eb4aff34f2cc2654493c.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/AgmYF-pyAUKmaMqrsNZ-cw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                              </uix:NSelectItem.Target>
+                                                            </uix:NSelectItem>
+                                                          </Sequence>
+                                                        </If.Then>
+                                                        <If.Else>
+                                                          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_82">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </Sequence>
+                                                        </If.Else>
+                                                      </If>
+                                                      <uix:NSelectItem DisplayName="Select Item 'ComboBox Order reason (…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,75" sap2010:WorkflowViewState.IdRef="NSelectItem_10" Item="GSBS TEMPLATE - price discrepancy" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                        <uix:NSelectItem.Items>
+                                                          <scg:List x:TypeArguments="x:String" Capacity="50">
+                                                            <x:String>Delay - Goods returned</x:String>
+                                                            <x:String>Lost-audited (damage moved to type-prod)</x:String>
+                                                            <x:String>Delivered to incorrect address</x:String>
+                                                            <x:String>Carrier delay - reimburse services</x:String>
+                                                            <x:String>Invoicing error (name, address, customer</x:String>
+                                                            <x:String>Incorrect services invoiced</x:String>
+                                                            <x:String>Discount error</x:String>
+                                                            <x:String>Pricing error</x:String>
+                                                            <x:String>VAT error</x:String>
+                                                            <x:String>Goodwill gesture</x:String>
+                                                            <x:String>Annual rebates</x:String>
+                                                            <x:String>Handling charge refund</x:String>
+                                                            <x:String>Retention of title</x:String>
+                                                            <x:String>Write off irretrievable debt</x:String>
+                                                            <x:String>Marketing initiative voucher</x:String>
+                                                            <x:String>Order cancelled prior to desp./collect</x:String>
+                                                            <x:String>Freight Cost Re-Imbursement</x:String>
+                                                            <x:String>Difference of price</x:String>
+                                                            <x:String>Invalid / discontinued items on order</x:String>
+                                                            <x:String>High Value Order - HV1</x:String>
+                                                            <x:String>Delivery-Irretrievable debt write off</x:String>
+                                                            <x:String>Invoice-Irretrievable debt write off</x:String>
+                                                            <x:String>Fraud-Irretrievable debt write off</x:String>
+                                                            <x:String>Eproc/Einvoice-Irretrievable debt write</x:String>
+                                                            <x:String>Sales representative visit</x:String>
+                                                            <x:String>Customer internal process</x:String>
+                                                            <x:String>General quote</x:String>
+                                                            <x:String>Customer request to tender</x:String>
+                                                            <x:String>Price and Availability Check</x:String>
+                                                            <x:String>Terms and Conditions of Quote not met</x:String>
+                                                            <x:String>SSC Query/Other</x:String>
+                                                            <x:String>Vendor Buyback - Return to Vendor</x:String>
+                                                            <x:String>Vendor Buyback - Scrap Stock</x:String>
+                                                            <x:String>Calibration Service Provided</x:String>
+                                                            <x:String>Demonstration Complete - Stock returned</x:String>
+                                                            <x:String>Demonstration Stk Purchased by Customer</x:String>
+                                                            <x:String>Warranty Repair</x:String>
+                                                            <x:String>Maintenance Solution - Contracts</x:String>
+                                                            <x:String>Maintenance Solution - Products</x:String>
+                                                            <x:String>GSBS EMAIL TO SALES - price discrepancy</x:String>
+                                                            <x:String>GSBS TEMPLATE - price discrepancy</x:String>
+                                                            <x:String>GSBS TEMPLATE - missing/invalid stock no</x:String>
+                                                            <x:String>GSBS TEMPLATE - quantity/pack size query</x:String>
+                                                            <x:String>GSBS TEMPLATE - other</x:String>
+                                                            <x:String>FOC Samples - Marketing</x:String>
+                                                            <x:String>FOC Samples - Field Sales</x:String>
+                                                            <x:String>FOC Samples - Customer Service</x:String>
+                                                            <x:String>FOC Samples - Telesales</x:String>
+                                                            <x:String>FOC Samples - Technical Support</x:String>
+                                                            <x:String xml:space="preserve"> </x:String>
+                                                          </scg:List>
+                                                        </uix:NSelectItem.Items>
+                                                        <uix:NSelectItem.Target>
+                                                          <uix:TargetAnchorable DesignTimeRectangle="151, 489, 300, 20" DesignTimeScaleFactor="1" ElementType="DropDown" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/ssubHEADER_FRAME:SAPMV45A:4440/cmbVBAK-AUGRU' /&gt;" Guid="b47a5568-9e95-4254-af46-20f3357056aa" InformativeScreenshot="f92b95acce7a0d17a465069428b143cd.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                        </uix:NSelectItem.Target>
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </uix:NSelectItem>
+                                                    </Sequence>
+                                                  </Sequence>
+                                                </FlowStep>
+                                              </FlowDecision.True>
+                                              <FlowDecision.False>
+                                                <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <av:Point x:Key="ShapeLocation">155,565</av:Point>
+                                                      <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Sequence DisplayName="Difference &lt;= 15" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_69">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,48" sap2010:WorkflowViewState.IdRef="LogMessage_73" Level="Info" Message="[&quot;Difference : &quot;+dbDifference.ToString+ &quot; is ≤ 15% (tolerance), then the bot can accept and continue processing the line&quot;]" />
+                                                  </Sequence>
+                                                </FlowStep>
+                                              </FlowDecision.False>
+                                            </FlowDecision>
+                                          </FlowStep.Next>
+                                        </FlowStep>
+                                      </FlowDecision.True>
+                                      <FlowDecision.False>
+                                        <FlowStep x:Name="__ReferenceID3" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">45,445</av:Point>
+                                              <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Sequence DisplayName="SAP Price &lt; Net Price In Po" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Sequence_63">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="LogMessage_67" Level="Info" Message="[&quot;SAP Price : &quot;+out_strSAPNetPrice+&quot;  is Lower than the Invoice (PDF/PO) Price : &quot;+in_strTotalPrice]">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                            </ui:LogMessage>
+                                          </Sequence>
+                                        </FlowStep>
+                                      </FlowDecision.False>
+                                    </FlowDecision>
+                                  </FlowDecision.False>
+                                </FlowDecision>
+                              </FlowStep.Next>
+                            </FlowStep>
+                            <x:Reference>__ReferenceID0</x:Reference>
+                            <x:Reference>__ReferenceID1</x:Reference>
+                            <x:Reference>__ReferenceID2</x:Reference>
+                            <x:Reference>__ReferenceID3</x:Reference>
+                            <x:Reference>__ReferenceID4</x:Reference>
+                            <x:Reference>__ReferenceID5</x:Reference>
+                            <x:Reference>__ReferenceID6</x:Reference>
+                            <x:Reference>__ReferenceID7</x:Reference>
+                            <x:Reference>__ReferenceID8</x:Reference>
+                            <x:Reference>__ReferenceID9</x:Reference>
+                          </Flowchart>
+                        </Sequence>
+                      </ActivityAction>
+                    </uix:NApplicationCard.Body>
+                    <uix:NApplicationCard.TargetApp>
+                      <uix:TargetApp Area="-8, -8, 1936, 1048" ContentHash="S7zGL7nFKkW_f2ZNHjowlg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="a487f53d1bd1a9e9527f42af261cc809.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/pVGlVRVl_ky5CU44iAhQog" Selector="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" Version="V1" />
+                    </uix:NApplicationCard.TargetApp>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </uix:NApplicationCard>
+                </Sequence>
+              </Sequence>
+            </ActivityAction>
+          </ui:RetryScope.ActivityBody>
+          <ui:RetryScope.Condition>
+            <ActivityFunc x:TypeArguments="x:Boolean" />
+          </ui:RetryScope.Condition>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsPinned">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:RetryScope>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="774,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Sequence SE" sap:VirtualizedContainerService.HintSize="768,55" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Error" Message="[&quot;Exception  : &quot;+exception.Message+&quot; at : &quot;+exception.Source]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+        <Catch x:TypeArguments="ss:VerificationException" sap:VirtualizedContainerService.HintSize="774,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="ss:VerificationException">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="ss:VerificationException" Name="exception" />
+            </ActivityAction.Argument>
+            <Rethrow DisplayName="Rethrow Verification Exception" sap:VirtualizedContainerService.HintSize="768,25" sap2010:WorkflowViewState.IdRef="Rethrow_2" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message End Sequence" sap:VirtualizedContainerService.HintSize="808,75" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[strSequenceName+&quot; Is Ended Successfully&quot;]" />
+  </Sequence>
+</Activity>

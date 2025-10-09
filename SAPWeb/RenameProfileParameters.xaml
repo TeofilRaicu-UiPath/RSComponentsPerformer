@@ -1,0 +1,419 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_Window" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="out_ErrorMessage" Type="OutArgument(x:String)" />
+    <x:Property Name="out_Success" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="in_Parameter" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Services.RuntimeAnalyze</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1816,5293" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="556,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;---Start Setting profile parameters---&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,4933" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,4673" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V2">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,4536" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'System'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V4">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="mIzK278DaE-BN_z1cF7SKw" DesignTimeRectangle="13, 615, 174, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl id='th-l-table-navbar' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='System' class='th-lk' tableRow='1' tag='A' /&gt;" Guid="9f5d6b89-ac63-47e1-853f-8c2a0a88fbc2" InformativeScreenshot="01012b696c200c2b72c42a69798adb54.png" Reference="2KckjEL3hkeLxhrpoo7qIg/ZCmUDcpTMEiwjwGbD3JvJQ" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'User Parameters'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="TbCwLX-2rki_rMmAT30SwA" DesignTimeRectangle="210, 347, 98, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='8' tag='TABLE' /&gt;&lt;webctrl aaname=' User Parameters' class='th-lk' tableRow='1' tag='A' /&gt;" Guid="b816251a-547c-4885-a2d9-6ef9320ed6e0" ImageBase64="" InformativeScreenshot="ab09d1e16e1e678e3f3a9f81742a29d8.png" Reference="2KckjEL3hkeLxhrpoo7qIg/XZYDMjxPuEKmlSeCfLCl0w" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='System Work Centre - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Parameters'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="UqVEt4bMTE6ucNLjfnBErA" DesignTimeRectangle="346, 425, 78, 23" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl visibleinnertext='Parameters' idx='1' /&gt;" Guid="d2730fec-eca7-4c80-8080-dc43a1ce9076" ImageBase64="" InformativeScreenshot="32390c053cf80a5bed67139d0c4e778f.png" Reference="2KckjEL3hkeLxhrpoo7qIg/SSxSETX6VUS9fVey0bUHbA" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'UCF_Button C102_ftb'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="35edffc9-5905-4f15-a1f1-91292c2ed2cb" ContentHash="Tj2ImItr1UiCS3qydPOiAg" DesignTimeRectangle="660, 481, 33, 22" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl aria-role='button' idx='20' /&gt;" Guid="1da2c92b-cd67-40bc-965c-18b3501f0e14" InformativeScreenshot="47aee049a01acfc321098ad30dca4ec1.png" Reference="LwYOhlgeok64kz6xgXYPNA/iNUOIoToKkG3dBmCIqh1Qw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Find" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="gRLjwpFmEk-BzBWlY50skQ" DesignTimeRectangle="384, 481, 33, 22" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl tag='FRAME' id='WorkAreaFrame2' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[0]/usr/tabsTABSTRIP1/tabpPARAM/ssubMAINAREA:SAPLSUID_MAINTENANCE:1104/cntlG_PARAMETER_CONTAINER/shellcont/shell/tbar/btn&amp;amp;FIND' /&gt;" Guid="90d13141-b5aa-4b9c-b1fb-90581b894b6d" InformativeScreenshot="814acfaac2e5b0ab337dbbe2b5b21729.png" Reference="LwYOhlgeok64kz6xgXYPNA/fgb2UubZ6EKNg93opa51Pg" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="Z_CIC_SOFF" />
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(esc)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[in_Parameter]" />
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_8" Shortcuts="[d(hk)][k(tab)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_5" Shortcuts="[d(hk)][k(down)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_9" Shortcuts="[d(hk)][k(left)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_6" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NKeyboardShortcuts.VerifyOptions>
+                </uix:NKeyboardShortcuts>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="YQWq2hd3dUGC5hSzSEe9uw" DesignTimeRectangle="464, 312, 43, 22" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl innertext='Save' idx='2' /&gt;" Guid="8e56fe3f-9d5a-4539-986b-25a179979b7d" InformativeScreenshot="4bde72028af8c2d06c59d4bc9a481329.png" Reference="2KckjEL3hkeLxhrpoo7qIg/fyUQ7Y4rH0-AXqBv-3OHXQ" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                  <uix:NClick.VerifyOptions>
+                    <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                      <uix:VerifyExecutionOptions.Retry>
+                        <InArgument x:TypeArguments="x:Boolean" />
+                      </uix:VerifyExecutionOptions.Retry>
+                      <uix:VerifyExecutionOptions.Timeout>
+                        <InArgument x:TypeArguments="x:Double" />
+                      </uix:VerifyExecutionOptions.Timeout>
+                    </uix:VerifyExecutionOptions>
+                  </uix:NClick.VerifyOptions>
+                </uix:NClick>
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Account Identification'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
+                  <uix:NClick.Target>
+                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="ax4ODZllI0qTwL05RLLN7Q" DesignTimeRectangle="13, 277, 174, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl tag='FRAME' idx='3' /&gt;&lt;webctrl id='th-l-table-navbar' tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='th-lk' tableRow='1' tag='A' aaname='Account Identification' /&gt;" Guid="bc51f5fc-8065-453c-ba74-03894797810e" InformativeScreenshot="58426c04c3b5a7a42b85c101d8e58501.png" Reference="LwYOhlgeok64kz6xgXYPNA/NsNlsECU-E6nRTJGCTkNMw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                  </uix:NClick.Target>
+                </uix:NClick>
+                <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge User Parameters - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,529" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="e1e380bc-0948-4223-b59b-1e52022bb3f8" Version="V2">
+                  <uix:NApplicationCard.Body>
+                    <ActivityAction x:TypeArguments="x:Object">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                      </ActivityAction.Argument>
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,280" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,218" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1e380bc-0948-4223-b59b-1e52022bb3f8" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="ae231059-e157-408e-8235-76225045e673" ContentHash="RvV3N04sg0yTjE28MSq9rA" DesignTimeRectangle="1015, 173, 68, 32" ElementType="Button" FullSelectorArgument="&lt;ctrl name='vcp1ascs.ebs.ecomp.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" Guid="de439c55-a443-49dc-89f7-800a474178f8" InformativeScreenshot="b12bae75da370765581781adc78e6de4.png" Reference="LwYOhlgeok64kz6xgXYPNA/sBKCgDFQ5UOPN5FLYHemeg" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='User Parameters - [Interaction Center ] - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                      </Sequence>
+                    </ActivityAction>
+                  </uix:NApplicationCard.Body>
+                  <uix:NApplicationCard.TargetApp>
+                    <uix:TargetApp Area="15, 10, 1902, 961" BrowserType="Edge" ContentHash="7GyoUNGX_Eu2nn7gbQBMhQ" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="408ef59185bb8a5e54276e3bcaf3ebce.jpg" Reference="LwYOhlgeok64kz6xgXYPNA/HQhSst0RmEGakcTxnP8VBQ" Selector="&lt;html app='msedge.exe' title='User Parameters - [Interaction Center ]' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(*==)/bc/bsp/sap/crm_ui_start/default.htm" Version="V2" />
+                  </uix:NApplicationCard.TargetApp>
+                </uix:NApplicationCard>
+                <Assign DisplayName="Assign success" sap:VirtualizedContainerService.HintSize="450,107" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="19, 20, 1902, 961" BrowserType="Edge" ContentHash="pV1Wkzr_oEyWV1oqXHXv7w" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="23a201a200adb0015ea58c60a4a46274.jpg" Reference="LwYOhlgeok64kz6xgXYPNA/8_a02n-YQ0qcxeMgG860Uw" Selector="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Corporate Account*' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" Version="V1" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="522,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:MultipleAssign DisplayName="Multiple Assign output 2" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                <ui:MultipleAssign.AssignOperations>
+                  <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:String">[out_ErrorMessage]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:String">Could not update profile</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                    <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                      <ui:AssignOperation.To>
+                        <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
+                      </ui:AssignOperation.To>
+                      <ui:AssignOperation.Value>
+                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                      </ui:AssignOperation.Value>
+                    </ui:AssignOperation>
+                  </scg:List>
+                </ui:MultipleAssign.AssignOperations>
+              </ui:MultipleAssign>
+              <ui:LogMessage DisplayName="Log Message Error" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Error in updating contact&quot;]" />
+              <ui:LogMessage DisplayName="Log Message Error description" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="479,48" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="556,164" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;---End Setting profile parameters---&quot;]" />
+  </Sequence>
+</Activity>

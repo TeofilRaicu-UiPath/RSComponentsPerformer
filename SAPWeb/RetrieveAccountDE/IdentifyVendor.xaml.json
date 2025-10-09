@@ -1,0 +1,69 @@
+{
+  "DisplayName": "Main - Copy (1)",
+  "Tooltip": null,
+  "HelpLink": null,
+  "Color": null,
+  "OriginalIconFileName": null,
+  "Arguments": [
+    {
+      "Name": "in_Vendor",
+      "DisplayName": "in_Vendor",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_Name",
+      "DisplayName": "in_Name",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_Email",
+      "DisplayName": "in_Email",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": "TextComposer",
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "in_PostCode",
+      "DisplayName": "in_PostCode",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    },
+    {
+      "Name": "io_Window",
+      "DisplayName": "io_Window",
+      "Category": null,
+      "Tooltip": null,
+      "Placeholder": null,
+      "Widget": null,
+      "IsRequired": false,
+      "IsPrincipal": true,
+      "ArgumentType": 0,
+      "DataSourceItems": null
+    }
+  ]
+}

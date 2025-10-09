@@ -1,0 +1,57 @@
+{
+  "Workflows": [
+    {
+      "Path": null,
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": null,
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Main.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "PostalCode&Sequence_1",
+        "ExtractDataTable&Sequence_1",
+        "AccountExcpetionsString&Sequence_1",
+        "AccountExceptions&Sequence_1",
+        "ResultsReturned&Sequence_4",
+        "VendorException&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_ContactLastName",
+        "in_ContactFirstName",
+        "in_PostCodeDelivery",
+        "in_PostCodeInvoice",
+        "in_Name",
+        "in_Email",
+        "in_Telephone",
+        "in_Window",
+        "in_Vendor"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "SearchCustomerCriteria.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "ResultsReturned&Sequence_2",
+        "variable1&Flowchart_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_Window",
+        "in_Ztype",
+        "in_Vendor",
+        "in_PostCodeDelivery",
+        "in_PostCodeInvoice",
+        "in_Name",
+        "out_ExtractDataTable",
+        "in_ExceptionAccounts"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    }
+  ]
+}

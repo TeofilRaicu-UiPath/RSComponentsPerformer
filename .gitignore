@@ -1,0 +1,44 @@
+# ------------------------------
+# UiPath Project Git Ignore
+# ------------------------------
+
+# Project local settings (machine/user specific)
+*.local.json
+
+# Logs
+Logs/
+*.log
+
+# NuGet packages (can be restored via Manage Packages)
+.nuget/
+packages/
+*.nupkg
+
+# Output folders
+*.screenshots/
+*.screenshots_cache/
+TestResults/
+Output/
+
+# Temporary folders
+.temp/
+temp/
+cache/
+
+# Compiled binaries or intermediate files
+bin/
+obj/
+
+# VSCode or other IDE settings
+.vscode/
+.idea/
+
+# Windows junk files
+Thumbs.db
+Desktop.ini
+
+# UiPath Project Auto Backup files
+*.bak
+
+# UiPath Test Data Files
+*.xlsx.tmp

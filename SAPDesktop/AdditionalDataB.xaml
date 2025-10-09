@@ -1,0 +1,451 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="AdditionalDataB" this:AdditionalDataB.in_ServiceExecutant="gsdfedxfghdhgf" this:AdditionalDataB.in_CostCenter="mjknlophgsfdkjbhgrased" this:AdditionalDataB.in_DispatchMethod="asdfgfsedrw" this:AdditionalDataB.in_Email="ASDFfdqwerqwedfsddf" this:AdditionalDataB.in_MessageRequired="ASDF" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_ServiceExecutant" Type="InArgument(x:String)" />
+    <x:Property Name="in_CostCenter" Type="InArgument(x:String)" />
+    <x:Property Name="in_DispatchMethod" Type="InArgument(x:String)" />
+    <x:Property Name="in_Email" Type="InArgument(x:String)" />
+    <x:Property Name="in_MessageRequired" Type="InArgument(x:String)" />
+    <x:Property Name="in_DesktopApp" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="in_MediaCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_CostCenterPopUp" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_FillCostCenter" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_FillServiceExecutant" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_FillBuyerReference" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_BuyerReference" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>870,4896</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>AdditionalDataB_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="AdditionalDataB" sap:VirtualizedContainerService.HintSize="1790,2940" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="ADB - Log Message - START" sap:VirtualizedContainerService.HintSize="518,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START Additional Data B ---&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Create Account Order: Header Data" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,2580" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_DesktopApp]" OpenMode="Never" ScopeGuid="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="ADB - Do" sap:VirtualizedContainerService.HintSize="484,2411" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Status'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="ev2Z3xDtZUuaifH1ROfoWA" DesignTimeRectangle="704, 227, 63, 22" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\11' /&gt;" Guid="28de1010-9dca-4fcd-ad43-ed5ab6e65984" InformativeScreenshot="2ae89423f4365b2d09d2a24e2d6d6641.png" Reference="LwYOhlgeok64kz6xgXYPNA/YXkNPOAEgEGXjkcMymkVSA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Additional data A'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable ContentHash="Q1XiY-2iNkejcI5t4TIDNg" DesignTimeRectangle="768, 227, 121, 22" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\12' /&gt;" Guid="9ea870d0-a984-49bf-b271-25a37cfc99d1" InformativeScreenshot="b11f3093cd5596f6f690699e62e4e302.png" Reference="LwYOhlgeok64kz6xgXYPNA/Tu1YTjvap0K--QYHcTSL2w" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="ADB - Click 'Additional data B'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="889, 217, 120, 22" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;sap text='Additional data B' /&gt;" FuzzySelectorArgument="&lt;sap text='Additional data B' check:text='Additional data B' /&gt;" Guid="15076d98-955c-4218-8ec4-6f4f47f5ba99" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHwAAAAaCAYAAAB1szj5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO6SURBVGhD7ZlBTxNBFMf3o+CtV27oF+BG4FQ+QI2JFw8mBoQIiYl6UERELG2FCPFg5AKCQIsUIgQTY4iJiREoBSwgggoqXp/zht3hzbCzXbcbTekcfunMvv++ffP+s9stWF8OfoOhcjCGVxjW+vaeawC5NzQHFzsn4ELHuKEMQe/QQ+qpNbbwQTqws38I299+Qnx0kZ/0/G0Bpt7vGMqQyXdb0Nw3B9OL+WPDbw1k+eDz918uZm/BwOwaJKZWDWVIXzYPyfRHuNSdOTb85uAMNxrZ+vpDmD38ZhN6M6vwMJ0zlDFPXm1wP4XhN9gdjmZv7h0Is4deF6BnMgfdEyuGMqc/u6YaPg2F3X1h9rOFAnSP56DrxUppPGqFM5FWuPa3sX+B3+v/7zpDIPUyLxt+vT8jzH46/wm6xlagc3TZgyloiFhgRVqg1TVuk2yBKp2GxsQY81ZDQ1KjCxO/eX3pXOr2C+a3WC8J59pddCWQYF/LkuGXe9L8wODsBnQ8Xy5OAptQzQqthvqES9yB61rgqu/YFNSzvJ45w8KrNoovXQl1Y36rEc478/ZGZjqZh0A8rRiOk4GZdbgzsuSL5hgzO5aBWK3FP6V4Ly6A7FjWrOZiMTweicJZfGqocR4jOhFnDe4leZmmntWjxrBWmlPUS/OqSNdh2Dr3XBlmNtEiTB/TXVeFXysKMd08BHomcrLhj7PrcHt4yScZqGO7uS7OxvGjpjVJMQtq2uy5FPeIiTHJzc9RY+T8tihvrDifNdU1RuE6Xe0OXmsg0FxudWu1bjFmsD1vwo1SmzqpK4EH7H1MMtxNpEVqgLJQpXhJWyzGxx6GUz0nBTU6805oHUh+nQaP6+qUoLUWMdwrzq9Hng5044YEvoAHNpzvQKVAfFzxuHpn0WZ5xcTYw/ATdy1q7ebQXPQcey7XXMRwrzoZrrk0hrprFTC/usF02oDcZ2/qAQ33MEQdB4p55MdP2hi/dzgaKM4j+dVzHILkcqtbq1XA/NK6UBvuXR7ccNcmkcZLY3uHC71HjOTFF0FpsSKmNILeiWpdZM6v43wn4nHdJhHo69TmYnO1bi+tBI8Rw720AcGf2YEMlxZBcN7W+Zzv7KPHWFVtVG6qLkabzxdsPwbxmC6mNoleR5qjgU6+KNQUu8MR7Ro0uTBGa+N6Dy1FWhMSrtkI/hYP/tJmKDs62W9xY3gFcdcYXlngX9uM4RUEGn4lNc9NR4zhp5yOkWVIZvICi04Mpx/+zxND5WDldw/BUDkYwyuKQ/gDBi1bkHZ285UAAAAASUVORK5CYII=" InformativeScreenshot="f2fde2ac5a2d7ac2c0bd60528c9cc36b.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <If Condition="[in_FillCostCenter]" DisplayName="If fill cost center FR" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_15">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,748" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[not string.IsNullOrWhiteSpace(in_CostCenter)]" DisplayName="ADB - If cost center is provided" sap:VirtualizedContainerService.HintSize="450,688" sap2010:WorkflowViewState.IdRef="If_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TextField Customer'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Text="[in_CostCenter]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="213, 281, 146, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Customer Cost Centre' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Customer Cost Centre' /&gt;" Guid="b6045f4d-bc46-4b68-a9b9-c025b5d50c57" InformativeScreenshot="e6bce4a743eef521e500a2d621fe3edf.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="ADB - Log Message - Cost Center not provided" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Cost Center not provided&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[in_CostCenterPopUp]" DisplayName="If cost center pop up" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_14">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Do this for uk&quot;]" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[in_FillServiceExecutant]" DisplayName="If fill service executant" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_16">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,748" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[not string.IsNullOrWhiteSpace(in_ServiceExecutant)]" DisplayName="ADB - If value for service executant is provided" sap:VirtualizedContainerService.HintSize="450,688" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'TextField Service'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Text="[in_ServiceExecutant]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable DesignTimeRectangle="213, 391, 356, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Service Executant' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Service Executant' /&gt;" Guid="4d0f02bd-1a1c-4243-b87b-ef08720758c9" InformativeScreenshot="aa96e7edf35d9ad0e6d769c8e7d0add5.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="ADB - Log Message - Service executant not provided" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Service executant not provided&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,89" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[in_FillBuyerReference]" DisplayName="If fill buyer reference DE" sap:VirtualizedContainerService.HintSize="450,560" sap2010:WorkflowViewState.IdRef="If_17">
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'TextField Buyer referen…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Text="[in_BuyerReference]" Version="V5">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable ContentHash="c3zAVrH3Dkm5eQBAFPXhBg" DesignTimeRectangle="214, 313, 118, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Buyer reference' /&gt;" Guid="cb563386-8da9-4279-baf2-e7d569610636" InformativeScreenshot="32fbeccc0a29f83dec137082de2ac6c4.png" Reference="LwYOhlgeok64kz6xgXYPNA/nV5-S7WI4kC8lVd6j7px6Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not string.IsNullOrWhiteSpace(in_DispatchMethod)]" DisplayName="ADB - If value for Dispatch Method is provided" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="ADB - Type Into 'Dispatch method'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Text="[in_DispatchMethod]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="213, 501, 20, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Message despatch method' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Message despatch method' /&gt;" Guid="2c151c2a-a72e-495d-8dd8-c38cb1bd6d6e" InformativeScreenshot="b0927338fafab85211441291bf0e90cd.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="ADB - Log Message - Dispatch Method not provided" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Dispatch Method not provided&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not string.IsNullOrWhiteSpace(in_MessageRequired)]" DisplayName="ADB - If Message required is provided" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="If_12">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,301" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="ADB - Type Into 'Messages Required'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Text="[in_MessageRequired]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="213, 523, 20, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Messages required' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Messages required' /&gt;" Guid="88b8175b-12f8-4bb5-b3bc-1dbaefb1346c" InformativeScreenshot="5ebd4afd0bd47d29a38f49b19155c185.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="ADB - Log Message - Message required not provided" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Message Required not provided&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <If Condition="[not string.IsNullOrWhiteSpace(in_Email)]" DisplayName="ADB - If email is provided" sap:VirtualizedContainerService.HintSize="450,865" sap2010:WorkflowViewState.IdRef="If_13">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If.Then>
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,476" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Update email &quot; + in_Email]" />
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Email'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="c2546aee-e02b-44fd-8c8f-a8d052adf04a" Text="[in_Email]" Version="V3">
+                    <uix:NTypeInto.Target>
+                      <uix:TargetAnchorable DesignTimeRectangle="213, 545, 531, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='E-Mail Address' type='GuiTextField' idx='2' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='E-Mail Address' type='GuiTextField' /&gt;" Guid="ea99d4d0-546c-4a46-b7db-2eb7e97a4baa" ImageBase64="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" InformativeScreenshot="c4efb6db5085ade39e5e922a77f65301.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                    </uix:NTypeInto.Target>
+                  </uix:NTypeInto>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,226" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="ADB - Log Message - Email not provided" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Email not provided&quot;]" />
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 2576, 1048" ContentHash="TyrKdpReAUK4qaNHGbDwfQ" FilePath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE8SURBVFhHYxgFo2AUjIJBAxxrVls61ay5T2dcC7Ue7AAnoMB/emHHmjWz7KtXMkGtp68DgJbPsCtfzQi1GgLo5QCg5dMcy1cgLH//5UcECG89fa+5dsnR/5Ti0nkH/ztWrcJuefWaKXYVq1B9/v7Lz//Uwk/ffP6f3LX2v335cmyWT7KqQPI5DGAziBwMsjy+ddl/m6IFQMtWo1s+wbZ4CablIIDNMFLxk9ef/se1LMVuec2aPrMStGBHBtgMJAWDLI8FWV6M1fIeqDW4AdCQxSB89f7LfWsPXfm/9uBlknBsCzDYsVlevboLagVxwKZovotd6ZL/diWLScL25cuwWL6mA2os8QBoCFXKAWCwt0GNJA1QqSBqhhpHOqDUAUCfN0KNIg8AHaAJNGg+mTgXaswoGAWjYBSQCBgYAMLf0dVJBbU9AAAAAElFTkSuQmCC" InformativeScreenshot="cb2c683a7dded4c7a6fd4c9f1560b8b2.png" Reference="4SKUAodOREupFn91SuqyNg/2Gwk6XcLHUGURUZTFXUAEA" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" Version="V2" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="ADB - Log Message - END ADB" sap:VirtualizedContainerService.HintSize="518,164" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- END of Additional Data B ---&quot;]" />
+  </Sequence>
+</Activity>

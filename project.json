@@ -1,0 +1,113 @@
+{
+  "name": "PO Processing Perfomer",
+  "projectId": "09fa3ef8-d370-42bc-a08c-42b271b8eb35",
+  "description": "PO Processing Perfomer",
+  "main": "Main.xaml",
+  "dependencies": {
+    "SAPDesktop.Descriptors": "[1.0.8]",
+    "SAPWeb.Descriptors": "[1.0.38]",
+    "UiPath.DataService.Activities": "[25.2.0]",
+    "UiPath.Excel.Activities": "[2.24.4]",
+    "UiPath.Mail.Activities": "[2.4.10]",
+    "UiPath.MicrosoftOffice365.Activities": "[3.4.10]",
+    "UiPath.System.Activities": "[25.8.1]",
+    "UiPath.Testing.Activities": "[24.10.4]",
+    "UiPath.UIAutomation.Activities": "[25.10.13]",
+    "UiPath.WebAPI.Activities": "[2.3.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "tenantName": "RS",
+      "namespace": "PO_Processing_Perfomer",
+      "uniqueReference": "Thy42t6SXjduUjhJsX6H7L0tK8KOkDQspK28p5uM3Nk="
+    }
+  ],
+  "schemaVersion": "4.0",
+  "studioVersion": "24.10.16.0",
+  "projectVersion": "1.0.17",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession",
+    "robotVersion": "24.10.0"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "saveToCloud": false
+  },
+  "arguments": {
+    "input": [
+      {
+        "name": "in_OrchestratorQueueName",
+        "displayName": "in_OrchestratorQueueName",
+        "tooltip": "Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file.",
+        "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "in_OrchestratorQueueFolder",
+        "displayName": "in_OrchestratorQueueFolder",
+        "tooltip": "Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file.",
+        "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+        "required": false,
+        "hasDefault": false
+      }
+    ],
+    "output": []
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "00552756-5343-4d19-af25-b972fbd6fa7f",
+      "input": [
+        {
+          "name": "in_OrchestratorQueueName",
+          "displayName": "in_OrchestratorQueueName",
+          "tooltip": "Allows the Orchestrator queue name to be passed as an argument, instead of only being defined in the configuration file.",
+          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        },
+        {
+          "name": "in_OrchestratorQueueFolder",
+          "displayName": "in_OrchestratorQueueFolder",
+          "tooltip": "Allows the Orchestrator folder name where the queue is created to be passed as an argument, instead of only being defined in the configuration file.",
+          "type": "System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e",
+          "required": false,
+          "hasDefault": false
+        }
+      ],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

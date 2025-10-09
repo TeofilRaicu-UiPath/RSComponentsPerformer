@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="X_MFGGo60ES1RNaZ2BL-zw" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" CVScreenId="711c7fa3-eae5-43c1-997d-2d46dce2180b" DesignTimeRectangle="20, 333, 468, 16" ElementType="CheckBox" FullSelectorArgument="&lt;wnd ctrlid='1019' title='&amp;amp;Remember my decision' /&gt;" Guid="c2da8637-acf4-402c-ab0c-a0a7d3ed7986" ScopeSelectorArgument="&lt;wnd app='sapgui.exe' cls='#32770' title='SAP GUI Security' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="29fa40dad710fbbf18b1990d65c6e8ee.png" xmlns="">0ce0eki8R90G1wv_1-pvkbg</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

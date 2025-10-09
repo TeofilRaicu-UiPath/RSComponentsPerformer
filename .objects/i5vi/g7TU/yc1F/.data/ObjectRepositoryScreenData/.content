@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="2eyJPxURBUOuFESWaVvvow" Reference="LwYOhlgeok64kz6xgXYPNA/rVTPhnOFi0GZwpEZppvapg" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="249, 0, 2116, 1032" BrowserType="Edge" ContentHash="_dcZ0kRlbk6g9q8Q-OvRdg" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" Reference="LwYOhlgeok64kz6xgXYPNA/rVTPhnOFi0GZwpEZppvapg" Selector="&lt;html app='msedge.exe' title='Logon' /&gt;" Url="[SAPUrl]">
+      <imageRef attrName="InformativeScreenshot" originalValue="72a3a19a391347481619bd95481f5426.jpg" xmlns="">72a3a19a391347481619bd95481f5426.jpg</imageRef>
+    </TargetApp>
+    <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
+      <ObjectRepositoryVariableData Name="SAPUrl" />
+    </scg:List>
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>
