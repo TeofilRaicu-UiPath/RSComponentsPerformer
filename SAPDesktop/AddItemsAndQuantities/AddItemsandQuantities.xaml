@@ -135,7 +135,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1790,3459" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1093,3275" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="boolDiscontinued" />
       <Variable x:TypeArguments="x:Boolean" Name="boolInvalidStockNum" />
@@ -197,13 +197,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtItems]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633,2570" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[in_dtItems]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="633,2386" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="599,2374" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="599,2190" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="boolAvalibilityCheck" />
             </Sequence.Variables>
@@ -268,7 +268,7 @@
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
             </Switch>
-            <If Condition="[Not boolDiscontinued And Not boolInvalidStockNum]" sap:VirtualizedContainerService.HintSize="565,1995" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[Not boolDiscontinued And Not boolInvalidStockNum]" sap:VirtualizedContainerService.HintSize="565,1811" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -276,7 +276,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="531,1597" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="531,1413" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="boolSameDeliveryDate" />
                     <Variable x:TypeArguments="x:String" Name="strSAPNetPrice" />
@@ -345,14 +345,14 @@
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Switch>
-                  <Switch x:TypeArguments="x:String" DisplayName="Switch country check date" Expression="[in_strCountry]" sap:VirtualizedContainerService.HintSize="497,236" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                  <Switch x:TypeArguments="x:String" DisplayName="Switch country check date" Expression="[in_strCountry]" sap:VirtualizedContainerService.HintSize="497,427" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
                         <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
@@ -366,7 +366,7 @@
                         <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday">True</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
                         <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
@@ -380,7 +380,7 @@
                         <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday">False</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
                         <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
@@ -394,7 +394,7 @@
                         <InArgument x:TypeArguments="x:Boolean" x:Key="in_MoveToPrevFriday" />
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
-                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="IE" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
+                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="IE" DisplayName="CheckDeliveryDate - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml)" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\CheckDeliveryDate.xaml">
                       <ui:InvokeWorkflowFile.Arguments>
                         <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">[in_intNumOfRetries]</InArgument>
                         <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">[in_tsRetryInterval]</InArgument>
@@ -409,33 +409,50 @@
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                   </Switch>
-                  <If Condition="[boolSameDeliveryDate]" DisplayName="If lSameDeliveryDate (BE)" sap:VirtualizedContainerService.HintSize="497,432" sap2010:WorkflowViewState.IdRef="If_3">
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="497,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="484,483" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If Condition="[boolSameDeliveryDate]" DisplayName="If lSameDeliveryDate (BE)" sap:VirtualizedContainerService.HintSize="450,423" sap2010:WorkflowViewState.IdRef="If_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw DisplayName="Throw BE" Exception="[new BusinessRuleException(&quot;Same-day request outside allowed window&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </ui:CommentOut.Body>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If.Then>
-                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_8">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Throw DisplayName="Throw BE" Exception="[new BusinessRuleException(&quot;Same-day request outside allowed window&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                      </Sequence>
-                    </If.Then>
-                    <If.Else>
-                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_9">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </Sequence>
-                    </If.Else>
-                  </If>
+                  </ui:CommentOut>
                   <If Condition="[boolPriceDiscripancy]" DisplayName="If PriceDiscripancy" sap:VirtualizedContainerService.HintSize="497,478" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
