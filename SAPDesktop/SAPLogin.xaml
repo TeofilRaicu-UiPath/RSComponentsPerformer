@@ -100,7 +100,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="2555,1578" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1093,1578" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -143,7 +143,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PO_SAPCredentialName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="479,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SAPPassword]" Username="[SAPUsername]" />
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PO_SAPCredentialName&quot;).ToString]" CacheStrategy="None" DisplayName="Get Credential" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="479,175" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SAPPassword]" Username="[SAPUsername]" />
           <ucas:Logon ConnectionName="[ConnectionName]" DelayBetweenRetries="500" DisplayName="SAP Logon" sap:VirtualizedContainerService.HintSize="479,170" sap2010:WorkflowViewState.IdRef="Logon_1" Retries="5" SAPLogonPath="C:\Program Files (x86)\SAP\FrontEnd\SAPgui\saplogon.exe" Window="[SAPWIndow]" />
           <ucas:Login Password="{x:Null}" Client="[ClientName]" DisplayName="SAP Login" sap:VirtualizedContainerService.HintSize="479,377" sap2010:WorkflowViewState.IdRef="Login_1" IsSecure="True" Language="EN" MultiLogonOptionToChoose="Single" SecurePassword="[SAPPassword]" Timeout="5000" Username="[SAPUsername]" Window="[out_SAPSessionWindow]">
             <ucas:Login.Target>
