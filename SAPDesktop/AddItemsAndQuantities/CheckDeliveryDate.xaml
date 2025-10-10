@@ -126,7 +126,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description : CheckDeliveryDate&#xA;Precondition: Create Account Order Screen Is Open " DisplayName="SAP_CreateAccountOrder_CheckDeliveryDate" sap:VirtualizedContainerService.HintSize="1446,2424" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description : CheckDeliveryDate&#xA;Precondition: Create Account Order Screen Is Open " DisplayName="SAP_CreateAccountOrder_CheckDeliveryDate" sap:VirtualizedContainerService.HintSize="809,2426" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="SAP_CreateAccountOrder_CheckDeliveryDate" Name="strSequenceName" />
       <Variable x:TypeArguments="x:String" Name="strNewDeliveryDate" />
@@ -138,7 +138,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Start Sequence " sap:VirtualizedContainerService.HintSize="808,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strSequenceName+&quot; Is Started&quot;]" />
-    <TryCatch DisplayName="Try Catch CheckDeliveryDate" sap:VirtualizedContainerService.HintSize="808,2022" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch CheckDeliveryDate" sap:VirtualizedContainerService.HintSize="808,2024" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -146,29 +146,29 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1740" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
+        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1742" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action CheckDeliveryDate" sap:VirtualizedContainerService.HintSize="736,1539" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Action CheckDeliveryDate" sap:VirtualizedContainerService.HintSize="736,1541" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,1479" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,1481" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1396" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktopWindow]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1398" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktopWindow]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="634,1236" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="634,1360" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="s:DateTime" Name="dateDeliveryDate" />
                           </Sequence.Variables>
@@ -177,17 +177,17 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[Not string.IsNullOrEmpty(in_strPODeliveryDate)]" DisplayName="If date is not empty" sap:VirtualizedContainerService.HintSize="600,526" sap2010:WorkflowViewState.IdRef="If_19">
+                          <If Condition="[Not string.IsNullOrEmpty(in_strPODeliveryDate)]" DisplayName="If date is not empty" sap:VirtualizedContainerService.HintSize="600,652" sap2010:WorkflowViewState.IdRef="If_19">
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,267" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="506,393" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <TryCatch DisplayName="Try Catch general date format" sap:VirtualizedContainerService.HintSize="434,207" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                                <TryCatch DisplayName="Try Catch general date format" sap:VirtualizedContainerService.HintSize="472,333" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                                   <TryCatch.Try>
-                                    <Assign DisplayName="Assign dateDeliveryDate" sap:VirtualizedContainerService.HintSize="436,81" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                    <Assign DisplayName="Assign dateDeliveryDate" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
                                       <Assign.To>
                                         <OutArgument x:TypeArguments="s:DateTime">[dateDeliveryDate]</OutArgument>
                                       </Assign.To>
@@ -197,7 +197,7 @@
                                     </Assign>
                                   </TryCatch.Try>
                                   <TryCatch.Catches>
-                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="438,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -208,7 +208,7 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                         </ActivityAction.Argument>
-                                        <TryCatch DisplayName="Try Catch xx.dd.yyyy format" sap:VirtualizedContainerService.HintSize="472,369" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                                        <TryCatch DisplayName="Try Catch xx.dd.yyyy format" sap:VirtualizedContainerService.HintSize="472,310" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                           <TryCatch.Try>
                                             <Assign DisplayName="Assign dateDeliveryDate" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_32">
                                               <Assign.To>
@@ -231,7 +231,7 @@
                                                 <ActivityAction.Argument>
                                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                                 </ActivityAction.Argument>
-                                                <Throw Exception="[New BusinessRuleException(&quot;Delivery date in a wrong format&quot;)]" sap:VirtualizedContainerService.HintSize="398,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                                <Throw Exception="[New BusinessRuleException(&quot;Delivery date in a wrong format&quot;)]" sap:VirtualizedContainerService.HintSize="432,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
                                               </ActivityAction>
                                             </Catch>
                                           </TryCatch.Catches>
@@ -243,7 +243,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="506,89" sap2010:WorkflowViewState.IdRef="Sequence_77">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -252,7 +252,7 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <Flowchart DisplayName="Flowchart Check The Date" sap:VirtualizedContainerService.HintSize="600,650" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                          <Flowchart DisplayName="Flowchart Check The Date" sap:VirtualizedContainerService.HintSize="921,484.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                             <Flowchart.Variables>
                               <Variable x:TypeArguments="s:DateTime" Name="dateLastDateFoMonth" />
                             </Flowchart.Variables>
@@ -295,7 +295,7 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:LogMessage>
                                   <FlowStep.Next>
-                                    <FlowDecision x:Name="__ReferenceID10" Condition="[dateDeliveryDate.date&gt;now.Date]" DisplayName="Delivery Date &gt; Today Date " sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
+                                    <FlowDecision x:Name="__ReferenceID10" Condition="[dateDeliveryDate.date&gt;now.Date]" DisplayName="Delivery Date =&gt; Today Date " sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_6">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -314,7 +314,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">780,315 780,490</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info" Message="[&quot;The Delivery Date : &quot;+in_strPODeliveryDate+&quot; Is Higher Today Date So Start To Validate If Week end Or Not &quot;]">
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_57" Level="Info" Message="[&quot;The Delivery Date : &quot;+in_strPODeliveryDate+&quot; Is Today or a later Date, Start Validating If Week end Or Not &quot;]">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -923,7 +923,7 @@
                                       <av:Size x:Key="ShapeSize">110,70</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;No Need To Change The Delivery Date As The Delivery Date Is Empty&quot;]">
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;No Need To Change The Delivery Date As The Delivery Date Is Empty&quot;]">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1000,6 +1000,21 @@
                             <x:Reference>__ReferenceID18</x:Reference>
                             <x:Reference>__ReferenceID0</x:Reference>
                             <x:Reference>__ReferenceID19</x:Reference>
+                            <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <av:Point x:Key="ShapeLocation">845,225</av:Point>
+                                  <av:Size x:Key="ShapeSize">110,70</av:Size>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Today Date not BRE">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:Comment>
+                            </FlowStep>
                           </Flowchart>
                         </Sequence>
                       </ActivityAction>

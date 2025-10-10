@@ -120,7 +120,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="AdditionalDataB" sap:VirtualizedContainerService.HintSize="1790,2940" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="AdditionalDataB" sap:VirtualizedContainerService.HintSize="904,2940" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -406,7 +406,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[not string.IsNullOrWhiteSpace(in_Email)]" DisplayName="ADB - If email is provided" sap:VirtualizedContainerService.HintSize="450,865" sap2010:WorkflowViewState.IdRef="If_13">
+            <If Condition="[not string.IsNullOrWhiteSpace(in_Email) OR in_Email.ToString.ToLower.Contains(&quot;do_not_reply&quot;)]" DisplayName="ADB - If email is provided" sap:VirtualizedContainerService.HintSize="450,865" sap2010:WorkflowViewState.IdRef="If_13">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -435,7 +435,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="ADB - Log Message - Email not provided" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Email not provided&quot;]" />
+                  <ui:LogMessage DisplayName="ADB - Log Message - Email not provided" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Email not provided or addres contains do_not_reply.&quot;]" />
                 </Sequence>
               </If.Else>
             </If>

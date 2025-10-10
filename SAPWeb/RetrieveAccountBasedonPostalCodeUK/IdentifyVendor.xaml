@@ -126,7 +126,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1816,4112" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="904,1309" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="VendorException" />
       <Variable x:TypeArguments="x:String" Name="PostalCode" />
@@ -142,7 +142,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign exeption list" sap:VirtualizedContainerService.HintSize="706,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign exeption list" sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[VendorException]</OutArgument>
       </Assign.To>
@@ -155,7 +155,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[VendorException.Contains(in_Vendor)]" DisplayName="If vendor in list of exception" sap:VirtualizedContainerService.HintSize="706,57" sap2010:WorkflowViewState.IdRef="If_8">
+    <If Condition="[VendorException.Contains(in_Vendor)]" DisplayName="If vendor in list of exception" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="If_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,7 +190,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="706,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[AccountExceptions]</OutArgument>
       </Assign.To>
@@ -203,7 +203,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="706,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[GlobalRestrictedAccounts]</OutArgument>
       </Assign.To>
@@ -216,13 +216,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="706,3690" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,887" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="672,3530" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,727" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="PopUp" />
             </Sequence.Variables>
@@ -231,13 +231,59 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click Search Account" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="638,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da702429-086d-4241-9926-12f45aea14e0" Version="V4">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="_LlYkO6V30u6cUcizlVrPw" DesignTimeRectangle="1000, 281, 20, 20" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" Guid="9bc78c36-f657-4b1f-9241-a711c4996447" InformativeScreenshot="e19303ebcf2b3cdcbc86f0aa06d13ef9.png" Reference="2KckjEL3hkeLxhrpoo7qIg/5_cHRcS7h0-PlnbNu-lnVA" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account *' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-              </uix:NClick.Target>
-            </uix:NClick>
-            <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="638,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="638,2093" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OutUiElement="[PopUp]" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
+            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="450,560" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Trace" RetryInterval="00:00:02">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,419" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="2" DisplayName="Click Search Account" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="da702429-086d-4241-9926-12f45aea14e0" Version="V4">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="_LlYkO6V30u6cUcizlVrPw" DesignTimeRectangle="1000, 281, 20, 20" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='3' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" Guid="9bc78c36-f657-4b1f-9241-a711c4996447" InformativeScreenshot="e19303ebcf2b3cdcbc86f0aa06d13ef9.png" Reference="2KckjEL3hkeLxhrpoo7qIg/5_cHRcS7h0-PlnbNu-lnVA" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account *' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <Delay Duration="00:00:03" sap:VirtualizedContainerService.HintSize="382,122" sap2010:WorkflowViewState.IdRef="Delay_1" />
+                    <uix:NCheckState DisplayName="Check App State 'Account Group Dropdown'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="da702429-086d-4241-9926-12f45aea14e0" Version="V5">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <Throw DisplayName="Customer Account Search Error" Exception="[New Exception(&quot;Customer Account Search window did not appear in SAP&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_10" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(====)/bc/bsp/sap/bsp_wd_base/popup_buffered_frame_cached.htm" CVScreenId="72a07f4e-cee9-4b2d-b104-4cbb894525c4" ContentHash="IrmsDIKCh02A52_i4bW3kA" DesignTimeRectangle="520, 223, 20, 20" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='WorkAreaFrame1popup' tag='IFRAME' /&gt;&lt;webctrl tag='A' aaname='Choose the value of criterion Account group' idx='1' /&gt;" Guid="35b1c2f7-5c1c-46a4-a159-86e784aeb63c" InformativeScreenshot="1f08bda7f9cd4dbb8668cf90993c9933.png" Reference="2KckjEL3hkeLxhrpoo7qIg/0CDnVqu530WB3LaOiBKdXw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='*' title='Customer Account Search' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean" />
+              </ui:RetryScope.Condition>
+            </ui:RetryScope>
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OutUiElement="[PopUp]" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -408,11 +454,17 @@
               <uix:NApplicationCard.TargetApp>
                 <uix:TargetApp Area="1533, 242, 1551, 781" BrowserType="Edge" ContentHash="iwRCpycSbkG48-LMKdnDmA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAELSURBVDhPpZMBDcJADEWnAANgAAxgAOxgAASAATAABkAAGAADmOG/7v6lLLeEhJ+85Na0f21v6xpaiq24i3fhKg5iJkY1ERS+BAUPMS1wdoycpvwWjFxs0dVTENsJcsmrwtXOa3Hpj186C4wQL6qdMBdzEtgIEoFzhhhv5kwX1IQhbuBEdpCfDUWM4eeTiC5wnXMowuBrviJiGFhebrSSNXzOaub+bcAHkz+QX0dYCMaP5RyFl4OBbyTDYvMSvfy4ClpxEa5j1+g4udTUj40uwk3CkMShiK36YxjEFVrMx5sJ4soY/uoQO+LKyNuLmL0lOsk/DoUuJub9tJZcRQeMcxPMCRhQmLuSuu4DxhFTUDOzJRUAAAAASUVORK5CYII=" InformativeScreenshot="b3a4c56717ac5859cb242a528aa380ac.jpg" Reference="2KckjEL3hkeLxhrpoo7qIg/pXZsiI_k2UaS7ujCDIwmmQ" Selector="&lt;html app='msedge.exe' htmlwindowname='*' title='Customer Account Search' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(====)/bc/bsp/sap/bsp_wd_base/popup_buffered_frame_cached.htm?sap-client=*&amp;sap-language=EN&amp;sap-domainRelax=min&amp;&amp;NWBC_USE_MODAL_POPUPS=X" Version="V1" />
               </uix:NApplicationCard.TargetApp>
-            </uix:NApplicationCard>
-            <If Condition="[ReturnedRows = 0]" DisplayName="If no result returned" sap:VirtualizedContainerService.HintSize="638,1064" sap2010:WorkflowViewState.IdRef="If_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NApplicationCard>
+            <If Condition="[ReturnedRows = 0]" DisplayName="If no result returned" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="If_9">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>

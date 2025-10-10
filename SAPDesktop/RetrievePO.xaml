@@ -117,7 +117,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="840,4042" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="904,4042" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,6 +172,9 @@
                         <uix:VerifyExecutionOptions.Retry>
                           <InArgument x:TypeArguments="x:Boolean" />
                         </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Target>
+                          <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="fe353264-e25c-42c8-9c7c-f2a854385345" />
+                        </uix:VerifyExecutionOptions.Target>
                         <uix:VerifyExecutionOptions.Timeout>
                           <InArgument x:TypeArguments="x:Double" />
                         </uix:VerifyExecutionOptions.Timeout>
@@ -239,7 +242,7 @@
                   </If>
                   <uix:NSAPReadStatusbar MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="518,234" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_1" MessageData="[MessageData]" MessageText="[MessageText]" MessageType="[MessageType]" Version="V5">
                     <uix:NSAPReadStatusbar.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="d9840581-05bf-41a7-ae05-32b1306ecc96" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" />
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="792d0b19-4739-4555-9d3e-9e8d5b604682" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" />
                     </uix:NSAPReadStatusbar.Target>
                   </uix:NSAPReadStatusbar>
                   <If Condition="[not CBool(in_Config(&quot;PO_IgnorePODuplicates&quot;).toString)]" sap:VirtualizedContainerService.HintSize="518,1094" sap2010:WorkflowViewState.IdRef="If_3">
