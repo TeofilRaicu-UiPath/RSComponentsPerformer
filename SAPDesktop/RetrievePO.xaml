@@ -117,7 +117,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="904,4042" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1093,4042" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -141,7 +141,7 @@
               <OutArgument x:TypeArguments="x:String">[PONumber]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[if(string.IsNullOrEmpty(in_PONumber), in_Date.toString("dd/MM/yyyy") ,in_PONumber)]</InArgument>
+              <InArgument x:TypeArguments="x:String">[if(string.IsNullOrEmpty(in_PONumber), Now.toString("dd/MM/yyyy") ,in_PONumber)]</InArgument>
             </Assign.Value>
           </Assign>
           <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="586,3248" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="7989f289-13b8-4093-910b-310665ac12d6" Version="V2">
@@ -166,7 +166,7 @@
                       <uix:TargetAnchorable ContentHash="HozQmaVbNEmBP7bUHBBm6Q" DesignTimeRectangle="144, 225, 160, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Customer Purchase Order Number' /&gt;" Guid="0b0c40f6-751a-4744-9daf-082ba36c504c" InformativeScreenshot="0a6729ce966c180a99c16aac28cbb77a.png" Reference="iOCKXVFes0-u70fxfP76Eg/Qiui-9Aq9kO-VLeHgs44eg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="518,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="518,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
                     <uix:NKeyboardShortcuts.VerifyOptions>
                       <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                         <uix:VerifyExecutionOptions.Retry>
@@ -242,7 +242,7 @@
                   </If>
                   <uix:NSAPReadStatusbar MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="518,234" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_1" MessageData="[MessageData]" MessageText="[MessageText]" MessageType="[MessageType]" Version="V5">
                     <uix:NSAPReadStatusbar.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="792d0b19-4739-4555-9d3e-9e8d5b604682" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" />
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="4a90f69a-9cae-4c8d-9c3e-354158afdba6" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" />
                     </uix:NSAPReadStatusbar.Target>
                   </uix:NSAPReadStatusbar>
                   <If Condition="[not CBool(in_Config(&quot;PO_IgnorePODuplicates&quot;).toString)]" sap:VirtualizedContainerService.HintSize="518,1094" sap2010:WorkflowViewState.IdRef="If_3">
@@ -333,7 +333,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="618,633" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
