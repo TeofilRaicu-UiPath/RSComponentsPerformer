@@ -21,6 +21,7 @@
     <x:Property Name="in_JobTitle" Type="InArgument(x:String)" />
     <x:Property Name="in_addJobTitle" Type="InArgument(x:Boolean)" />
     <x:Property Name="in_Save" Type="InArgument(x:Boolean)" />
+    <x:Property Name="out_ConfirmButtonError" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -131,25 +132,30 @@
       <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
       <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1446,8536" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1733,8581" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FirstName" />
       <Variable x:TypeArguments="x:String" Name="LastName" />
       <Variable x:TypeArguments="x:String" Name="Email" />
-      <Variable x:TypeArguments="x:String" Default="Mr." Name="Title" />
+      <Variable x:TypeArguments="x:String" Name="Title">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Mr.</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1254,8513" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1283,8558" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <If Condition="[in_IgnoreAdding]" DisplayName="If country is DE and firstname is empty" sap:VirtualizedContainerService.HintSize="1216,8262" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[in_IgnoreAdding]" DisplayName="If country is DE and firstname is empty" sap:VirtualizedContainerService.HintSize="1245,8307" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1182,224" sap2010:WorkflowViewState.IdRef="Sequence_6">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1211,224" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -167,14 +173,14 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1182,7900" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1211,7945" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[String.IsNullOrEmpty(in_LastName)]" sap:VirtualizedContainerService.HintSize="1148,432" sap2010:WorkflowViewState.IdRef="If_16">
+              <If Condition="[String.IsNullOrEmpty(in_LastName)]" sap:VirtualizedContainerService.HintSize="1177,432" sap2010:WorkflowViewState.IdRef="If_16">
                 <If.Then>
                   <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_40">
                     <sap:WorkflowViewStateService.ViewState>
@@ -195,19 +201,19 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1148,7408" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1177,7453" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1114,7248" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1143,7293" sap2010:WorkflowViewState.IdRef="Sequence_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click New Related Contact" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click New Related Contact" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="a9bf7c14-0751-4d04-876d-d75f8c799207" ContentHash="TpDOne_Qh0KzIXlgGfkBRA" DesignTimeRectangle="287, 530, 125, 17" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl aaname='New Related Contact' tag='B' /&gt;" Guid="095d4aa2-fc94-4c97-81c3-78d568779682" InformativeScreenshot="6f79d10798c0e0bb9aa18d28400922ff.png" Reference="2KckjEL3hkeLxhrpoo7qIg/prOY6rSQNEuT2iYD8biyRg" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -218,7 +224,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Title Dropdown" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,189" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Title Dropdown" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,189" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="77e7fd09-6744-448c-9cce-9d3320aac3a5" ContentHash="VQ6ShGpC6ECqLqwXrNHdhQ" DesignTimeRectangle="1017, 345, 12, 21" ElementType="Icon" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='2' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='IMG' /&gt;" Guid="40f6aa6c-0e39-46b1-8137-64abc349d46c" ImageBase64="" InformativeScreenshot="4cbfa0f1a0921f14ab7970fd3a72c980.png" Reference="2KckjEL3hkeLxhrpoo7qIg/PUEyAK1TKE-Qqu40jDR2yA" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -229,7 +235,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Title" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,189" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Title" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,189" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="4ae5816c-89c0-4cdf-8cd4-6b8fc41b5fee" ContentHash="VBcBvtNkKUy0a1WiVRL5_g" DesignTimeRectangle="528, 431, 504, 20" ElementType="ListItem" FullSelectorArgument="[string.Format(&quot;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl aria-role='option' class='th-hb-off' tag='LI' innertext='{0}' /&gt;&quot;, Title)]" Guid="b99452bd-d82e-4d9c-8a5c-e3c0b1436366" ImageBase64="" InformativeScreenshot="5d1cb8d092ecf4b4887b037a91cecd4c.png" Reference="2KckjEL3hkeLxhrpoo7qIg/WMJMQLsWbU2WssMqg6KN6g" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -240,7 +246,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NClick>
-                      <Sequence DisplayName="Sequence process input" sap:VirtualizedContainerService.HintSize="1080,1083" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence DisplayName="Sequence process input" sap:VirtualizedContainerService.HintSize="1109,1083" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -402,7 +408,7 @@
                           </If.Else>
                         </If>
                       </Sequence>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into First Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[FirstName]" Version="V5">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into First Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[FirstName]" Version="V5">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="f3595fb8-bd46-45fe-90bd-15c369b53288" ContentHash="p0C2DbWigUu6Uekc8nZBLg" DesignTimeRectangle="527, 374, 506, 20" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl class='ch-grid' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='4' tag='INPUT' aaname='First Name:' /&gt;" Guid="e44d7549-d525-4eba-a1ab-9292693bf491" InformativeScreenshot="0bf9139b669664e17a5507238cb5032b.png" Reference="2KckjEL3hkeLxhrpoo7qIg/mLAvMk8FgEapSBKjd9-dsA" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NTypeInto.Target>
@@ -413,7 +419,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Last Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[LastName]" Version="V5">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Last Name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[LastName]" Version="V5">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="aeb243d5-eb20-4482-a30e-c15e845caf2b" ContentHash="5eyJlYtFiUybBkIniBP_8Q" DesignTimeRectangle="527, 398, 506, 20" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl class='ch-grid' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='INPUT' aaname='* Last Name:' /&gt;" Guid="a5d59daf-cd74-485b-96de-4001d8499ec7" ImageBase64="" InformativeScreenshot="0b6ebc32de7f48997c033c86968905e9.png" Reference="2KckjEL3hkeLxhrpoo7qIg/t12X8KOd10WfPEFJDr3OVw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NTypeInto.Target>
@@ -424,7 +430,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Email" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[Email]" Version="V5">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Email" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[Email]" Version="V5">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="OAQCIzcijkiRy14dNfvwjQ" DesignTimeRectangle="533, 471, 516, 20" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl class='ch-grid' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tableRow='8' tag='INPUT' aaname='Email:' /&gt;" Guid="24d3127b-7b4c-4d8d-b8e4-9a7244580a81" ImageBase64="" InformativeScreenshot="04dcc882b988243f8226299d13b1b4a4.png" Reference="2KckjEL3hkeLxhrpoo7qIg/e4rkaR0m3E-IZqmKqWM9jQ" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NTypeInto.Target>
@@ -435,7 +441,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NTypeInto>
-                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Telephone" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,250" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[in_Phone]" Version="V5">
+                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into Telephone" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,250" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Text="[in_Phone]" Version="V5">
                         <uix:NTypeInto.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="VUdVf9AfvEOpUUmnNezprg" DesignTimeRectangle="315, 446, 239, 20" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame*' tag='FRAME' /&gt;&lt;webctrl class='ch-grid' tableRow='1' tag='TABLE' /&gt;&lt;webctrl tag='INPUT' aaname='Telephone:' /&gt;" Guid="c9b1b4ef-ff4d-4c24-956c-d5ae5fec9001" ImageBase64="" InformativeScreenshot="d284b10dddcac78b292e11dc4ced66c6.png" Reference="2KckjEL3hkeLxhrpoo7qIg/KTiqD_BCR0KsuQMtKp6BFw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NTypeInto.Target>
@@ -446,7 +452,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NTypeInto>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,189" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Search" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,189" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="vgP49NacXE2rcDZ63pdVZQ" DesignTimeRectangle="213, 591, 41, 16" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl class='th-gr-tab' tableRow='8' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='B' aaname='Search' /&gt;" Guid="1c5830e9-4d27-4ab3-b591-e0d7bdf3f5da" InformativeScreenshot="03c6f5cdf547151e357674b58e5a9ec7.png" Reference="2KckjEL3hkeLxhrpoo7qIg/aDoHNvF4j06BBhgX0M0zag" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -457,7 +463,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Continue And Create" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Continue And Create" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="PsCuGYrk6UOWGi1V6qVN_w" DesignTimeRectangle="325, 591, 107, 16" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame*' tag='FRAME' /&gt;&lt;webctrl class='th-gr-tab' tableRow='8' tag='TABLE' /&gt;&lt;webctrl aaname='Continue &amp;amp; Create' tableRow='1' tag='B' /&gt;" Guid="67dc7e71-a5f0-4284-a3bc-d2551fea15f4" InformativeScreenshot="b1ecddae47cf0815fda299a11be88d9d.png" Reference="2KckjEL3hkeLxhrpoo7qIg/IFKTyXJsHkKdGn-nebir9g" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -468,7 +474,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NClick>
-                      <If Condition="[in_AddContactDetails]" DisplayName=" add fax if country is uk" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="If_12">
+                      <If Condition="[in_AddContactDetails]" DisplayName=" add fax if country is uk" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="If_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -506,7 +512,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Sales And Marketing" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Sales And Marketing" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="NClick_12" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="IsrRBBtXFESzVjTJDxj9Dg" DesignTimeRectangle="217, 603, 128, 17" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame*' tag='FRAME' /&gt;&lt;webctrl tableCol='1' tableRow='1' tag='TABLE' idx='8' /&gt;&lt;webctrl tableRow='1' tag='B' /&gt;" Guid="edac6b87-ae76-4c53-881c-28aa320cf58c" InformativeScreenshot="1419a875853701be2084d4af7ceefabf.png" Reference="2KckjEL3hkeLxhrpoo7qIg/ifNwK-Qd90SDPb6rxrU4gg" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -517,7 +523,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                       </uix:NClick>
-                      <If Condition="[in_ContactSourceSSC]" DisplayName="If contact source SSC (FR)" sap:VirtualizedContainerService.HintSize="1080,688" sap2010:WorkflowViewState.IdRef="If_10">
+                      <If Condition="[in_ContactSourceSSC]" DisplayName="If contact source SSC (FR)" sap:VirtualizedContainerService.HintSize="1109,688" sap2010:WorkflowViewState.IdRef="If_10">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -553,7 +559,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <If Condition="[in_AddIndStatus]" DisplayName="If add ind status FR" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="If_13">
+                      <If Condition="[in_AddIndStatus]" DisplayName="If add ind status FR" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="If_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -609,7 +615,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <If Condition="[in_JobRoleProcurement]" DisplayName="If job role Procurement - FR, DE" sap:VirtualizedContainerService.HintSize="1080,84" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If Condition="[in_JobRoleProcurement]" DisplayName="If job role Procurement - FR, DE" sap:VirtualizedContainerService.HintSize="1109,84" sap2010:WorkflowViewState.IdRef="If_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -645,7 +651,7 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <If Condition="[in_ContactSourceCOE]" DisplayName="If contact source coe uk" sap:VirtualizedContainerService.HintSize="1080,688" sap2010:WorkflowViewState.IdRef="If_8">
+                      <If Condition="[in_ContactSourceCOE]" DisplayName="If contact source coe uk" sap:VirtualizedContainerService.HintSize="1109,688" sap2010:WorkflowViewState.IdRef="If_8">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -681,13 +687,13 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <Sequence DisplayName="Fill Job Title" sap:VirtualizedContainerService.HintSize="1080,1329" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                      <Sequence DisplayName="Fill Job Title" sap:VirtualizedContainerService.HintSize="1109,1333" sap2010:WorkflowViewState.IdRef="Sequence_34">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <If Condition="[in_addJobTitle]" DisplayName="If fill job title" sap:VirtualizedContainerService.HintSize="518,1237" sap2010:WorkflowViewState.IdRef="If_15">
+                        <If Condition="[in_addJobTitle]" DisplayName="If fill job title" sap:VirtualizedContainerService.HintSize="518,1239" sap2010:WorkflowViewState.IdRef="If_15">
                           <If.Then>
                             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,987" sap2010:WorkflowViewState.IdRef="Sequence_38">
                               <sap:WorkflowViewStateService.ViewState>
@@ -753,7 +759,7 @@
                           </If.Else>
                         </If>
                       </Sequence>
-                      <If Condition="[in_Save]" sap:VirtualizedContainerService.HintSize="1080,708" sap2010:WorkflowViewState.IdRef="If_17">
+                      <If Condition="[in_Save]" sap:VirtualizedContainerService.HintSize="1109,708" sap2010:WorkflowViewState.IdRef="If_17">
                         <If.Then>
                           <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_43">
                             <sap:WorkflowViewStateService.ViewState>
@@ -796,18 +802,18 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <uix:NCheckState DisplayName="Check App State 'Identify Account'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1080,1012" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Timeout="5" Version="V5">
+                      <uix:NCheckState DisplayName="Check App State 'Identify Account'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1109,1053" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Timeout="5" Version="V5">
                         <uix:NCheckState.IfExists>
-                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="513,203" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                          <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="542,811" sap2010:WorkflowViewState.IdRef="Sequence_23">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:MultipleAssign DisplayName="Multiple Assign output 1" sap:VirtualizedContainerService.HintSize="479,141" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                            <ui:MultipleAssign DisplayName="Multiple Assign output 1" sap:VirtualizedContainerService.HintSize="508,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_5">
                               <ui:MultipleAssign.AssignOperations>
                                 <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
-                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                                     <ui:AssignOperation.To>
                                       <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
                                     </ui:AssignOperation.To>
@@ -818,6 +824,55 @@
                                 </scg:List>
                               </ui:MultipleAssign.AssignOperations>
                             </ui:MultipleAssign>
+                            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="508,601" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                              <TryCatch.Try>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="400,157" sap2010:WorkflowViewState.IdRef="NClick_29" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="9c52ea4f-35f2-46f5-9245-ebd45a6c4591" DesignTimeRectangle="240, 704, 52, 15" ElementType="Text" FuzzySelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname=' Actions Full Name Last Name ID Customer Group Currency Archiving Flag Street Postal Code City Direct Telephone Direct Extension Relationsh.Cat.' tag='TABLE' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;webctrl class='th-lk' type='' tag='A' aaname='Confirm         ' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='Confirm' /&gt;" Guid="ce574c42-483c-4196-ad69-18bc6079f5e7" ImageBase64="" InformativeScreenshot="b4a6a2c7ffa01699d0b46c651a6df120.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID*2s2cDZlZGdGME9BPT0=)' title='Identify Account*' /&gt;" SearchSteps="FuzzySelector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CVScreenId="9c52ea4f-35f2-46f5-9245-ebd45a6c4591" DesignTimeRectangle="363, 704, 111, 15" ElementType="Text" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' matching:name='fuzzy' fuzzylevel:name='0.0' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;&lt;webctrl aaname=' Actions Full Name Last Name ID Customer Group Currency Archiving Flag Street Postal Code City Direct Telephone Direct Extension Relationsh.Cat.' tag='TABLE' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' /&gt;&lt;webctrl type='' tag='SPAN' class='th-tx th-tx-value th-tx-nowrap' aaname='M STEPHANE BARBARIA' matching:class='fuzzy' fuzzylevel:class='0.0' matching:aaname='fuzzy' fuzzylevel:aaname='0.0' check:innerText='*{0}*' /&gt;&quot;, in_FirstName)]" Guid="50576008-93f2-4119-92b3-27c614d8232d" ImageBase64="" SearchSteps="FuzzySelector" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </TryCatch.Try>
+                              <TryCatch.Catches>
+                                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="474,414" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ActivityAction x:TypeArguments="s:Exception">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    </ActivityAction.Argument>
+                                    <Sequence DisplayName="Catch" sap:VirtualizedContainerService.HintSize="468,344" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                                      <Sequence.Variables>
+                                        <Variable x:TypeArguments="x:Boolean" Name="CustomerIdentified" />
+                                      </Sequence.Variables>
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Warn" Message="[&quot;Could not click Confirm after creating the contact person&quot;]" />
+                                      <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                        <Assign.To>
+                                          <OutArgument x:TypeArguments="x:Boolean">[out_ConfirmButtonError]</OutArgument>
+                                        </Assign.To>
+                                        <Assign.Value>
+                                          <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                        </Assign.Value>
+                                      </Assign>
+                                    </Sequence>
+                                  </ActivityAction>
+                                </Catch>
+                              </TryCatch.Catches>
+                            </TryCatch>
                           </Sequence>
                         </uix:NCheckState.IfExists>
                         <uix:NCheckState.IfNotExists>
@@ -903,7 +958,7 @@
         </If>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1220,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1249,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -914,7 +969,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="513,633" sap2010:WorkflowViewState.IdRef="Sequence_25">
+            <Sequence sap:VirtualizedContainerService.HintSize="1214,633" sap2010:WorkflowViewState.IdRef="Sequence_25">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
