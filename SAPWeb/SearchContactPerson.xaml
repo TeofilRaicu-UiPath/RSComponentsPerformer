@@ -126,7 +126,7 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SearchContactPerson" sap:VirtualizedContainerService.HintSize="1733,3710" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SearchContactPerson" sap:VirtualizedContainerService.HintSize="1093,3486" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -134,13 +134,13 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="SCP - Start" sap:VirtualizedContainerService.HintSize="710,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- Start Search contact person---&quot;]" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="710,173" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Search for &quot; + in_ContactPerosn + &quot; and select &quot; + in_FirstName]" />
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,3177" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_SAPWindow]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8a41a624-36a3-4c7b-b236-138d9d4f14a5" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="710,2953" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_SAPWindow]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="8a41a624-36a3-4c7b-b236-138d9d4f14a5" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676,3008" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="676,2784" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_ContactPerson" />
               <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
@@ -172,21 +172,6 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Related Partners Found'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="642,225" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="8a41a624-36a3-4c7b-b236-138d9d4f14a5" Version="V5">
-              <uix:NClick.Target>
-                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="9c39f71f-554e-4dd5-a47c-7ad056294a2a" DesignTimeRectangle="415, 581, 157, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='21' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" Guid="4dbe9aa7-5ab6-44f1-86f6-19301c29cf80" InformativeScreenshot="b6b2321aee3dbc8cf6091649c0a93cd9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account *' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
-              </uix:NClick.Target>
-              <uix:NClick.VerifyOptions>
-                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
-                  <uix:VerifyExecutionOptions.Retry>
-                    <InArgument x:TypeArguments="x:Boolean" />
-                  </uix:VerifyExecutionOptions.Retry>
-                  <uix:VerifyExecutionOptions.Timeout>
-                    <InArgument x:TypeArguments="x:Double" />
-                  </uix:VerifyExecutionOptions.Timeout>
-                </uix:VerifyExecutionOptions>
-              </uix:NClick.VerifyOptions>
-            </uix:NClick>
             <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="SCP - Type Into Filter - Contact person" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="642,250" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="8a41a624-36a3-4c7b-b236-138d9d4f14a5" Text="[in_ContactPerosn]" Version="V3">
               <uix:NTypeInto.Target>
                 <uix:TargetAnchorable BrowserURL="https://vct1ascs.ebs.ecomp.com/sap(bD1FTiZjPTYwMCZpPTEmZT1RekE1T1RrM01qUmZYMTlmTVRGZk9UTmZBc0NhN1E2OEg5Q2c2UDZqbUlXZGRnJTNkJTNk)/bc/bsp/sap/crm_ui_frame/BSPWDApplication.do?sap-client=600&amp;sap-domainrelax=min&amp;sap-language=EN" DesignTimeRectangle="1670, 609, 174, 20" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableCol='1' tableRow='1' tag='TABLE' innertext='Filter:*' /&gt;&lt;webctrl tableRow='1' tag='LABEL' aaname='Filter:*' /&gt;&lt;nav up='2' /&gt;&lt;webctrl tableRow='1' tag='INPUT' colName='Filter:*' /&gt;" Guid="d2ff0312-2a1a-4e14-8494-8ac2aacab81c" InformativeScreenshot="0ad76f843ac1321dd624caa862f49a1b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account *' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
@@ -206,29 +191,29 @@
                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[dt_ContactPerson.RowCount = 1]" sap:VirtualizedContainerService.HintSize="642,1873" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[dt_ContactPerson.RowCount = 1]" sap:VirtualizedContainerService.HintSize="642,1874" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="608,1621" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="608,1622" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ContactPerson]" DisplayName="SCP - For Each Row in Data Table - attempt match of input and available contact person" sap:VirtualizedContainerService.HintSize="574,1561" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_ContactPerson]" DisplayName="SCP - For Each Row in Data Table - attempt match of input and available contact person" sap:VirtualizedContainerService.HintSize="574,1562" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,1374" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,1375" sap2010:WorkflowViewState.IdRef="Sequence_5">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[CurrentRow(4).ToString.ToLower.Contains(in_FirstName.ToLower)]" DisplayName="SCP - If - Match found &gt; confirm" sap:VirtualizedContainerService.HintSize="506,1314" sap2010:WorkflowViewState.IdRef="If_1">
+                          <If Condition="[CurrentRow(4).ToString.ToLower.Contains(in_FirstName.ToLower)]" DisplayName="SCP - If - Match found &gt; confirm" sap:VirtualizedContainerService.HintSize="506,1315" sap2010:WorkflowViewState.IdRef="If_1">
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="472,813" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="472,814" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -266,7 +251,7 @@
                                     </Catch>
                                   </TryCatch.Catches>
                                 </TryCatch>
-                                <Assign DisplayName="SCP - Assign fail of flow" sap:VirtualizedContainerService.HintSize="438,113" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign DisplayName="SCP - Assign fail of flow" sap:VirtualizedContainerService.HintSize="438,114" sap2010:WorkflowViewState.IdRef="Assign_2">
                                   <Assign.To>
                                     <OutArgument x:TypeArguments="x:Boolean">[out_SCPSuccess]</OutArgument>
                                   </Assign.To>

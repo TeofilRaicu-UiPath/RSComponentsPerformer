@@ -99,7 +99,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="testNames" sap:VirtualizedContainerService.HintSize="1733,1226" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="testNames" sap:VirtualizedContainerService.HintSize="1093,818" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="CustomerIdentified" />
       <Variable x:TypeArguments="ui:UiElement" Name="io_SAPWebWindow" />
@@ -111,7 +111,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,292" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
@@ -166,7 +166,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="513,416" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
@@ -279,47 +279,6 @@
         <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SAPWindow">[io_SAPWebWindow]</InArgument>
         <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">Alex Tanase</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CreateContact - Invoke Workflow File (SAPWeb\CreateContact.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SAPWeb\CreateContact.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Window">[io_SAPWebWindow]</InOutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Title">Mr</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">Alex</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_LastName">Tanase</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_AVMGeneralEmail" />
-        <InArgument x:TypeArguments="x:String" x:Key="In_Email">sebastian.balan@uipath.com</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Phone">0723540000</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Fax">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Success">[Success]</OutArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_ErrorMessage">[Message]</OutArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_IgnoreAdding">False</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Add0InFront">False</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Add0IfLengthIs9">True</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_ContactSourceSSC">False</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_JobRoleProcurement">True</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_ContactSourceCOE">False</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_AddIndStatus">True</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_AddContactDetails">False</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_JobTitle">test</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_addJobTitle">False</InArgument>
-        <InArgument x:TypeArguments="x:Boolean" x:Key="in_Save">False</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SearchContactPerson - Invoke Workflow File (SAPWeb\SearchContactPerson.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SAPWeb\SearchContactPerson.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ContactPerosn">Alex Tanase</InArgument>
-        <OutArgument x:TypeArguments="x:Boolean" x:Key="out_SCPSuccess">[CustomerIdentified]</OutArgument>
-        <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SAPWindow">[io_SAPWebWindow]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">Alex Tanase</InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
     </ui:InvokeWorkflowFile>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,164" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;sasasa&quot;]" />
   </Sequence>
