@@ -171,15 +171,15 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Confirm'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1226,2498" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
+                  <uix:NCheckState DisplayName="Check App State 'Confirm'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1226,2498" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Timeout="20" Version="V5">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,470" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,564" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:RetryScope ContinueOnError="False" DisplayName="Retry Clicking 'Confirm'" sap:VirtualizedContainerService.HintSize="450,410" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Info" RetryInterval="00:00:03">
+                        <ui:RetryScope ContinueOnError="False" DisplayName="Retry Clicking 'Confirm'" sap:VirtualizedContainerService.HintSize="450,502" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Info" RetryInterval="00:00:03">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
                               <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_28">
