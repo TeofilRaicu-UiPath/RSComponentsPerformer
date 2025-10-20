@@ -74,7 +74,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="testTrasnsaction" sap:VirtualizedContainerService.HintSize="1026,637" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="testTrasnsaction" sap:VirtualizedContainerService.HintSize="1093,799" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="a" />
     </Sequence.Variables>
@@ -83,7 +83,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="502,84" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="572,84" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,279" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
@@ -105,32 +105,43 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[a &lt; 5]" DisplayName="While" sap:VirtualizedContainerService.HintSize="502,530" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
-      <ui:InterruptibleWhile.Body>
-        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,393" sap2010:WorkflowViewState.IdRef="Sequence_2">
-          <Sequence.Variables>
-            <Variable x:TypeArguments="ui:QueueItem" Name="tr" />
-          </Sequence.Variables>
+    <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="572,228" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="OrderManagement_PostDU" Reference="GB_2025_10_18 03_15_11_1_1-3">
+      <ui:AddQueueItem.ItemInformation>
+        <scg:Dictionary x:TypeArguments="x:String, InArgument" />
+      </ui:AddQueueItem.ItemInformation>
+    </ui:AddQueueItem>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="572,464" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="536,362" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="434,228" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="OrderManagement_PostDU_test" Reference="FR_2025_10_02 07_11_19_4_1-2">
-            <ui:AddQueueItem.ItemInformation>
-              <scg:Dictionary x:TypeArguments="x:String, InArgument" />
-            </ui:AddQueueItem.ItemInformation>
-          </ui:AddQueueItem>
-          <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:Int32">[a]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:Int32">[a +1]</InArgument>
-            </Assign.Value>
-          </Assign>
+          <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[a &lt; 5]" DisplayName="While" sap:VirtualizedContainerService.HintSize="502,302" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+            <ui:InterruptibleWhile.Body>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ui:QueueItem" Name="tr" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Int32">[a]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Int32">[a +1]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </Sequence>
+            </ui:InterruptibleWhile.Body>
+          </ui:InterruptibleWhile>
         </Sequence>
-      </ui:InterruptibleWhile.Body>
-    </ui:InterruptibleWhile>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
   </Sequence>
 </Activity>
