@@ -139,7 +139,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateShipTo" sap:VirtualizedContainerService.HintSize="1126,13956" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateShipTo" sap:VirtualizedContainerService.HintSize="1126,13400" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OriginalCompanyName" />
       <Variable x:TypeArguments="x:String" Name="OriginalStreet" />
@@ -154,8 +154,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="UST - Log Message - START" sap:VirtualizedContainerService.HintSize="1126,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START Update Ship To ---&quot;]" />
-    <If Condition="[not string.IsNullOrWhiteSpace(in_ShipTo)]" DisplayName="UST - If Ship to was not found on invoice, leave as is " sap:VirtualizedContainerService.HintSize="1126,13594" sap2010:WorkflowViewState.IdRef="If_22">
+    <ui:LogMessage DisplayName="UST - Log Message - START" sap:VirtualizedContainerService.HintSize="1126,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START Update Ship To ---&quot;]" />
+    <If Condition="[not string.IsNullOrWhiteSpace(in_ShipTo)]" DisplayName="UST - If Ship to was not found on invoice, leave as is " sap:VirtualizedContainerService.HintSize="1126,13040" sap2010:WorkflowViewState.IdRef="If_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,26 +163,26 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1092,13199" sap2010:WorkflowViewState.IdRef="Sequence_48">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1092,12646" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="UST - Use Application: SAP DesktopApp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1058,13139" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SApDesktopWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="UST - Use Application: SAP DesktopApp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1058,12586" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SApDesktopWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1024,12938" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                <Sequence sap:VirtualizedContainerService.HintSize="1024,12386" sap2010:WorkflowViewState.IdRef="Sequence_52">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="UST - Do" sap:VirtualizedContainerService.HintSize="990,11543" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Sequence DisplayName="UST - Do" sap:VirtualizedContainerService.HintSize="990,10991" sap2010:WorkflowViewState.IdRef="Sequence_32">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="ExtractedCountry" />
                       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
@@ -195,25 +195,24 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="808,89" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Checked if Ship To is clicked correctly." />
-                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="NTP - Extract Partners" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Partn.Funct.' ReferenceName='Partn.Funct.' ReferenceIdx='0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Partner' ReferenceName='Partner' ReferenceIdx='1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Name' ReferenceName='Name' ReferenceIdx='2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Street' ReferenceName='Street' ReferenceIdx='3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Postal code' ReferenceName='Postal code' ReferenceIdx='4'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Cty' ReferenceName='Cty' ReferenceIdx='5'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Partner Definitn' ReferenceName='Partner Definitn' ReferenceIdx='6'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="808,190" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="NTP - Extract Partners" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Partn.Funct.' ReferenceName='Partn.Funct.' ReferenceIdx='0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Partner' ReferenceName='Partner' ReferenceIdx='1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Name' ReferenceName='Name' ReferenceIdx='2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Street' ReferenceName='Street' ReferenceIdx='3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Postal code' ReferenceName='Postal code' ReferenceIdx='4'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Cty' ReferenceName='Cty' ReferenceIdx='5'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Partner Definitn' ReferenceName='Partner Definitn' ReferenceIdx='6'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest' /&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="814,189" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                       <uix:NExtractData.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="29, 301, 948, 589" DesignTimeScaleFactor="1" ElementType="Table" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\08/ssubSUBSCREEN_BODY:SAPMV45A:4352/subSUBSCREEN_PARTNER_OVERVIEW:SAPLV09C:1000/tblSAPLV09CGV_TC_PARTNER_OVERVIEW' /&gt;" Guid="583e53f6-58fe-498c-a19e-4ab412e6536e" InformativeScreenshot="e7514d642626bf13c8db9bf8bc451572.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                       </uix:NExtractData.Target>
                     </uix:NExtractData>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[ExtractDataTable]" DisplayName="NTP - For Each Row in Data Table locate Ship to Party" sap:VirtualizedContainerService.HintSize="808,1590" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[CurrentIndex]" DataTable="[ExtractDataTable]" DisplayName="NTP - For Each Row in Data Table locate Ship to Party" sap:VirtualizedContainerService.HintSize="814,1578" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
                       <ui:ForEachRow.Body>
                         <ActivityAction x:TypeArguments="sd:DataRow">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,1392" sap2010:WorkflowViewState.IdRef="Sequence_70">
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,1382" sap2010:WorkflowViewState.IdRef="Sequence_70">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[CurrentRow(&quot;Partn.Funct.&quot;).ToString.Contains (&quot;Ship-to party&quot;)]" DisplayName="If ship to found" sap:VirtualizedContainerService.HintSize="570,1332" sap2010:WorkflowViewState.IdRef="If_33">
+                            <If Condition="[CurrentRow(&quot;Partn.Funct.&quot;).ToString.Contains (&quot;Ship-to party&quot;)]" DisplayName="If ship to found" sap:VirtualizedContainerService.HintSize="570,1322" sap2010:WorkflowViewState.IdRef="If_33">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -221,13 +220,13 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,1080" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,1072" sap2010:WorkflowViewState.IdRef="Sequence_71">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="502,115" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                  <Assign sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_4">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[Row]</OutArgument>
                                     </Assign.To>
@@ -235,7 +234,7 @@
                                       <InArgument x:TypeArguments="x:String">[CurrentIndex.tostring]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <If Condition="[CurrentRow(&quot;Street&quot;).ToString.ToUpper.Equals(in_StreetAddress) = true AND CurrentRow(&quot;Postal code&quot;).ToString.ToUpper.Equals(in_PostalCode) = true AND CurrentRow(&quot;Cty&quot;).ToString.ToUpper.Equals(in_City) = true]" DisplayName="NTP - If Street, postal code and city match &gt; leave as is " sap:VirtualizedContainerService.HintSize="502,857" sap2010:WorkflowViewState.IdRef="If_34">
+                                  <If Condition="[CurrentRow(&quot;Street&quot;).ToString.ToUpper.Equals(in_StreetAddress) = true AND CurrentRow(&quot;Postal code&quot;).ToString.ToUpper.Equals(in_PostalCode) = true AND CurrentRow(&quot;Cty&quot;).ToString.ToUpper.Equals(in_City) = true]" DisplayName="NTP - If Street, postal code and city match &gt; leave as is " sap:VirtualizedContainerService.HintSize="502,850" sap2010:WorkflowViewState.IdRef="If_34">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -243,14 +242,14 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,343" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,340" sap2010:WorkflowViewState.IdRef="Sequence_75">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="NTP - Log Message - Match for street, postal code and city" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Match&quot;]" />
-                                        <Assign DisplayName="NTP - Assign Search For alternatives = false" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                        <ui:LogMessage DisplayName="NTP - Log Message - Match for street, postal code and city" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Match&quot;]" />
+                                        <Assign DisplayName="NTP - Assign Search For alternatives = false" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_5">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Boolean">[isSearchForAlternatives]</OutArgument>
                                           </Assign.To>
@@ -261,13 +260,13 @@
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,343" sap2010:WorkflowViewState.IdRef="Sequence_77">
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,340" sap2010:WorkflowViewState.IdRef="Sequence_77">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="NTP - Log message no match" sap:VirtualizedContainerService.HintSize="434,177" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;No Match&quot;]">
+                                        <ui:LogMessage DisplayName="NTP - Log message no match" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_25" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;No Match&quot;]">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -275,7 +274,7 @@
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </ui:LogMessage>
-                                        <Assign DisplayName="NTP - Assign Search For alternatives = True" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                        <Assign DisplayName="NTP - Assign Search For alternatives = True" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_7">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Boolean">[isSearchForAlternatives]</OutArgument>
                                           </Assign.To>
@@ -290,7 +289,7 @@
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,90" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,89" sap2010:WorkflowViewState.IdRef="Sequence_72">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -309,12 +308,12 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:ForEachRow>
-                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="UST - Click 'Ship to '" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="808,190" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="UST - Click 'Ship to '" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="814,189" sap2010:WorkflowViewState.IdRef="NClick_7" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="195, 325, 74, 20" ElementType="InputBox" FullSelectorArgument="[string.Format(&quot;&lt;sap colTooltip='Partners' id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\08/ssubSUBSCREEN_BODY:SAPMV45A:4352/subSUBSCREEN_PARTNER_OVERVIEW:SAPLV09C:1000/tblSAPLV09CGV_TC_PARTNER_OVERVIEW' tableRow='{0}' tableCol='1' /&gt;&quot;, Row)]" Guid="0504832d-c3a4-43af-bcb3-66c5163eb1ae" ImageBase64="" InformativeScreenshot="7ba71d5ca22fbbe770b21d044a312285.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <If Condition="[isSearchForAlternatives and in_SearchForAlternatives]" DisplayName="NTP - no match &gt; look for alternatives" sap:VirtualizedContainerService.HintSize="808,4714" sap2010:WorkflowViewState.IdRef="If_35">
+                    <If Condition="[isSearchForAlternatives and in_SearchForAlternatives]" DisplayName="NTP - no match &gt; look for alternatives" sap:VirtualizedContainerService.HintSize="814,4699" sap2010:WorkflowViewState.IdRef="If_35">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -322,7 +321,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="698,4453" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="698,4440" sap2010:WorkflowViewState.IdRef="Sequence_76">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_Alternatives" />
                             <Variable x:TypeArguments="x:Boolean" Name="AlternativeMatch" />
@@ -333,22 +332,22 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="664,177" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Trace" Message="[&quot;Search for alternatives&quot;]" />
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="NTP - Click 'Button Propose'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="664,190" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                          <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="664,175" sap2010:WorkflowViewState.IdRef="LogMessage_29" Level="Trace" Message="[&quot;Search for alternatives&quot;]" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="NTP - Click 'Button Propose'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="664,189" sap2010:WorkflowViewState.IdRef="NClick_6" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="213, 918, 20, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\08/ssubSUBSCREEN_BODY:SAPMV45A:4352/subSUBSCREEN_PARTNER_OVERVIEW:SAPLV09C:1000/btnALTERN' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\08/ssubSUBSCREEN_BODY:SAPMV45A:4352/subSUBSCREEN_PARTNER_OVERVIEW:SAPLV09C:1000/btnALTERN' /&gt;" Guid="b72763b0-e3c2-47f4-ba3b-ac177f111682" InformativeScreenshot="07c1a58b5d5298ac1ef9e92bda066219.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <uix:NCheckState DisplayName="Check App State 'There are no alternativ…'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="664,710" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Timeout="5" Version="V5">
+                          <uix:NCheckState DisplayName="Check App State 'There are no alternativ…'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="664,704" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Timeout="5" Version="V5">
                             <uix:NCheckState.IfExists>
-                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,459" sap2010:WorkflowViewState.IdRef="Sequence_78">
+                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_78">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Trace" Message="[&quot;No alternatives&quot;]" />
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V5">
+                                <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_30" Level="Trace" Message="[&quot;No alternatives&quot;]" />
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V5">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable ContentHash="2SDXiiPyTUqk2U6D6o-JxQ" DesignTimeRectangle="383, 135, 20, 20" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' /&gt;" Guid="57feaae9-c346-42cb-a4be-4bede2a6d9a3" InformativeScreenshot="9ea3a2278f83ea37b54b0f3228cd5fe0.png" Reference="LwYOhlgeok64kz6xgXYPNA/uRlL-e-u8Em9XVDCAL1ieg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Information' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                   </uix:NClick.Target>
@@ -384,12 +383,12 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </uix:NCheckState>
-                          <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Alternatives]" DisplayName="NTP - Extract Table Data of alternatives" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Funct' ReferenceIdx='1' Name='Funct'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name' ReferenceIdx='2' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='P' ReferenceIdx='3' Name='P'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='M' ReferenceIdx='4' Name='M'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5' ReferenceIdx='5' Name='Column-5'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Partners' ReferenceIdx='6' Name='Partners'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name1' ReferenceIdx='7' Name='Name1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name 2' ReferenceIdx='8' Name='Name 2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name 3' ReferenceIdx='9' Name='Name 3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name 4' ReferenceIdx='10' Name='Name 4'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Street' ReferenceIdx='11' Name='Street'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='District' ReferenceIdx='12' Name='District'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='City' ReferenceIdx='13' Name='City'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Postl Code' ReferenceIdx='14' Name='Postl Code'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='PO Box' ReferenceIdx='15' Name='PO Box'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Postl Code1' ReferenceIdx='16' Name='Postl Code1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Rg' ReferenceIdx='17' Name='Rg'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Ctr' ReferenceIdx='18' Name='Ctr'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Tel.no.' ReferenceIdx='19' Name='Tel.no.'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Fax' ReferenceIdx='20' Name='Fax'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' preheader_text='' columns_name_source='Displayed' join_type='LeftOuter' null_value_text='(null)' /&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="664,190" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                          <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Alternatives]" DisplayName="NTP - Extract Table Data of alternatives" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Funct' ReferenceIdx='1' Name='Funct'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name' ReferenceIdx='2' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='P' ReferenceIdx='3' Name='P'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='M' ReferenceIdx='4' Name='M'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-5' ReferenceIdx='5' Name='Column-5'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Partners' ReferenceIdx='6' Name='Partners'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name1' ReferenceIdx='7' Name='Name1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name 2' ReferenceIdx='8' Name='Name 2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name 3' ReferenceIdx='9' Name='Name 3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Name 4' ReferenceIdx='10' Name='Name 4'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Street' ReferenceIdx='11' Name='Street'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='District' ReferenceIdx='12' Name='District'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='City' ReferenceIdx='13' Name='City'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Postl Code' ReferenceIdx='14' Name='Postl Code'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='PO Box' ReferenceIdx='15' Name='PO Box'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Postl Code1' ReferenceIdx='16' Name='Postl Code1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Rg' ReferenceIdx='17' Name='Rg'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Ctr' ReferenceIdx='18' Name='Ctr'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Tel.no.' ReferenceIdx='19' Name='Tel.no.'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Fax' ReferenceIdx='20' Name='Fax'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' preheader_text='' columns_name_source='Displayed' join_type='LeftOuter' null_value_text='(null)' /&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="664,189" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                             <uix:NExtractData.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="0, 24, 607, 185" DesignTimeScaleFactor="1" ElementType="Container" FullSelectorArgument="&lt;sap id='usr' /&gt;" Guid="903af0c5-9e94-477f-a98a-30632c92787f" InformativeScreenshot="f8ed537807d86865420260edc23b37b8.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Partner selection' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
                             </uix:NExtractData.Target>
                           </uix:NExtractData>
-                          <Assign sap:VirtualizedContainerService.HintSize="664,115" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign sap:VirtualizedContainerService.HintSize="664,114" sap2010:WorkflowViewState.IdRef="Assign_10">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[AlternativeMatch]</OutArgument>
                             </Assign.To>
@@ -584,7 +583,7 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ForEachRow>
-                          <If Condition="[not AlternativeMatch and dt_Alternatives.RowCount &gt; 0]" DisplayName="If no alternative" sap:VirtualizedContainerService.HintSize="664,528" sap2010:WorkflowViewState.IdRef="If_39">
+                          <If Condition="[not AlternativeMatch and dt_Alternatives.RowCount &gt; 0]" DisplayName="If no alternative" sap:VirtualizedContainerService.HintSize="664,526" sap2010:WorkflowViewState.IdRef="If_39">
                             <If.Then>
                               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_89">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -610,7 +609,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_90">
+                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_90">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -622,7 +621,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="698,90" sap2010:WorkflowViewState.IdRef="Sequence_83">
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="698,89" sap2010:WorkflowViewState.IdRef="Sequence_83">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -631,12 +630,12 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="UST - Click 'Ship to '" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="808,190" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                    <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="UST - Click 'Ship to '" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="814,189" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                       <uix:NClick.Target>
                         <uix:TargetAnchorable DesignTimeRectangle="195, 325, 74, 20" ElementType="InputBox" FullSelectorArgument="[string.Format(&quot;&lt;sap colTooltip='Partners' id='usr/tabsTAXI_TABSTRIP_HEAD/tabpT\08/ssubSUBSCREEN_BODY:SAPMV45A:4352/subSUBSCREEN_PARTNER_OVERVIEW:SAPLV09C:1000/tblSAPLV09CGV_TC_PARTNER_OVERVIEW' tableRow='{0}' tableCol='1' /&gt;&quot;, Row)]" Guid="0504832d-c3a4-43af-bcb3-66c5163eb1ae" ImageBase64="" InformativeScreenshot="7ba71d5ca22fbbe770b21d044a312285.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
                       </uix:NClick.Target>
                     </uix:NClick>
-                    <uix:NGetText DisplayName="Get Text country" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="808,57" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" TextString="[ExtractedCountry]" Version="V5">
+                    <uix:NGetText DisplayName="Get Text country" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="814,57" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" TextString="[ExtractedCountry]" Version="V5">
                       <uix:NGetText.Target>
                         <uix:TargetAnchorable ContentHash="mPZZLvXi8UaBXXXylr9oGw" DesignTimeRectangle="157, 230, 27, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Country Key' /&gt;" Guid="9ae16823-8e8e-48e1-86d7-81b809feae9d" InformativeScreenshot="c85efd8bcfccd911e30bd3ffc73342ba.png" Reference="LwYOhlgeok64kz6xgXYPNA/Y0HJmHf8PkaCoQllpvopug" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address From Master Data for Ship-to party ( Document header )' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                       </uix:NGetText.Target>
@@ -647,7 +646,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NGetText>
-                    <If Condition="[in_Country.Equals(ExtractedCountry)]" DisplayName="If country match" sap:VirtualizedContainerService.HintSize="808,4247" sap2010:WorkflowViewState.IdRef="If_23">
+                    <If Condition="[in_Country.Equals(ExtractedCountry)]" DisplayName="If country match" sap:VirtualizedContainerService.HintSize="814,3814" sap2010:WorkflowViewState.IdRef="If_23">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -655,14 +654,14 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="774,3904" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="780,3471" sap2010:WorkflowViewState.IdRef="Sequence_53">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="740,175" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Country is match&quot;]" />
-                          <Sequence DisplayName="Sequence extract data" sap:VirtualizedContainerService.HintSize="740,57" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="746,175" sap2010:WorkflowViewState.IdRef="LogMessage_31" Level="Info" Message="[&quot;Country is match&quot;]" />
+                          <Sequence DisplayName="Sequence extract data" sap:VirtualizedContainerService.HintSize="746,57" sap2010:WorkflowViewState.IdRef="Sequence_55">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -695,7 +694,7 @@
                               </uix:NGetText.Target>
                             </uix:NGetText>
                           </Sequence>
-                          <Assign DisplayName="Assign address match" sap:VirtualizedContainerService.HintSize="740,115" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign DisplayName="Assign address match" sap:VirtualizedContainerService.HintSize="746,115" sap2010:WorkflowViewState.IdRef="Assign_3">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Boolean">[isMatch]</OutArgument>
                             </Assign.To>
@@ -707,7 +706,7 @@ in_VendorName.Equals(OriginalCompanyName.ToUpper) And in_StreetAddress.Equals(Or
 in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.ToUpper) )]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[not isMatch]" DisplayName="If address has to be updated" sap:VirtualizedContainerService.HintSize="740,3497" sap2010:WorkflowViewState.IdRef="If_24">
+                          <If Condition="[not isMatch]" DisplayName="If address has to be updated" sap:VirtualizedContainerService.HintSize="746,3064" sap2010:WorkflowViewState.IdRef="If_24">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -715,34 +714,34 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="706,3247" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="712,2814" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="672,175" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;No match for address, start updating it&quot;]" />
-                                <If Condition="[in_UpdateJustStreet]" DisplayName="If update just street" sap:VirtualizedContainerService.HintSize="672,3012" sap2010:WorkflowViewState.IdRef="If_38">
+                                <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="678,175" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;No match for address, start updating it&quot;]" />
+                                <If Condition="[in_UpdateJustStreet]" DisplayName="If update just street" sap:VirtualizedContainerService.HintSize="678,2579" sap2010:WorkflowViewState.IdRef="If_38">
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="638,394" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="644,533" sap2010:WorkflowViewState.IdRef="Sequence_87">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:LogMessage DisplayName="Log Message 5" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Update just street and number&quot;]" />
-                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,84" sap2010:WorkflowViewState.IdRef="NTypeInto_38" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_StreetAddress]" Version="V3">
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,250" sap2010:WorkflowViewState.IdRef="NTypeInto_38" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_StreetAddress]" Version="V3">
                                         <uix:NTypeInto.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="157, 164, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" Guid="4fef4294-a055-4ca8-bab5-4552821d5460" InformativeScreenshot="92c97c8972a68c293cfb915b75f6fd37.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                         </uix:NTypeInto.Target>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </uix:NTypeInto>
-                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into House Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,75" sap2010:WorkflowViewState.IdRef="NTypeInto_39" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into House Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NTypeInto_39" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                                         <uix:NTypeInto.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="388, 164, 55, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/subGCS_ADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subGCS_ADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;" Guid="f61391d6-b95b-4877-9c0d-8279c351089c" ImageBase64="" InformativeScreenshot="3c9e385af6f6921a6f790ea8c2159894.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='Doc.address for the Ship-to party ( Document header )' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                         </uix:NTypeInto.Target>
@@ -761,7 +760,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
-                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="638,2457" sap2010:WorkflowViewState.IdRef="Sequence_88">
+                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="644,1885" sap2010:WorkflowViewState.IdRef="Sequence_88">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="Street1" />
                                         <Variable x:TypeArguments="x:String" Name="Street2">
@@ -775,97 +774,314 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Sequence DisplayName="Update Fields" sap:VirtualizedContainerService.HintSize="604,1902" sap2010:WorkflowViewState.IdRef="Sequence_86">
+                                      <Sequence DisplayName="Update Fields" sap:VirtualizedContainerService.HintSize="610,1825" sap2010:WorkflowViewState.IdRef="Sequence_86">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <If Condition="[in_StreetAddress.Length &gt; 34]" sap:VirtualizedContainerService.HintSize="570,671" sap2010:WorkflowViewState.IdRef="If_40">
-                                          <If.Then>
-                                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,336" sap2010:WorkflowViewState.IdRef="Sequence_101">
+                                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Country]" sap:VirtualizedContainerService.HintSize="576,953" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                          <Switch.Default>
+                                            <If Condition="[in_StreetAddress.Length &gt; 34]" DisplayName="If Length exceeds value" sap:VirtualizedContainerService.HintSize="459,25" sap2010:WorkflowViewState.IdRef="If_47">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <If Condition="[in_ExceptionLongAddress]" DisplayName="If throw exception address is too long" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_44">
-                                                <sap:WorkflowViewStateService.ViewState>
-                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                                  </scg:Dictionary>
-                                                </sap:WorkflowViewStateService.ViewState>
-                                                <If.Then>
-                                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_108">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Throw Exception="[new BusinessRuleException(&quot;Address is too long&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_3" />
-                                                  </Sequence>
-                                                </If.Then>
-                                                <If.Else>
-                                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_107">
+                                              <If.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,336" sap2010:WorkflowViewState.IdRef="Sequence_123">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If Condition="[in_ExceptionLongAddress]" DisplayName="If throw exception address is too long" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_52">
                                                     <sap:WorkflowViewStateService.ViewState>
                                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                       </scg:Dictionary>
                                                     </sap:WorkflowViewStateService.ViewState>
-                                                  </Sequence>
-                                                </If.Else>
-                                              </If>
-                                              <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(0,34)]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_13">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[Street2]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(34)]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                            </Sequence>
-                                          </If.Then>
-                                          <If.Else>
-                                            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_102">
+                                                    <If.Then>
+                                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_121">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                        <Throw Exception="[new BusinessRuleException(&quot;Address is too long&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                                                      </Sequence>
+                                                    </If.Then>
+                                                    <If.Else>
+                                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_122">
+                                                        <sap:WorkflowViewStateService.ViewState>
+                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                          </scg:Dictionary>
+                                                        </sap:WorkflowViewStateService.ViewState>
+                                                      </Sequence>
+                                                    </If.Else>
+                                                  </If>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_26">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(0,34)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_27">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Street2]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(34)]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_124">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_28">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[in_StreetAddress]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Switch.Default>
+                                          <If x:Key="FR" Condition="[in_StreetAddress.Length &gt; 34]" DisplayName="If Length exceeds value" sap:VirtualizedContainerService.HintSize="457,25" sap2010:WorkflowViewState.IdRef="If_46">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If.Then>
+                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,336" sap2010:WorkflowViewState.IdRef="Sequence_111">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[in_ExceptionLongAddress]" DisplayName="If throw exception address is too long" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_50">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If.Then>
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_109">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Throw Exception="[new BusinessRuleException(&quot;Address is too long&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_5" />
+                                                    </Sequence>
+                                                  </If.Then>
+                                                  <If.Else>
+                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_110">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Sequence>
+                                                  </If.Else>
+                                                </If>
+                                                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(0,34)]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Street2]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(34)]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_112">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[in_StreetAddress]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Else>
+                                          </If>
+                                          <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="536,673" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_29">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[in_StreetAddress]</OutArgument>
+                                              </Assign.To>
+                                              <Assign.Value>
+                                                <InArgument x:TypeArguments="x:String">[in_StreetAddress.Replace(in_VendorName,"").Trim]</InArgument>
+                                              </Assign.Value>
+                                            </Assign>
+                                            <If Condition="[in_StreetAddress.Trim.Length &gt; 34]" DisplayName="If Length exceeds value" sap:VirtualizedContainerService.HintSize="502,499" sap2010:WorkflowViewState.IdRef="If_48">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                                <Assign.To>
-                                                  <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
-                                                </Assign.To>
-                                                <Assign.Value>
-                                                  <InArgument x:TypeArguments="x:String">[in_StreetAddress]</InArgument>
-                                                </Assign.Value>
-                                              </Assign>
-                                            </Sequence>
-                                          </If.Else>
-                                        </If>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,250" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[Street1]" Version="V3">
+                                              <If.Then>
+                                                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,173" sap2010:WorkflowViewState.IdRef="Sequence_115">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Throw Exception="[new BusinessRuleException(&quot;Address is too long&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                                                </Sequence>
+                                              </If.Then>
+                                              <If.Else>
+                                                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_116">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_22">
+                                                    <Assign.To>
+                                                      <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                    </Assign.To>
+                                                    <Assign.Value>
+                                                      <InArgument x:TypeArguments="x:String">[in_StreetAddress.Trim]</InArgument>
+                                                    </Assign.Value>
+                                                  </Assign>
+                                                </Sequence>
+                                              </If.Else>
+                                            </If>
+                                          </Sequence>
+                                          <If x:Key="GB" Condition="[in_StreetAddress.Length &gt; 34]" DisplayName="If Length exceeds value" sap:VirtualizedContainerService.HintSize="457,25" sap2010:WorkflowViewState.IdRef="If_45">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <If.Then>
+                                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,336" sap2010:WorkflowViewState.IdRef="Sequence_119">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <If Condition="[in_ExceptionLongAddress]" DisplayName="If throw exception address is too long" sap:VirtualizedContainerService.HintSize="434,57" sap2010:WorkflowViewState.IdRef="If_51">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <If.Then>
+                                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_117">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <Throw Exception="[new BusinessRuleException(&quot;Address is too long&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                                                    </Sequence>
+                                                  </If.Then>
+                                                  <If.Else>
+                                                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_118">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                    </Sequence>
+                                                  </If.Else>
+                                                </If>
+                                                <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(0,34)]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_24">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Street2]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[in_StreetAddress.Substring(34)]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_120">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_25">
+                                                  <Assign.To>
+                                                    <OutArgument x:TypeArguments="x:String">[Street1]</OutArgument>
+                                                  </Assign.To>
+                                                  <Assign.Value>
+                                                    <InArgument x:TypeArguments="x:String">[in_StreetAddress]</InArgument>
+                                                  </Assign.Value>
+                                                </Assign>
+                                              </Sequence>
+                                            </If.Else>
+                                          </If>
+                                        </Switch>
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[Street1]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="157, 164, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" Guid="4fef4294-a055-4ca8-bab5-4552821d5460" InformativeScreenshot="92c97c8972a68c293cfb915b75f6fd37.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NTypeInto.Target>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <If Condition="[not String.IsNullOrEmpty(Street2)]" DisplayName="If part 2 of street exists" sap:VirtualizedContainerService.HintSize="570,57" sap2010:WorkflowViewState.IdRef="If_41">
+                                        <If Condition="[not String.IsNullOrEmpty(Street2)]" DisplayName="If part 2 of street exists" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="If_41">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -921,7 +1137,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into House Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,57" sap2010:WorkflowViewState.IdRef="NTypeInto_36" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into House Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_36" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="388, 164, 55, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/subGCS_ADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subGCS_ADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;" Guid="f61391d6-b95b-4877-9c0d-8279c351089c" ImageBase64="" InformativeScreenshot="3c9e385af6f6921a6f790ea8c2159894.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='Doc.address for the Ship-to party ( Document header )' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -937,7 +1153,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST -Type Into 'Postal code'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,57" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_PostalCode]" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST -Type Into 'Postal code'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_23" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_PostalCode]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="157, 186, 76, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Postal Code*' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Postal Code*' /&gt;" Guid="ba535c23-c6a6-4522-8b53-4543c5c77608" InformativeScreenshot="f3dfd7e0ae55b3fa68636429d00a84d9.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -948,7 +1164,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'City'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,57" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_City]" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'City'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_24" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_City]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="234, 186, 286, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='City*' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='City*' /&gt;" Guid="766184bf-06c6-46ca-8393-1a58c09480bc" InformativeScreenshot="a0bcab28a667593cee9c2e61e72e3ecb.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -959,7 +1175,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Country'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,57" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_Country]" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Country'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_25" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_Country]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="157, 208, 27, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Country Key' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Country Key' /&gt;" Guid="fe1fbc9c-a2bc-4be5-8658-a1b410c30f28" InformativeScreenshot="7b9d9fdd92029698c734d64e45474a77.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -970,7 +1186,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <If Condition="[not String.IsNullOrEmpty(in_Region)]" DisplayName="If region" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="If_29">
+                                        <If Condition="[not String.IsNullOrEmpty(in_Region)]" DisplayName="If region" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="If_29">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1001,7 +1217,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If Condition="[not String.IsNullOrEmpty(in_TimeZone)]" DisplayName="If timezone" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="If_30">
+                                        <If Condition="[not String.IsNullOrEmpty(in_TimeZone)]" DisplayName="If timezone" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="If_30">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1032,7 +1248,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If Condition="[not String.IsNullOrEmpty(in_TransportationZone)]" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="If_26">
+                                        <If Condition="[not String.IsNullOrEmpty(in_TransportationZone)]" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="If_26">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1063,7 +1279,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'PO box'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'PO box'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_29" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="157, 318, 76, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='PO Box' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='PO Box' /&gt;" Guid="b13647e4-0dd7-40e3-b441-fb1d8f60ad57" InformativeScreenshot="e6ea4e7e803660c947b01e7db34a0e38.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -1079,7 +1295,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into 'TextField PO Box Postal…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="NTypeInto_30" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V5">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into 'TextField PO Box Postal…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_30" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V5">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable ContentHash="cfOxtkGw6UiXJ22eOHVBWA" DesignTimeRectangle="157, 362, 76, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='PO Box Postal Code' /&gt;" Guid="c277fe7f-f858-47a1-a0a0-3fac40f324d4" InformativeScreenshot="831ec6283c19786c371610c5012c0dab.png" Reference="LwYOhlgeok64kz6xgXYPNA/lyq8WwxszUid__7zJXad_w" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address From Master Data for Ship-to party ( Document header )' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -1105,7 +1321,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into Company name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="NTypeInto_31" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_VendorName]" Version="V5">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into Company name" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="NTypeInto_31" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_VendorName]" Version="V5">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable ContentHash="VImUK47WHE2knfNIQk_weA" DesignTimeRectangle="157, 76, 286, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Name 1' /&gt;" Guid="8b9efe14-ca85-4ede-80bf-cd011ee19a9e" InformativeScreenshot="104bb092aec36a85c678c3d4d1c245a5.png" Reference="LwYOhlgeok64kz6xgXYPNA/sLSCnclxx0CZB5knLylDng" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address From Master Data for Ship-to party ( Document header )' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                           </uix:NTypeInto.Target>
@@ -1116,7 +1332,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                         </uix:NTypeInto>
-                                        <If Condition="[not OriginalStreet.Equals(in_StreetAddress) or not OriginalCompanyName.Equals(in_VendorName)]" DisplayName="If addres or company name different" sap:VirtualizedContainerService.HintSize="570,84" sap2010:WorkflowViewState.IdRef="If_37">
+                                        <If Condition="[not OriginalStreet.Equals(in_StreetAddress) or not OriginalCompanyName.Equals(in_VendorName)]" DisplayName="If addres or company name different" sap:VirtualizedContainerService.HintSize="576,57" sap2010:WorkflowViewState.IdRef="If_37">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1230,7 +1446,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                             </Sequence>
                                           </If.Else>
                                         </If>
-                                        <If Condition="[in_AddName2 and Not OriginalPostCode.Equals(in_PostalCode)]" DisplayName="If post code modified" sap:VirtualizedContainerService.HintSize="570,48" sap2010:WorkflowViewState.IdRef="If_25">
+                                        <If Condition="[in_AddName2 and Not OriginalPostCode.Equals(in_PostalCode)]" DisplayName="If post code modified" sap:VirtualizedContainerService.HintSize="576,48" sap2010:WorkflowViewState.IdRef="If_25">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
