@@ -56,6 +56,7 @@
       <x:String>System.Xml.Serialization</x:String>
       <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Numerics</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -119,9 +120,10 @@
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateSalesOrder" sap:VirtualizedContainerService.HintSize="2086,2249" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateSalesOrder" sap:VirtualizedContainerService.HintSize="1730,1959" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="CreateSalesTransaction" />
     </Sequence.Variables>
@@ -131,7 +133,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="CSO - START - Log Message" sap:VirtualizedContainerService.HintSize="1730,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START Create sales order ---&quot;]" />
-    <TryCatch DisplayName="Try Catch download file" sap:VirtualizedContainerService.HintSize="1730,610" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch download file" sap:VirtualizedContainerService.HintSize="1730,320" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
         <uix:NApplicationCard AttachMode="ByInstance" DisplayName="CSO - Use Browser Edge SAP Webapp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="400,25" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="e871e76e-d7fd-4c1c-8bd3-f1f5593a3dfc" Version="V2">
           <uix:NApplicationCard.Body>
@@ -139,7 +141,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,764" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,733" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -150,7 +152,7 @@
                     <uix:TargetAnchorable BrowserURL="https://vct1ascs.ebs.ecomp.com/sap(bD1FTiZjPTYwMCZpPTEmZT1RekE1T1RrM01qUmZYMTlmTUY5Zk1WOWZBbjBlMDlqT0gtQ2d5ZXFEYTFkQzFBJTNkJTNk)/bc/bsp/sap/crm_ui_frame/bspwdapplication.do?wcf-request-ticket=8E212D651BC3DF3D98F1B41C46ADDA5C" DesignTimeRectangle="13, 511, 174, 26" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame*' tag='FRAME' /&gt;&lt;webctrl id='th-l-table-navbar' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='Sales' class='th-lk' tableRow='1' tag='A' /&gt;" Guid="bee4f2d7-1f15-4194-8bde-3d696f51610a" InformativeScreenshot="7aa99b8dcaa870c144153ff1f9307f63.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="CSO - Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[CreateSalesTransaction]" sap:VirtualizedContainerService.HintSize="382,84" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+                <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="CSO - Wait for Download" DownloadFolder="[System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), &quot;Downloads&quot;)]" File="[CreateSalesTransaction]" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
                   <ui:GetLastDownloadedFile.Body>
                     <ActivityAction>
                       <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_2">
@@ -186,7 +188,7 @@
                     </uix:VerifyExecutionOptions>
                   </uix:NKeyboardShortcuts.VerifyOptions>
                 </uix:NKeyboardShortcuts>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="CSO - Click 'createsalestransaction'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,182" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e871e76e-d7fd-4c1c-8bd3-f1f5593a3dfc" Version="V3">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DelayBefore="2" DisplayName="CSO - Click 'createsalestransaction'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e871e76e-d7fd-4c1c-8bd3-f1f5593a3dfc" Version="V3">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="12b3e9c5-a702-45f7-a75f-27edb2030b6b" DesignTimeRectangle="71, 71, 155, 16" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='createsalestransaction*.sap' role='outline item' /&gt;&lt;ctrl name='createsalestransaction*.sap' role='text' /&gt;" Guid="e40a5304-936b-4de0-8697-d405adc28d4e" InformativeScreenshot="673cfc97bce8a9d7e1f6911d5765b5ef.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
@@ -206,10 +208,10 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="422,416" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>

@@ -122,7 +122,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description : Add Quantity&#xA;" DisplayName="SAP_CreateAccountOrder_AddQuantity" sap:VirtualizedContainerService.HintSize="904,1940" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description : Add Quantity&#xA;" DisplayName="SAP_CreateAccountOrder_AddQuantity" sap:VirtualizedContainerService.HintSize="808,1949" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="SAP_CreateAccountOrder_AddQuantity" Name="strSequenceName" />
     </Sequence.Variables>
@@ -132,26 +132,26 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Start Sequence " sap:VirtualizedContainerService.HintSize="808,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strSequenceName+&quot; Is Started&quot;]" />
-    <TryCatch DisplayName="Try Catch  Add Quantity" sap:VirtualizedContainerService.HintSize="808,1538" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message Start Sequence " sap:VirtualizedContainerService.HintSize="808,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strSequenceName+&quot; Is Started&quot;]" />
+    <TryCatch DisplayName="Try Catch  Add Quantity" sap:VirtualizedContainerService.HintSize="808,1543" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1256" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
+        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1257" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action  Add Quantity" sap:VirtualizedContainerService.HintSize="736,1055" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Action  Add Quantity" sap:VirtualizedContainerService.HintSize="736,1056" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,995" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,996" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,912" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktop]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,913" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktop]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -168,7 +168,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Flowchart sap:VirtualizedContainerService.HintSize="921,484.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                          <Flowchart sap:VirtualizedContainerService.HintSize="600,650" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -308,14 +308,14 @@
                                           </sap:WorkflowViewStateService.ViewState>
                                           <uix:NCheckState DisplayName="Check App State 'Information Pop up'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="NCheckState_14" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout3]" Version="V4">
                                             <uix:NCheckState.IfExists>
-                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,455" sap2010:WorkflowViewState.IdRef="Sequence_64">
+                                              <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,459" sap2010:WorkflowViewState.IdRef="Sequence_64">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Info" Message="[&quot;Pop up  Information is appeare so start to click continue&quot;]" />
-                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,177" sap2010:WorkflowViewState.IdRef="LogMessage_68" Level="Info" Message="[&quot;Pop up  Information is appeare so start to click continue&quot;]" />
+                                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Continue (Enter)'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
                                                   <uix:NClick.Target>
                                                     <uix:TargetAnchorable ContentHash="EUmhqGtV2U239mt8CeN_SQ" DesignTimeRectangle="383, 113, 20, 20" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='tbar[0]/btn[0]' tooltip='Continue   (Enter)' type='GuiButton' /&gt;" Guid="870a0b71-efe4-4e9b-91a4-9597e300a895" InformativeScreenshot="37950a65cec723376139ac108bb3809f.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/Nmy8AbTQ806vcagiDhwhvQ" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Information' aaname='Information' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
                                                   </uix:NClick.Target>
@@ -333,13 +333,13 @@
                                               </Sequence>
                                             </uix:NCheckState.IfExists>
                                             <uix:NCheckState.IfNotExists>
-                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,230" sap2010:WorkflowViewState.IdRef="Sequence_65">
+                                              <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,232" sap2010:WorkflowViewState.IdRef="Sequence_65">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Info" Message="[&quot;Pop up Information  is not appeare &quot;]" />
+                                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,170" sap2010:WorkflowViewState.IdRef="LogMessage_69" Level="Info" Message="[&quot;Pop up Information  is not appeare &quot;]" />
                                               </Sequence>
                                             </uix:NCheckState.IfNotExists>
                                             <uix:NCheckState.Target>
@@ -398,7 +398,7 @@
                                                   </Sequence>
                                                 </uix:NCheckState.IfNotExists>
                                                 <uix:NCheckState.Target>
-                                                  <uix:TargetAnchorable ContentHash="aN0Yv72HakaVCd8Q9AsWAg" DesignTimeRectangle="28, 187, 1880, 818" DesignTimeScaleFactor="1" ElementType="Container" FullSelectorArgument="&lt;sap id='shellcont/shell/shellcont[1]/shell' /&gt;" Guid="b88d1db3-238a-4667-b9a3-35007c0b069b" InformativeScreenshot="2a58a029991d38e1e108ba4e3685045c.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/dQM673SlvEyREwwgwfUBog" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='APO Availability Check *' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                                  <uix:TargetAnchorable ContentHash="aN0Yv72HakaVCd8Q9AsWAg" DesignTimeRectangle="28, 187, 1880, 818" DesignTimeScaleFactor="1" ElementType="Container" FullSelectorArgument="&lt;sap id='shellcont/shell/shellcont[1]/shell' /&gt;" Guid="b88d1db3-238a-4667-b9a3-35007c0b069b" InformativeScreenshot="2a58a029991d38e1e108ba4e3685045c.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/dQM673SlvEyREwwgwfUBog" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='*APO Availability Check*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
                                                 </uix:NCheckState.Target>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -692,7 +692,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">295,377.5 295,407.5 290,407.5 290,415</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[strSAPUN.ToLower.Trim.Equals(&quot;bag&quot;)]" DisplayName="If UN = BAG" sap:VirtualizedContainerService.HintSize="502,1536" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <If Condition="[strSAPUN.ToLower.Trim.Equals(&quot;bag&quot;)]" DisplayName="If UN = BAG" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="If_4">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -700,7 +700,7 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
-                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,1174" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                      <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,1182" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                         <Sequence.Variables>
                                           <Variable x:TypeArguments="x:String" Name="strBagQuantity" />
                                         </Sequence.Variables>
@@ -710,19 +710,19 @@
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Unit Of Measure is Equals BAG So  Start To Clicl Of The Quantity For The Bag&quot;]" />
-                                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,211" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4" />
-                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Display item det…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="Info" Message="[&quot;Unit Of Measure is Equals BAG So  Start To Clicl Of The Quantity For The Bag&quot;]" />
+                                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_11" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V4" />
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button Display item det…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V4">
                                           <uix:NClick.Target>
                                             <uix:TargetAnchorable ContentHash="n0gH-vkh0Ua0_r0bwVurDw" DesignTimeRectangle="32, 928, 20, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/subSUBSCREEN_BUTTONS:SAPMV45A:4050/btnBT_ITEM' tooltip='Display item details' /&gt;" Guid="04ae6f25-5803-4a4b-bc1b-64c30cfa5443" InformativeScreenshot="cfcf2732cf40ee7c7702664151be4197.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/k6Z1ejPczkSut_t4aJ80IA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
                                           </uix:NClick.Target>
                                         </uix:NClick>
-                                        <uix:NGetText DisplayName="Get Text 'Bag Quantity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" TextString="[strBagQuantity]" Timeout="[in_intTimeout10]" Version="V4">
+                                        <uix:NGetText DisplayName="Get Text 'Bag Quantity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,190" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" TextString="[strBagQuantity]" Timeout="[in_intTimeout10]" Version="V4">
                                           <uix:NGetText.Target>
                                             <uix:TargetAnchorable ContentHash="zE0i17HL5UqLeWa-M_1glw" DesignTimeRectangle="522, 291, 48, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4451/txtVBAP-UMVKZ' /&gt;" Guid="a43370e3-dba4-4512-b92b-36e005798027" InformativeScreenshot="03c549d07d9b17604514cfbdfa8bd1d0.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/j5xn4q_vhEyplSPoVL6qGg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
                                           </uix:NGetText.Target>
                                         </uix:NGetText>
-                                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(f3)][u(hk)]" Timeout="[in_intTimeout10]" Version="V4">
+                                        <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,249" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(f3)][u(hk)]" Timeout="[in_intTimeout10]" Version="V4">
                                           <uix:NKeyboardShortcuts.VerifyOptions>
                                             <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                                               <uix:VerifyExecutionOptions.Retry>
@@ -734,7 +734,7 @@
                                             </uix:VerifyExecutionOptions>
                                           </uix:NKeyboardShortcuts.VerifyOptions>
                                         </uix:NKeyboardShortcuts>
-                                        <Assign DisplayName="Assign in_strQuantity" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                        <Assign DisplayName="Assign in_strQuantity" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_10">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:String">[in_strQuantity]</OutArgument>
                                           </Assign.To>
@@ -745,13 +745,13 @@
                                       </Sequence>
                                     </If.Then>
                                     <If.Else>
-                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,224" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                      <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,226" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Unit Of Measure is Not Equals BAG So Keep The Quantity As Is&quot;]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,166" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="Info" Message="[&quot;Unit Of Measure is Not Equals BAG So Keep The Quantity As Is&quot;]" />
                                       </Sequence>
                                     </If.Else>
                                   </If>

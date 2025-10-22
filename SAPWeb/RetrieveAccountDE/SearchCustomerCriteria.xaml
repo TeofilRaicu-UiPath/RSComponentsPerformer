@@ -122,25 +122,25 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SearchCustomerCriteria" sap:VirtualizedContainerService.HintSize="904,1374" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SearchCustomerCriteria" sap:VirtualizedContainerService.HintSize="870,1414" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="736,1351" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="736,1391" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702,1191" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702,1231" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1129" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1169" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -156,7 +156,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="600,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Searching for  vendor : &quot; + in_Vendor + &quot;and post code&quot; + in_PostCode]" />
-                    <Flowchart DisplayName="Flowchart logic to select" sap:VirtualizedContainerService.HintSize="600,650" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                    <Flowchart DisplayName="Flowchart logic to select" sap:VirtualizedContainerService.HintSize="887,484.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                       <Flowchart.Variables>
                         <Variable x:TypeArguments="x:Int32" Default="0" Name="Position" />
                         <Variable x:TypeArguments="x:String" Name="AccountId" />
@@ -1014,21 +1014,6 @@
                       <x:Reference>__ReferenceID33</x:Reference>
                       <x:Reference>__ReferenceID34</x:Reference>
                       <x:Reference>__ReferenceID35</x:Reference>
-                      <FlowStep sap2010:WorkflowViewState.IdRef="FlowStep_20">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <av:Point x:Key="ShapeLocation">365,995</av:Point>
-                            <av:Size x:Key="ShapeSize">110,70</av:Size>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Wherever the Postal code is used, check if it's empty and skip the type into if they are.">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                        </ui:Comment>
-                      </FlowStep>
                     </Flowchart>
                   </Sequence>
                 </ActivityAction>
