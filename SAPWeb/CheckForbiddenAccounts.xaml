@@ -117,7 +117,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckForbiddenAccounts" sap:VirtualizedContainerService.HintSize="2086,3051" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckForbiddenAccounts" sap:VirtualizedContainerService.HintSize="870,3051" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="ExceptionRows" />
       <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
@@ -153,7 +153,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[CurrentRow(6).ToString.Substring(0,currentText.Length).Equals(currentText)]" DisplayName="If starts with forbiddent letters" sap:VirtualizedContainerService.HintSize="502,654" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[CurrentRow(6).ToString.Substring(0,currentText.Length).Equals(currentText) OR CurrentRow(6).ToString.ToUpper.Substring(0,2).Equals(&quot;XX&quot;)]" DisplayName="If starts with forbiddent letters" sap:VirtualizedContainerService.HintSize="502,654" sap2010:WorkflowViewState.IdRef="If_1">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -168,7 +168,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Ignored account &quot; + CurrentRow(6).ToString]" />
+                          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Ignored account &quot; + CurrentRow(6).ToString]" />
                           <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_1">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[ExceptionRows]</OutArgument>
