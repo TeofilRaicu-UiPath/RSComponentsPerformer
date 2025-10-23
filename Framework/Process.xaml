@@ -154,7 +154,7 @@
       <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="870,8772" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="1093,10476" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Message" />
       <Variable x:TypeArguments="x:Boolean" Name="Success" />
@@ -976,14 +976,14 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </ui:CommentOut>
       </Sequence>
     </Switch>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch Country process customer related messages" Expression="[Country]" sap:VirtualizedContainerService.HintSize="712,1630" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch Country process customer related messages" Expression="[Country]" sap:VirtualizedContainerService.HintSize="712,2573" sap2010:WorkflowViewState.IdRef="Switch`1_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If x:Key="FR" Condition="[Success]" sap:VirtualizedContainerService.HintSize="672,1400" sap2010:WorkflowViewState.IdRef="If_1">
+      <If x:Key="FR" Condition="[Success]" sap:VirtualizedContainerService.HintSize="683,3300" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -991,13 +991,13 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="638,1089" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="649,2989" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[CustomerOrderRelatedMessagesPresent]" sap:VirtualizedContainerService.HintSize="604,1029" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[CustomerOrderRelatedMessagesPresent]" sap:VirtualizedContainerService.HintSize="615,2929" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1005,16 +1005,16 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="570,843" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="581,2743" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[CustomerOrderRelatedMessages.ToUpper.Contains(&quot;E-BILLING&quot;) Or &#xA;CustomerOrderRelatedMessages.ToUpper.Contains(&quot;PDF INVOICING&quot;) Or &#xA;CustomerOrderRelatedMessages.ToUpper.Contains(&quot;BP UNIQUE&quot;)]" DisplayName="If ignore bill to" sap:VirtualizedContainerService.HintSize="536,57" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[CustomerOrderRelatedMessages.ToUpper.Contains(&quot;E-BILLING&quot;) Or &#xA;CustomerOrderRelatedMessages.ToUpper.Contains(&quot;PDF INVOICING&quot;) Or &#xA;CustomerOrderRelatedMessages.ToUpper.Contains(&quot;BP UNIQUE&quot;)]" DisplayName="If ignore bill to" sap:VirtualizedContainerService.HintSize="547,424" sap2010:WorkflowViewState.IdRef="If_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -1045,10 +1045,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                       </Sequence>
                     </If.Else>
                   </If>
-                  <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Z4&quot;) or CustomerOrderRelatedMessages.Contains(&quot;Prices are taken from purchasing manager/website and have to keyed as in in the order&quot;)]" DisplayName="If exact price match" sap:VirtualizedContainerService.HintSize="536,57" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Z4&quot;) or CustomerOrderRelatedMessages.Contains(&quot;Prices are taken from purchasing manager/website and have to keyed as in in the order&quot;)]" DisplayName="If exact price match" sap:VirtualizedContainerService.HintSize="547,424" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -1079,17 +1079,17 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Sequence DisplayName="Extract aditional data B FR" sap:VirtualizedContainerService.HintSize="536,621" sap2010:WorkflowViewState.IdRef="Sequence_115">
+                  <Sequence DisplayName="Extract aditional data B FR" sap:VirtualizedContainerService.HintSize="547,1355" sap2010:WorkflowViewState.IdRef="Sequence_115">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Please assign the order to the contact&quot;)]" DisplayName="If Reception" sap:VirtualizedContainerService.HintSize="502,57" sap2010:WorkflowViewState.IdRef="If_29">
+                    <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Please assign the order to the contact&quot;)]" DisplayName="If Reception" sap:VirtualizedContainerService.HintSize="502,424" sap2010:WorkflowViewState.IdRef="If_29">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -1155,10 +1155,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;OC:&quot;)]" DisplayName="If Email OC" sap:VirtualizedContainerService.HintSize="502,48" sap2010:WorkflowViewState.IdRef="If_42">
+                    <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;OC:&quot;)]" DisplayName="If Email OC" sap:VirtualizedContainerService.HintSize="502,415" sap2010:WorkflowViewState.IdRef="If_42">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
@@ -1190,10 +1190,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                       </If.Else>
                     </If>
                   </Sequence>
-                  <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Sales district&quot;)]" DisplayName="If Sales district" sap:VirtualizedContainerService.HintSize="536,48" sap2010:WorkflowViewState.IdRef="If_32">
+                  <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Sales district&quot;)]" DisplayName="If Sales district" sap:VirtualizedContainerService.HintSize="547,480" sap2010:WorkflowViewState.IdRef="If_32">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
@@ -1241,7 +1241,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="570,25" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="581,25" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1254,7 +1254,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="649,173" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1265,19 +1265,19 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </If.Else>
       </If>
       <x:Null x:Key="GB" />
-      <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="672,947" sap2010:WorkflowViewState.IdRef="Sequence_84">
+      <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="570,2311" sap2010:WorkflowViewState.IdRef="Sequence_84">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Sequence DisplayName="Extract aditional data B DE" sap:VirtualizedContainerService.HintSize="536,782" sap2010:WorkflowViewState.IdRef="Sequence_116">
+        <Sequence DisplayName="Extract aditional data B DE" sap:VirtualizedContainerService.HintSize="536,1779" sap2010:WorkflowViewState.IdRef="Sequence_116">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Please assign the order to the contact&quot;)]" DisplayName="If Reception" sap:VirtualizedContainerService.HintSize="416,214" sap2010:WorkflowViewState.IdRef="If_43">
+          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Please assign the order to the contact&quot;)]" DisplayName="If Reception" sap:VirtualizedContainerService.HintSize="502,424" sap2010:WorkflowViewState.IdRef="If_43">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1311,7 +1311,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;AB&quot;)]" DisplayName="If Email AB" sap:VirtualizedContainerService.HintSize="416,214" sap2010:WorkflowViewState.IdRef="If_44">
+          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;AB&quot;)]" DisplayName="If Email AB" sap:VirtualizedContainerService.HintSize="502,424" sap2010:WorkflowViewState.IdRef="If_44">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1346,10 +1346,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;OC&quot;)]" DisplayName="If Email OC" sap:VirtualizedContainerService.HintSize="416,57" sap2010:WorkflowViewState.IdRef="If_45">
+          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;OC&quot;)]" DisplayName="If Email OC" sap:VirtualizedContainerService.HintSize="502,424" sap2010:WorkflowViewState.IdRef="If_45">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -1380,7 +1380,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
               </Sequence>
             </If.Else>
           </If>
-          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Please use the generic email address:&quot;)]" DisplayName="If Reception" sap:VirtualizedContainerService.HintSize="416,205" sap2010:WorkflowViewState.IdRef="If_46">
+          <If Condition="[CustomerOrderRelatedMessages.Contains(&quot;Please use the generic email address:&quot;)]" DisplayName="If Reception" sap:VirtualizedContainerService.HintSize="502,415" sap2010:WorkflowViewState.IdRef="If_46">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1463,7 +1463,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
             </Sequence>
           </If.Else>
         </If>
-        <If Condition="[CustomerOrderRelatedMessages.ToLower.Contains(&quot;guv&quot;) Or&#xA;CustomerOrderRelatedMessages.ToLower.Contains(&quot;portofolio&quot;) Or&#xA;CustomerOrderRelatedMessages.ToLower.Contains(&quot;simple system&quot;) Or&#xA;ContactStatus = &quot;☑&quot;]" DisplayName="If Guv Clients" sap:VirtualizedContainerService.HintSize="536,48" sap2010:WorkflowViewState.IdRef="If_37">
+        <If Condition="[CustomerOrderRelatedMessages.ToLower.Contains(&quot;guv&quot;) Or&#xD;&#xA;CustomerOrderRelatedMessages.ToLower.Contains(&quot;portofolio&quot;) Or&#xD;&#xA;ContactStatus = &quot;☑&quot;]" DisplayName="If Guv Clients" sap:VirtualizedContainerService.HintSize="536,415" sap2010:WorkflowViewState.IdRef="If_37">
           <If.Then>
             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_100">
               <sap:WorkflowViewStateService.ViewState>
@@ -1493,10 +1493,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </If>
       </Sequence>
     </Switch>
-    <If Condition="[CustomerOrderRelatedMessagesPresent]" DisplayName="If the customer order related message is present" sap:VirtualizedContainerService.HintSize="712,57" sap2010:WorkflowViewState.IdRef="If_54">
+    <If Condition="[CustomerOrderRelatedMessagesPresent]" DisplayName="If the customer order related message is present" sap:VirtualizedContainerService.HintSize="712,818" sap2010:WorkflowViewState.IdRef="If_54">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
