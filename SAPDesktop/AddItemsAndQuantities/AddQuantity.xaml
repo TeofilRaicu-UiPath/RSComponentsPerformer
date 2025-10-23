@@ -124,7 +124,11 @@
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Description : Add Quantity&#xA;" DisplayName="SAP_CreateAccountOrder_AddQuantity" sap:VirtualizedContainerService.HintSize="878,1900" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="SAP_CreateAccountOrder_AddQuantity" Name="strSequenceName" />
+      <Variable x:TypeArguments="x:String" Name="strSequenceName">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">SAP_CreateAccountOrder_AddQuantity</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -720,7 +724,7 @@
                                         <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Get Bag Quantity FAILED" />
                                         <uix:NGetText DisplayName="Get Text 'Bag Quantity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" TextString="[strBagQuantity]" Timeout="[in_intTimeout10]" Version="V4">
                                           <uix:NGetText.Target>
-                                            <uix:TargetAnchorable ContentHash="zE0i17HL5UqLeWa-M_1glw" DesignTimeRectangle="522, 291, 48, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_ITEM/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4451/txtVBAP-UMVKZ' /&gt;" Guid="a43370e3-dba4-4512-b92b-36e005798027" InformativeScreenshot="03c549d07d9b17604514cfbdfa8bd1d0.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/j5xn4q_vhEyplSPoVL6qGg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
+                                            <uix:TargetAnchorable ContentHash="zE0i17HL5UqLeWa-M_1glw" DesignTimeRectangle="22, 717, 1500, 29" ElementType="InputBox" FullSelectorArgument="&lt;sap id='sbar/pane[0]' text='Item*' /&gt;" Guid="a43370e3-dba4-4512-b92b-36e005798027" InformativeScreenshot="ffb5d1da9735f63e75eff22068f59436.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/j5xn4q_vhEyplSPoVL6qGg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
                                           </uix:NGetText.Target>
                                         </uix:NGetText>
                                         <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_7" Shortcuts="[d(hk)][k(f3)][u(hk)]" Timeout="[in_intTimeout10]" Version="V4">
