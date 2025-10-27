@@ -117,16 +117,16 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="904,2626" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="658,2669.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="658,173" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Start type PO: &quot;+ in_PONumber]" />
-    <TryCatch DisplayName="Try Catch Create Saels Order" sap:VirtualizedContainerService.HintSize="658,2266" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="658,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Start type PO: &quot;+ in_PONumber]" />
+    <TryCatch DisplayName="Try Catch Create Saels Order" sap:VirtualizedContainerService.HintSize="658,2306" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="620,2006" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="619.3333333333334,2036" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:String" Name="PONumber" />
             <Variable x:TypeArguments="x:String" Name="teee" />
@@ -136,7 +136,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign sap:VirtualizedContainerService.HintSize="518,117.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[PONumber]</OutArgument>
             </Assign.To>
@@ -144,13 +144,13 @@
               <InArgument x:TypeArguments="x:String">[if(string.IsNullOrEmpty(in_PONumber), Now.toString("dd/MM/yyyy") ,in_PONumber)]</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,1832" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="7989f289-13b8-4093-910b-310665ac12d6" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,1858.6666666666667" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="7989f289-13b8-4093-910b-310665ac12d6" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,1672" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,1696.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="MessageType" />
                     <Variable x:TypeArguments="x:String" Name="MessageText" />
@@ -161,12 +161,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into 'PO Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="7989f289-13b8-4093-910b-310665ac12d6" Text="[PONumber]" Version="V5">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into 'PO Number'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="7989f289-13b8-4093-910b-310665ac12d6" Text="[PONumber]" Version="V5">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable ContentHash="HozQmaVbNEmBP7bUHBBm6Q" DesignTimeRectangle="144, 225, 160, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Customer Purchase Order Number' /&gt;" Guid="0b0c40f6-751a-4744-9daf-082ba36c504c" InformativeScreenshot="0a6729ce966c180a99c16aac28cbb77a.png" Reference="iOCKXVFes0-u70fxfP76Eg/Qiui-9Aq9kO-VLeHgs44eg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
+                  <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" ContinueOnError="True" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,255.33333333333334" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5">
                     <uix:NKeyboardShortcuts.VerifyOptions>
                       <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                         <uix:VerifyExecutionOptions.Retry>
@@ -258,12 +258,12 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <uix:NSAPReadStatusbar MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="450,234" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_1" MessageData="[MessageData]" MessageText="[MessageText]" MessageType="[MessageType]" Version="V5">
+                  <uix:NSAPReadStatusbar MessageId="{x:Null}" MessageNumber="{x:Null}" DisplayName="Read Status Bar" sap:VirtualizedContainerService.HintSize="450,239.33333333333334" sap2010:WorkflowViewState.IdRef="NSAPReadStatusbar_1" MessageData="[MessageData]" MessageText="[MessageText]" MessageType="[MessageType]" Version="V5">
                     <uix:NSAPReadStatusbar.Target>
-                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="3b80ce07-6701-41f9-a8c4-6c4536a80975" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" />
+                      <uix:TargetAnchorable DesignTimeRectangle="0, 0, 0, 0" Guid="b22384b4-05ab-48ee-9a94-078e82c20ed6" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Overview' /&gt;" SearchSteps="Selector" />
                     </uix:NSAPReadStatusbar.Target>
                   </uix:NSAPReadStatusbar>
-                  <If Condition="[not CBool(in_Config(&quot;PO_IgnorePODuplicates&quot;).toString)]" sap:VirtualizedContainerService.HintSize="450,386" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[not CBool(in_Config(&quot;PO_IgnorePODuplicates&quot;).toString)]" sap:VirtualizedContainerService.HintSize="450,388" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
                       <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
@@ -279,14 +279,14 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,525" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,528.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Error in PO Number &quot; + MessageText]" />
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Helpers\Outlook\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="382,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Helpers\Outlook\SendEmail.xaml">
+                              <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="382,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Error" Message="[&quot;Error in PO Number &quot; + MessageText]" />
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Helpers\Outlook\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="382,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Helpers\Outlook\SendEmail.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_Destination">[in_Config("PO_Exception_Mail_Destination").ToString]</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="in_Subject">[in_Config("PO_ExceptionMailSubject").ToString]</InArgument>
@@ -297,7 +297,7 @@
                                   <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAssetName">[in_Config("Microsoft365_CredentialName").ToString]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                               </ui:InvokeWorkflowFile>
-                              <Throw Exception="[New BusinessRuleException(&quot;BRE07: Duplicate PO Order&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                              <Throw Exception="[New BusinessRuleException(&quot;BRE07: Duplicate PO Order&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_2" />
                             </Sequence>
                           </If.Then>
                           <If.Else>
@@ -340,7 +340,7 @@
                       </Sequence>
                     </If.Else>
                   </If>
-                  <Assign DisplayName="Assign success" sap:VirtualizedContainerService.HintSize="450,107" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign DisplayName="Assign success" sap:VirtualizedContainerService.HintSize="450,110.66666666666667" sap2010:WorkflowViewState.IdRef="Assign_3">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
                     </Assign.To>

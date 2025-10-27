@@ -9,6 +9,7 @@
     <x:Property Name="in_City" Type="InArgument(x:String)" />
     <x:Property Name="in_VATNumber" Type="InArgument(x:String)" />
     <x:Property Name="in_PostCode" Type="InArgument(x:String)" />
+    <x:Property Name="in_Country" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -122,31 +123,31 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SearchCustomerCriteria" sap:VirtualizedContainerService.HintSize="1446,1414" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SearchCustomerCriteria" sap:VirtualizedContainerService.HintSize="736,1424.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="736,1391" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="736,1402" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702,1231" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702,1240" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1169" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1177.3333333333333" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="634,887" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="634,892.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_2">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="ResultsReturned" />
                     </Sequence.Variables>
@@ -155,8 +156,8 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="600,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Searching for  vendor : &quot; + in_Vendor + &quot;and post code&quot; + in_PostCode]" />
-                    <Flowchart DisplayName="Flowchart logic to select" sap:VirtualizedContainerService.HintSize="1463,778.04" sap2010:WorkflowViewState.IdRef="Flowchart_2">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="600,179.33333333333334" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Searching for  vendor : &quot; + in_Vendor + &quot;and post code&quot; + in_PostCode]" />
+                    <Flowchart DisplayName="Flowchart logic to select" sap:VirtualizedContainerService.HintSize="600,650.6666666666666" sap2010:WorkflowViewState.IdRef="Flowchart_2">
                       <Flowchart.Variables>
                         <Variable x:TypeArguments="x:Int32" Name="Position" />
                         <Variable x:TypeArguments="x:String" Name="AccountId" />
@@ -257,6 +258,7 @@
                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                             <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
+                                            <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                           </ui:InvokeWorkflowFile.Arguments>
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -506,6 +508,7 @@
                                                                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                                                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                                                         <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
+                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -625,6 +628,7 @@
                                                                                                     <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                                                                                     <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                                                                                     <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
+                                                                                                    <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                                                                                   </ui:InvokeWorkflowFile.Arguments>
                                                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
