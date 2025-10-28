@@ -236,10 +236,10 @@
                           <OutArgument x:TypeArguments="x:String">[strCountryName]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">United Kingdoms</InArgument>
+                          <InArgument x:TypeArguments="x:String">United Kingdom</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign x:Key="FR" sap:VirtualizedContainerService.HintSize="457,82" sap2010:WorkflowViewState.IdRef="Assign_12">
+                      <Assign x:Key="FR" sap:VirtualizedContainerService.HintSize="458,81" sap2010:WorkflowViewState.IdRef="Assign_12">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strCountryName]</OutArgument>
                         </Assign.To>
@@ -247,7 +247,7 @@
                           <InArgument x:TypeArguments="x:String">France</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <Assign x:Key="DE" sap:VirtualizedContainerService.HintSize="457,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+                      <Assign x:Key="DE" sap:VirtualizedContainerService.HintSize="458,82" sap2010:WorkflowViewState.IdRef="Assign_11">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[strCountryName]</OutArgument>
                         </Assign.To>
