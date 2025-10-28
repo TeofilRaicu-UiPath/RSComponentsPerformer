@@ -123,7 +123,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SearchCustomerCriteria" sap:VirtualizedContainerService.HintSize="870,1374" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SearchCustomerCriteria" sap:VirtualizedContainerService.HintSize="870,1414" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="ResultsReturned" />
     </Sequence.Variables>
@@ -132,19 +132,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="736,1351" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="736,1391" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702,1191" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="702,1231" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1129" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,1169" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -339,7 +339,7 @@
                                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                                             <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
-                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Country">GB</InArgument>
+                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                                           </ui:InvokeWorkflowFile.Arguments>
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -432,7 +432,7 @@
                                                                                 <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                                                                 <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                                                                 <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
-                                                                                <InArgument x:TypeArguments="x:String" x:Key="in_Country">GB</InArgument>
+                                                                                <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                                                               </ui:InvokeWorkflowFile.Arguments>
                                                                               <sap:WorkflowViewStateService.ViewState>
                                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -546,7 +546,7 @@
                                                                                                         <av:PointCollection x:Key="ConnectorLocation">655,1520 510,1520 510,1580</av:PointCollection>
                                                                                                       </scg:Dictionary>
                                                                                                     </sap:WorkflowViewStateService.ViewState>
-                                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckForbiddenAccounts - Invoke Workflow File (SAPWeb\CheckForbiddenAccounts.xaml)" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SAPWeb\CheckForbiddenAccounts.xaml">
+                                                                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CheckForbiddenAccounts - Invoke Workflow File (SAPWeb\CheckForbiddenAccounts.xaml)" sap:VirtualizedContainerService.HintSize="337,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SAPWeb\CheckForbiddenAccounts.xaml">
                                                                                                       <ui:InvokeWorkflowFile.Arguments>
                                                                                                         <InArgument x:TypeArguments="s:String[]" x:Key="in_GlobalExceptionAccountsStartLetters">[in_GlobalExceptionAccountsStartLetters]</InArgument>
                                                                                                         <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionAccounts">[in_ExceptionAccounts]</InArgument>
@@ -554,7 +554,7 @@
                                                                                                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                                                                                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                                                                                         <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
-                                                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Country">GB</InArgument>
+                                                                                                        <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                                                                                       </ui:InvokeWorkflowFile.Arguments>
                                                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -744,7 +744,7 @@
                                                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[out_ValidRows]</OutArgument>
                                                                             <OutArgument x:TypeArguments="x:Int32" x:Key="out_Postion">[Position]</OutArgument>
                                                                             <OutArgument x:TypeArguments="x:String" x:Key="out_AccountID">[AccountId]</OutArgument>
-                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Country">GB</InArgument>
+                                                                            <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                                                                           </ui:InvokeWorkflowFile.Arguments>
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">

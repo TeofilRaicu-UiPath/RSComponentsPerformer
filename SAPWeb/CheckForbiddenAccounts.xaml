@@ -118,7 +118,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CheckForbiddenAccounts" sap:VirtualizedContainerService.HintSize="870,4173" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CheckForbiddenAccounts" sap:VirtualizedContainerService.HintSize="870,4135" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Default="0" Name="ExceptionRows" />
       <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
@@ -131,25 +131,25 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="638,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Start check forbiddent accounts&quot;]" />
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[rowIndex]" DataTable="[in_ExtractedData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="638,3275" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[rowIndex]" DataTable="[in_ExtractedData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="638,3237" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,3079" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="604,3041" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="570,3019" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_GlobalExceptionAccountsStartLetters]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText" sap:VirtualizedContainerService.HintSize="570,2981" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[in_GlobalExceptionAccountsStartLetters]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="currentText" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,2882" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="536,2844" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,7 +229,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <ui:Comment DisplayName="Comment RT Country" sap:VirtualizedContainerService.HintSize="502,126" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Bring Country argument and create a switch for all countries. Modify external flows to pass argument" />
+                    <ui:Comment DisplayName="Comment RT Country" sap:VirtualizedContainerService.HintSize="502,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="Determine Country Name" />
                     <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_Country]" sap:VirtualizedContainerService.HintSize="502,342" sap2010:WorkflowViewState.IdRef="Switch`1_2">
                       <Assign x:Key="GB" sap:VirtualizedContainerService.HintSize="457,82" sap2010:WorkflowViewState.IdRef="Assign_13">
                         <Assign.To>

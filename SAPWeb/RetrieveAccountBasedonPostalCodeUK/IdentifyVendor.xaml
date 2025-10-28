@@ -11,6 +11,7 @@
     <x:Property Name="in_ContactLastName" Type="InArgument(x:String)" />
     <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="out_AccountIdentified" Type="OutArgument(x:Boolean)" />
+    <x:Property Name="in_Country" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -126,7 +127,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1093,1224" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="870,3300" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="VendorException" />
       <Variable x:TypeArguments="x:String" Name="PostalCode" />
@@ -142,7 +143,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign DisplayName="Assign exeption list" sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+    <Assign DisplayName="Assign exeption list" sap:VirtualizedContainerService.HintSize="706,114" sap2010:WorkflowViewState.IdRef="Assign_2">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[VendorException]</OutArgument>
       </Assign.To>
@@ -155,7 +156,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <If Condition="[VendorException.Contains(in_Vendor)]" DisplayName="If vendor in list of exception" sap:VirtualizedContainerService.HintSize="518,57" sap2010:WorkflowViewState.IdRef="If_8">
+    <If Condition="[VendorException.Contains(in_Vendor)]" DisplayName="If vendor in list of exception" sap:VirtualizedContainerService.HintSize="706,57" sap2010:WorkflowViewState.IdRef="If_8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -190,7 +191,7 @@
         </Sequence>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="706,114" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[AccountExceptions]</OutArgument>
       </Assign.To>
@@ -203,7 +204,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="518,114" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="706,114" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[GlobalRestrictedAccounts]</OutArgument>
       </Assign.To>
@@ -216,13 +217,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,802" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Identify Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="706,2878" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[in_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="da702429-086d-4241-9926-12f45aea14e0" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,642" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="672,2718" sap2010:WorkflowViewState.IdRef="Sequence_7">
             <Sequence.Variables>
               <Variable x:TypeArguments="ui:UiElement" Name="PopUp" />
             </Sequence.Variables>
@@ -231,7 +232,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="450,473" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Trace" RetryInterval="00:00:02">
+            <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="638,473" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Trace" RetryInterval="00:00:02">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
                   <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_37">
@@ -252,7 +253,7 @@
                 <ActivityFunc x:TypeArguments="x:Boolean" />
               </ui:RetryScope.Condition>
             </ui:RetryScope>
-            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OutUiElement="[PopUp]" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
+            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Customer Account Search" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="638,2133" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" OutUiElement="[PopUp]" ScopeGuid="cb1b776f-f72b-4fb2-9177-4aaed87c197e" Version="V2">
               <uix:NApplicationCard.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
@@ -326,6 +327,7 @@
                         <InArgument x:TypeArguments="s:String[]" x:Key="in_GlobalExceptionAccountsStartLetters">[GlobalRestrictedAccounts]</InArgument>
                         <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionAccounts">[AccountExceptions]</InArgument>
                         <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[ReturnedRows]</OutArgument>
+                        <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                       </ui:InvokeWorkflowFile.Arguments>
                     </ui:InvokeWorkflowFile>
                     <If Condition="[ReturnedRows &lt;&gt; 1]" sap:VirtualizedContainerService.HintSize="570,1056" sap2010:WorkflowViewState.IdRef="If_4">
@@ -353,6 +355,7 @@
                               <InArgument x:TypeArguments="s:String[]" x:Key="in_GlobalExceptionAccountsStartLetters">[GlobalRestrictedAccounts]</InArgument>
                               <InArgument x:TypeArguments="x:String" x:Key="in_ExceptionAccounts">[AccountExceptions]</InArgument>
                               <OutArgument x:TypeArguments="x:Int32" x:Key="out_ValidRows">[ReturnedRows]</OutArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="in_Country">[in_Country]</InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                           <If Condition="[ReturnedRows &lt;&gt; 1]" sap:VirtualizedContainerService.HintSize="502,491" sap2010:WorkflowViewState.IdRef="If_14">
@@ -425,12 +428,12 @@
               </uix:NApplicationCard.TargetApp>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NApplicationCard>
-            <If Condition="[ReturnedRows = 0]" DisplayName="If no result returned" sap:VirtualizedContainerService.HintSize="450,50" sap2010:WorkflowViewState.IdRef="If_9">
+            <If Condition="[ReturnedRows = 0]" DisplayName="If no result returned" sap:VirtualizedContainerService.HintSize="638,50" sap2010:WorkflowViewState.IdRef="If_9">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>

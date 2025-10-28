@@ -114,22 +114,22 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1093,5648" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="870,5736" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="556,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;---Start Setting profile parameters---&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,5288" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="556,5376" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,5028" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="518,5116" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,4891" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="484,4979" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -186,6 +186,7 @@
                     </uix:VerifyExecutionOptions>
                   </uix:NClick.VerifyOptions>
                 </uix:NClick>
+                <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="450,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Double Check parameter selection" />
                 <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'UCF_Button C102_ftb'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,225" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="03c98de4-66e7-4041-a7dc-bc7b869980f0" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="35edffc9-5905-4f15-a1f1-91292c2ed2cb" ContentHash="Tj2ImItr1UiCS3qydPOiAg" DesignTimeRectangle="660, 481, 33, 22" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl aria-role='button' idx='20' /&gt;" Guid="1da2c92b-cd67-40bc-965c-18b3501f0e14" InformativeScreenshot="47aee049a01acfc321098ad30dca4ec1.png" Reference="LwYOhlgeok64kz6xgXYPNA/iNUOIoToKkG3dBmCIqh1Qw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
