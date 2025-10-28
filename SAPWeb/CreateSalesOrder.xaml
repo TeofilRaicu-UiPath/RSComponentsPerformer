@@ -125,7 +125,7 @@
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="CreateSalesOrder" sap:VirtualizedContainerService.HintSize="1730,7259" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="CreateSalesOrder" sap:VirtualizedContainerService.HintSize="1730,8273" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="si:FileInfo" Name="CreateSalesTransaction" />
     </Sequence.Variables>
@@ -135,7 +135,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="CSO - START - Log Message" sap:VirtualizedContainerService.HintSize="1730,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START Create sales order ---&quot;]" />
-    <TryCatch DisplayName="Try Catch download file" sap:VirtualizedContainerService.HintSize="1730,84" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch download file" sap:VirtualizedContainerService.HintSize="1730,57" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -240,7 +240,7 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <uix:NCheckState DisplayName="Check App State 'Remember My Decision'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1730,84" sap2010:WorkflowViewState.IdRef="NCheckState_4" IsLoose="True" Timeout="5" Version="V5">
+    <uix:NCheckState DisplayName="Check App State 'Remember My Decision'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1730,1211" sap2010:WorkflowViewState.IdRef="NCheckState_4" IsLoose="True" Timeout="5" Version="V5">
       <uix:NCheckState.IfExists>
         <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,962" sap2010:WorkflowViewState.IdRef="Sequence_18">
           <sap:WorkflowViewStateService.ViewState>
@@ -294,25 +294,25 @@
       </uix:NCheckState.Target>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NCheckState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="SAP" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1730,6729" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_SAPDesktop]" ScopeGuid="ca0bd06f-653a-4946-9dbb-19acf7241f02" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="SAP" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1730,6645" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" OpenMode="Never" OutUiElement="[io_SAPDesktop]" ScopeGuid="ca0bd06f-653a-4946-9dbb-19acf7241f02" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1696,6430" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1696,6346" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[in_ChangeSalesGroup]" DisplayName="Ifthe sales group need to be changed" sap:VirtualizedContainerService.HintSize="1662,84" sap2010:WorkflowViewState.IdRef="If_5">
+            <If Condition="[in_ChangeSalesGroup]" DisplayName="Ifthe sales group need to be changed" sap:VirtualizedContainerService.HintSize="1662,57" sap2010:WorkflowViewState.IdRef="If_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -406,7 +406,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Pop up  Immediate Payment not appeare &quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Fatal" Message="[&quot;Pop up  Immediate Payment not appeare &quot;]" />
                 </Sequence>
               </uix:NCheckState.IfNotExists>
               <uix:NCheckState.Target>
@@ -419,7 +419,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </uix:NCheckState>
-            <If Condition="[in_BillToAddress]" DisplayName="If billing parteners appeared" sap:VirtualizedContainerService.HintSize="1662,3609" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[in_BillToAddress]" DisplayName="If billing parteners appeared" sap:VirtualizedContainerService.HintSize="1662,3596" sap2010:WorkflowViewState.IdRef="If_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -427,15 +427,15 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1628,3350" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1628,3337" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Partners'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1594,3290" sap2010:WorkflowViewState.IdRef="NCheckState_2" IsLoose="True" Timeout="5" Version="V5">
+                  <uix:NCheckState DisplayName="Check App State 'Partners'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1594,3277" sap2010:WorkflowViewState.IdRef="NCheckState_2" IsLoose="True" Timeout="5" Version="V5">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1090,3050" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1090,3037" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                         </Sequence.Variables>
@@ -444,20 +444,20 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Partner selection" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1056,2988" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" IsDisplayNameAuto="True" ScopeGuid="184e5141-e082-4c1a-a225-859e10a57796" Version="V2">
+                        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Application: Partner selection" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1056,2975" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" IsDisplayNameAuto="True" ScopeGuid="184e5141-e082-4c1a-a225-859e10a57796" Version="V2">
                           <uix:NApplicationCard.Body>
                             <ActivityAction x:TypeArguments="x:Object">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1022,2694" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1022,2683" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="988,177" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Bill to Pop Up appeared&quot;]" />
-                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="988,249" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)]f[u(ctrl)][u(hk)]" Version="V5">
+                                <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="988,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Bill to Pop Up appeared&quot;]" />
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="988,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)]f[u(ctrl)][u(hk)]" Version="V5">
                                   <uix:NKeyboardShortcuts.VerifyOptions>
                                     <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                                       <uix:VerifyExecutionOptions.Retry>
@@ -469,15 +469,15 @@
                                     </uix:VerifyExecutionOptions>
                                   </uix:NKeyboardShortcuts.VerifyOptions>
                                 </uix:NKeyboardShortcuts>
-                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into postcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="988,251" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ca0bd06f-653a-4946-9dbb-19acf7241f02" Text="[in_Postcode]" Version="V5">
+                                <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" ClipboardMode="Never" DisplayName="Type Into postcode" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="988,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="ca0bd06f-653a-4946-9dbb-19acf7241f02" Text="[in_Postcode]" Version="V5">
                                   <uix:NTypeInto.Target>
                                     <uix:TargetAnchorable ContentHash="9VfZHw2aHUqSByfWWApmhg" DesignTimeRectangle="115, 32, 286, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/txtRSYSF-STRING' /&gt;" Guid="8383347d-53fa-4fbf-b13e-0727dfc24a0e" InformativeScreenshot="0b231107f829317ffef9b8f686d9482e.png" Reference="LwYOhlgeok64kz6xgXYPNA/s1dYgeKcDkWEkF8xMBlLng" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='Find' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                   </uix:NTypeInto.Target>
                                 </uix:NTypeInto>
-                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="988,212" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5" />
-                                <uix:NCheckState DisplayName="Check App State 'Label No. of hits'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="988,1743" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="ca0bd06f-653a-4946-9dbb-19acf7241f02" Timeout="5" Version="V5">
+                                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="988,211" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(enter)][u(hk)]" Version="V5" />
+                                <uix:NCheckState DisplayName="Check App State 'Label No. of hits'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="988,1738" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="ca0bd06f-653a-4946-9dbb-19acf7241f02" Timeout="5" Version="V5">
                                   <uix:NCheckState.IfExists>
-                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,1499" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                                    <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,1496" sap2010:WorkflowViewState.IdRef="Sequence_15">
                                       <Sequence.Variables>
                                         <Variable x:TypeArguments="x:String" Name="NoHits" />
                                       </Sequence.Variables>
@@ -486,8 +486,8 @@
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Searching by postcode &quot; +in_Postcode + &quot; returned results&quot;]" />
-                                      <uix:NGetText DisplayName="Get Text 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,190" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="184e5141-e082-4c1a-a225-859e10a57796" TextString="[NoHits]" Version="V5">
+                                      <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Searching by postcode &quot; +in_Postcode + &quot; returned results&quot;]" />
+                                      <uix:NGetText DisplayName="Get Text 'Label'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="450,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="184e5141-e082-4c1a-a225-859e10a57796" TextString="[NoHits]" Version="V5">
                                         <uix:NGetText.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="116, 32, 77, 15" ElementType="Text" FullSelectorArgument="&lt;sap id='usr' /&gt;&lt;sap type='GuiLabel' id='usr/lbl[16,0]' /&gt;" Guid="7f38064d-1f63-4347-b30c-45a86a679307" ImageBase64="" InformativeScreenshot="5226be4d0d284713624fa9bf90ee30b0.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='Find' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                         </uix:NGetText.Target>
@@ -545,13 +545,13 @@
                                     </Sequence>
                                   </uix:NCheckState.IfExists>
                                   <uix:NCheckState.IfNotExists>
-                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,178" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                    <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <Throw Exception="[New BusinessRuleException(&quot;Could not identify partner, no result&quot;)]" sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                                      <Throw Exception="[New BusinessRuleException(&quot;Could not identify partner, no result&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_1" />
                                     </Sequence>
                                   </uix:NCheckState.IfNotExists>
                                   <uix:NCheckState.Target>
@@ -568,7 +568,7 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -592,7 +592,7 @@
                 </Sequence>
               </If.Else>
             </If>
-            <If Condition="[in_OpenQuotations]" DisplayName="If open quotations DE and FR" sap:VirtualizedContainerService.HintSize="1662,1015" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[in_OpenQuotations]" DisplayName="If open quotations DE and FR" sap:VirtualizedContainerService.HintSize="1662,1014" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -614,7 +614,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Open quotations appeared&quot;]" />
+                        <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="416,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Open quotations appeared&quot;]" />
                         <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="ca0bd06f-653a-4946-9dbb-19acf7241f02" Version="V5">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable ContentHash="2UE_0b436E-Px-s4gCtALg" DesignTimeRectangle="262, 53, 146, 22" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/btnSPOP-VAROPTION1' /&gt;" Guid="4675a344-3a03-4390-b543-b8a6bafb33d1" InformativeScreenshot="ef1e766c7e767d2742e10b98d0bf5fe2.png" Reference="LwYOhlgeok64kz6xgXYPNA/xVDOd86iAESbIZYWjjvS9Q" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Open quotations' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
@@ -654,7 +654,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,90" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="528,89" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -663,15 +663,15 @@
                 </Sequence>
               </If.Else>
             </If>
-            <uix:NCheckState DisplayName="Check App State ship to party" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1662,462" sap2010:WorkflowViewState.IdRef="NCheckState_5" IsLoose="True" Timeout="5" Version="V5">
+            <uix:NCheckState DisplayName="Check App State ship to party" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1662,419" sap2010:WorkflowViewState.IdRef="NCheckState_5" IsLoose="True" Timeout="5" Version="V5">
               <uix:NCheckState.IfExists>
-                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,178" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="Sequence_21">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Throw Exception="[New BusinessRuleException(&quot;Ship-to party is not assigned to a sold-to party&quot;)]" sap:VirtualizedContainerService.HintSize="416,116" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                  <Throw Exception="[New BusinessRuleException(&quot;Ship-to party is not assigned to a sold-to party&quot;)]" sap:VirtualizedContainerService.HintSize="416,115" sap2010:WorkflowViewState.IdRef="Throw_2" />
                 </Sequence>
               </uix:NCheckState.IfExists>
               <uix:NCheckState.IfNotExists>
@@ -706,6 +706,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
-    <ui:LogMessage DisplayName="CSO - END- Log Message" sap:VirtualizedContainerService.HintSize="1730,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- END Create sales order ---&quot;]" />
+    <ui:LogMessage DisplayName="CSO - END- Log Message" sap:VirtualizedContainerService.HintSize="1730,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- END Create sales order ---&quot;]" />
   </Sequence>
 </Activity>

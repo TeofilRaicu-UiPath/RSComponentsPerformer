@@ -118,9 +118,12 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="1093,1129" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="904,1129" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ss:SecureString" Name="MicrosoftOffice365Pass" />
       <Variable x:TypeArguments="x:String" Name="MicrosoftOffice365Username" />
@@ -164,7 +167,7 @@
                 </umamm:MailboxArgument>
               </umam:GetEmailByIdConnections.MailboxArg>
             </umam:GetEmailByIdConnections>
-            <umam:ForwardMail AttachmentsCollection="{x:Null}" BCC="{x:Null}" CC="{x:Null}" ContinueOnError="{x:Null}" Account="[in_EmailInbox]" AuthScopesInvalid="False" Body="[in_Message]" DisplayName="Forward Mail" sap:VirtualizedContainerService.HintSize="434,374" sap2010:WorkflowViewState.IdRef="ForwardMail_1" IsDraft="False" Message="[MailMessage]" NewSubject="[in_Subject + &quot; &quot; + MailMessage.Subject]" ReplaceExisting="False" To="[in_Destination.Split(&quot;;&quot;).ToArray]">
+            <umam:ForwardMail AttachmentsCollection="{x:Null}" BCC="{x:Null}" CC="{x:Null}" ContinueOnError="{x:Null}" Account="[in_EmailInbox]" AuthScopesInvalid="False" Body="[&quot;Hi Team,&#xD;&#xA;This order requires manual processing due to the below error message:&#xD;&#xA;&quot;+vbNewLine+in_Message+vbNewLine+&#xD;&#xA; System.Environment.UserName]" DisplayName="Forward Mail" sap:VirtualizedContainerService.HintSize="434,374" sap2010:WorkflowViewState.IdRef="ForwardMail_1" IsDraft="False" Message="[MailMessage]" NewSubject="[in_Subject + &quot; &quot; + MailMessage.Subject]" ReplaceExisting="False" To="[in_Destination.Split(&quot;;&quot;).ToArray]">
               <umam:ForwardMail.Attachments>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
               </umam:ForwardMail.Attachments>

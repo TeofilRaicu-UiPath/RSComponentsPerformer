@@ -134,7 +134,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1283,9657" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1283,10288" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FirstName" />
       <Variable x:TypeArguments="x:String" Name="LastName" />
@@ -146,9 +146,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1283,9634" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1283,10265" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <If Condition="[in_IgnoreAdding]" DisplayName="If country is DE and firstname is empty" sap:VirtualizedContainerService.HintSize="1245,9383" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[in_IgnoreAdding]" DisplayName="If country is DE and firstname is empty" sap:VirtualizedContainerService.HintSize="1245,10014" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
             <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1211,224" sap2010:WorkflowViewState.IdRef="Sequence_6">
               <sap:WorkflowViewStateService.ViewState>
@@ -168,7 +168,7 @@
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1211,9021" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="1211,9652" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -196,13 +196,13 @@
                   </Sequence>
                 </If.Else>
               </If>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1177,8529" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1177,9160" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1143,8369" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1143,9000" sap2010:WorkflowViewState.IdRef="Sequence_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -644,10 +644,10 @@
                           </Sequence>
                         </If.Else>
                       </If>
-                      <If Condition="[in_JobRoleProcurement]" DisplayName="If job role Procurement - FR, DE" sap:VirtualizedContainerService.HintSize="1109,57" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If Condition="[in_JobRoleProcurement]" DisplayName="If job role Procurement - FR, DE" sap:VirtualizedContainerService.HintSize="1109,688" sap2010:WorkflowViewState.IdRef="If_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
@@ -660,12 +660,12 @@
                             </sap:WorkflowViewStateService.ViewState>
                             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Job role" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,189" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                               <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="nItoHNzGdkmJFBwUP71fnQ" DesignTimeRectangle="1006, 563, 20, 20" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='24' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" Guid="fd1a4ed8-3a9d-44d4-bb24-155befa61cf8" ImageBase64="" InformativeScreenshot="cb0910134b41df83bbac1fc2724778ab.png" Reference="2KckjEL3hkeLxhrpoo7qIg/gWfptkuGUEaMTL8KLWYaHw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="7ah-zYmyqE2WLACL_0kvzA" DesignTimeRectangle="527, 753, 20, 20" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame*' tag='FRAME' /&gt;&lt;webctrl tag='TABLE' rowName='Job Role:' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" Guid="3866f0ad-6a32-43ca-bfe6-92b3348d0864" InformativeScreenshot="a72466570ac425eec1422575c8133017.png" Reference="2KckjEL3hkeLxhrpoo7qIg/gWfptkuGUEaMTL8KLWYaHw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
                             <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click Procurement, sourcing, order admin" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="e1cf758e-ea04-4759-8cb8-93290c2d86e5" Version="V5">
                               <uix:NClick.Target>
-                                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="7n2quzORaEi5KKiGEwrsRA" DesignTimeRectangle="526, 825, 213, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl aaname='Procurement, sourcing, order admin' class='th-hb-item' tag='A' /&gt;" Guid="c9e24c0d-eab7-4e7c-8f52-c240d2fb1a34" ImageBase64="" InformativeScreenshot="2a6a78e06620fd016f19d685c74787b9.png" Reference="2KckjEL3hkeLxhrpoo7qIg/iSuZO82Dp0-nglbKeIUk3g" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="zN2w80R2C06ler0N-LZzMg" DesignTimeRectangle="314, 653, 213, 18" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame*' tag='FRAME' /&gt;&lt;webctrl aaname='Procurement, sourcing, order admin' class='th-hb-item' tag='A' /&gt;" Guid="c9e24c0d-eab7-4e7c-8f52-c240d2fb1a34" InformativeScreenshot="a980e1a0a4e99196723601e770f0d0ed.png" Reference="2KckjEL3hkeLxhrpoo7qIg/iSuZO82Dp0-nglbKeIUk3g" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Contact: New*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                               </uix:NClick.Target>
                             </uix:NClick>
                           </Sequence>

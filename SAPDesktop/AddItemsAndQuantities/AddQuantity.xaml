@@ -122,13 +122,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description : Add Quantity&#xA;" DisplayName="SAP_CreateAccountOrder_AddQuantity" sap:VirtualizedContainerService.HintSize="878,1900" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description : Add Quantity&#xA;" DisplayName="SAP_CreateAccountOrder_AddQuantity" sap:VirtualizedContainerService.HintSize="904,1940" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Name="strSequenceName">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:String">SAP_CreateAccountOrder_AddQuantity</Literal>
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:String" Default="SAP_CreateAccountOrder_AddQuantity" Name="strSequenceName" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -137,25 +133,25 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message Start Sequence " sap:VirtualizedContainerService.HintSize="808,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[strSequenceName+&quot; Is Started&quot;]" />
-    <TryCatch DisplayName="Try Catch  Add Quantity" sap:VirtualizedContainerService.HintSize="808,1498" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch  Add Quantity" sap:VirtualizedContainerService.HintSize="808,1538" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1216" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
+        <ui:RetryScope LogRetriedExceptions="{x:Null}" RetriedExceptionsLogLevel="{x:Null}" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="770,1256" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="[in_intNumOfRetries]" RetryInterval="[in_tsRetryInterval]">
           <ui:RetryScope.ActivityBody>
             <ActivityAction>
-              <Sequence DisplayName="Action  Add Quantity" sap:VirtualizedContainerService.HintSize="736,1015" sap2010:WorkflowViewState.IdRef="Sequence_3">
+              <Sequence DisplayName="Action  Add Quantity" sap:VirtualizedContainerService.HintSize="736,1055" sap2010:WorkflowViewState.IdRef="Sequence_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,955" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Actions" sap:VirtualizedContainerService.HintSize="702,995" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,872" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktop]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
+                  <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Create Account Order Overview" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="668,912" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SAPDesktop]" OpenMode="Never" ScopeGuid="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" Timeout="[in_intTimeout10]" Version="V2">
                     <uix:NApplicationCard.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -172,7 +168,7 @@
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Flowchart sap:VirtualizedContainerService.HintSize="895,610.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+                          <Flowchart sap:VirtualizedContainerService.HintSize="921,484.04" sap2010:WorkflowViewState.IdRef="Flowchart_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -696,7 +692,7 @@
                                       <av:PointCollection x:Key="ConnectorLocation">295,377.5 295,407.5 290,407.5 290,415</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[strSAPUN.ToLower.Trim.Equals(&quot;bag&quot;)]" DisplayName="If UN = BAG" sap:VirtualizedContainerService.HintSize="502,1624" sap2010:WorkflowViewState.IdRef="If_4">
+                                  <If Condition="[strSAPUN.ToLower.Trim.Equals(&quot;bag&quot;)]" DisplayName="If UN = BAG" sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="If_4">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -721,7 +717,7 @@
                                             <uix:TargetAnchorable ContentHash="n0gH-vkh0Ua0_r0bwVurDw" DesignTimeRectangle="32, 928, 20, 22" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;sap id='usr/tabsTAXI_TABSTRIP_OVERVIEW/tabpT\01/ssubSUBSCREEN_BODY:SAPMV45A:4400/subSUBSCREEN_TC:SAPMV45A:4900/subSUBSCREEN_BUTTONS:SAPMV45A:4050/btnBT_ITEM' tooltip='Display item details' /&gt;" Guid="04ae6f25-5803-4a4b-bc1b-64c30cfa5443" InformativeScreenshot="cfcf2732cf40ee7c7702664151be4197.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/k6Z1ejPczkSut_t4aJ80IA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V4" Visibility="Interactive" WaitForReadyArgument="Complete" />
                                           </uix:NClick.Target>
                                         </uix:NClick>
-                                        <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Get Bag Quantity FAILED" />
+                                        <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="434,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Get Bag Quantity Fixed" />
                                         <uix:NGetText DisplayName="Get Text 'Bag Quantity'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="434,189" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="3059ff5a-2c98-46d4-9efa-0407e85fdeb9" TextString="[strBagQuantity]" Timeout="[in_intTimeout10]" Version="V4">
                                           <uix:NGetText.Target>
                                             <uix:TargetAnchorable ContentHash="zE0i17HL5UqLeWa-M_1glw" DesignTimeRectangle="22, 717, 1500, 29" ElementType="InputBox" FullSelectorArgument="&lt;sap id='sbar/pane[0]' text='Item*' /&gt;" Guid="a43370e3-dba4-4512-b92b-36e005798027" InformativeScreenshot="ffb5d1da9735f63e75eff22068f59436.png" Reference="Jr_8XDlrBkKIemrP6GIZ6Q/j5xn4q_vhEyplSPoVL6qGg" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' title='Create Account Order*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Complete" />
@@ -789,7 +785,7 @@
                                               <av:PointCollection x:Key="ConnectorLocation">290,575 290,605</av:PointCollection>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <If Condition="[strSapStatusBarMessage.ToLower.Contains(&quot;to ea&quot;)]" DisplayName="If need to Change UN " sap:VirtualizedContainerService.HintSize="110,70" sap2010:WorkflowViewState.IdRef="If_12">
+                                          <If Condition="[strSapStatusBarMessage.ToLower.Contains(&quot;to ea&quot;)]" DisplayName="If need to Change UN " sap:VirtualizedContainerService.HintSize="450,836" sap2010:WorkflowViewState.IdRef="If_12">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
