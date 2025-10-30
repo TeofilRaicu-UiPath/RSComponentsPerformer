@@ -5,6 +5,7 @@
     <x:Property Name="io_SAPWebWindow" Type="InOutArgument(ui:UiElement)" />
     <x:Property Name="io_SAPDesktopWindow" Type="InOutArgument(ui:Window)" />
     <x:Property Name="out_EmailId" Type="OutArgument(x:String)" />
+    <x:Property Name="out_SearchByEmail" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -159,7 +160,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="870,16528" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="904,14311" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Message" />
       <Variable x:TypeArguments="x:Boolean" Name="Success" />
@@ -227,8 +228,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="723,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process &quot; + in_TransactionItem.Reference]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataFabric - Invoke Workflow File (Helpers\JsonToTable\DataFabric.xaml)" sap:VirtualizedContainerService.HintSize="723,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Helpers\JsonToTable\DataFabric.xaml">
+    <ui:LogMessage DisplayName="Log Message Process Start" sap:VirtualizedContainerService.HintSize="655,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Process &quot; + in_TransactionItem.Reference]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DataFabric - Invoke Workflow File (Helpers\JsonToTable\DataFabric.xaml)" sap:VirtualizedContainerService.HintSize="655,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="Helpers\JsonToTable\DataFabric.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <InArgument x:TypeArguments="x:String" x:Key="in_QueueRefference">[in_TransactionItem.Reference]</InArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_EmailRecepient">[EmailRecipient]</OutArgument>
@@ -238,14 +239,14 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_EmailDestination">[EmailInbox]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Pre process extracted data" sap:VirtualizedContainerService.HintSize="655,4948" sap2010:WorkflowViewState.IdRef="Sequence_171">
+    <Sequence DisplayName="Pre process extracted data" sap:VirtualizedContainerService.HintSize="655,5011" sap2010:WorkflowViewState.IdRef="Sequence_171">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="621,85" sap2010:WorkflowViewState.IdRef="Assign_39">
+      <Assign sap:VirtualizedContainerService.HintSize="621,84" sap2010:WorkflowViewState.IdRef="Assign_39">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">[EmailRecipient]</OutArgument>
         </Assign.To>
@@ -259,7 +260,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="621,769" sap2010:WorkflowViewState.IdRef="MultipleAssign_24">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="621,768" sap2010:WorkflowViewState.IdRef="MultipleAssign_24">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -537,7 +538,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="621,57" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Extract Firstname and Lastname&quot;]">
+      <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="621,84" sap2010:WorkflowViewState.IdRef="LogMessage_3" Message="[&quot;Extract Firstname and Lastname&quot;]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -545,7 +546,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Sequence DisplayName="Sequence extract name" sap:VirtualizedContainerService.HintSize="621,2169" sap2010:WorkflowViewState.IdRef="Sequence_60">
+      <Sequence DisplayName="Sequence extract name" sap:VirtualizedContainerService.HintSize="621,1953" sap2010:WorkflowViewState.IdRef="Sequence_60">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="ReplaceTitles" />
         </Sequence.Variables>
@@ -555,7 +556,7 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="587,115" sap2010:WorkflowViewState.IdRef="Assign_30">
+        <Assign sap:VirtualizedContainerService.HintSize="570,114" sap2010:WorkflowViewState.IdRef="Assign_30">
           <Assign.To>
             <OutArgument x:TypeArguments="s:String[]">[ReplaceTitles]</OutArgument>
           </Assign.To>
@@ -563,7 +564,7 @@
             <InArgument x:TypeArguments="s:String[]">[in_Config("PO_TitlesReplace").tostring.Split(";")]</InArgument>
           </Assign.Value>
         </Assign>
-        <If Condition="[JsonObject(&quot;Buyer Contact Name&quot;).ToString.Contains(&quot;@&quot;)]" DisplayName="If it is an email" sap:VirtualizedContainerService.HintSize="587,1162" sap2010:WorkflowViewState.IdRef="If_26">
+        <If Condition="[JsonObject(&quot;Buyer Contact Name&quot;).ToString.Contains(&quot;@&quot;)]" DisplayName="If it is an email" sap:VirtualizedContainerService.HintSize="570,1156" sap2010:WorkflowViewState.IdRef="If_26">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -571,13 +572,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,167" sap2010:WorkflowViewState.IdRef="Sequence_72">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,166" sap2010:WorkflowViewState.IdRef="Sequence_72">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="434,107" sap2010:WorkflowViewState.IdRef="Assign_18">
+              <Assign sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_18">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
                 </Assign.To>
@@ -589,13 +590,13 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,824" sap2010:WorkflowViewState.IdRef="Sequence_73">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,820" sap2010:WorkflowViewState.IdRef="Sequence_73">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="502,115" sap2010:WorkflowViewState.IdRef="Assign_16">
+              <Assign sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_16">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
                 </Assign.To>
@@ -603,7 +604,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                   <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(JsonObject("Buyer Contact Name").ToString.Replace("-"," ").Replace("."," "), "[^\p{L}\p{N} ]", "")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText replace titles" sap:VirtualizedContainerService.HintSize="502,313" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ReplaceTitles]">
+              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each currentText replace titles" sap:VirtualizedContainerService.HintSize="502,312" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[ReplaceTitles]">
                 <ui:ForEach.Body>
                   <ActivityAction x:TypeArguments="x:String">
                     <ActivityAction.Argument>
@@ -635,7 +636,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                   <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(FullName, "[^\p{L}\p{N} ]", "")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Assign repalce all chars" sap:VirtualizedContainerService.HintSize="502,115" sap2010:WorkflowViewState.IdRef="Assign_43">
+              <Assign DisplayName="Assign repalce all chars" sap:VirtualizedContainerService.HintSize="502,114" sap2010:WorkflowViewState.IdRef="Assign_43">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
                 </Assign.To>
@@ -643,7 +644,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                   <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(FullName, "[^\p{L}\p{N} ]", "")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign DisplayName="Replace Non Letters" sap:VirtualizedContainerService.HintSize="502,106" sap2010:WorkflowViewState.IdRef="Assign_44">
+              <Assign DisplayName="Replace Non Letters" sap:VirtualizedContainerService.HintSize="502,105" sap2010:WorkflowViewState.IdRef="Assign_44">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:String">[FullName]</OutArgument>
                 </Assign.To>
@@ -654,15 +655,15 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
             </Sequence>
           </If.Else>
         </If>
-        <If Condition="[FullName.Trim.Contains(&quot; &quot;) AND NOT String.IsNullOrEmpty(Email)]" DisplayName="If FullName Contains a single name" sap:VirtualizedContainerService.HintSize="587,800" sap2010:WorkflowViewState.IdRef="If_76">
+        <If Condition="[FullName.Trim.Contains(&quot; &quot;) AND NOT String.IsNullOrEmpty(Email)]" DisplayName="If FullName Contains a single name" sap:VirtualizedContainerService.HintSize="570,591" sap2010:WorkflowViewState.IdRef="If_76">
           <If.Then>
-            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="553,464" sap2010:WorkflowViewState.IdRef="Sequence_186">
+            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="531,265" sap2010:WorkflowViewState.IdRef="Sequence_186">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Country]" sap:VirtualizedContainerService.HintSize="519,404" sap2010:WorkflowViewState.IdRef="Switch`1_29">
+              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Country]" sap:VirtualizedContainerService.HintSize="497,205" sap2010:WorkflowViewState.IdRef="Switch`1_29">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -717,7 +718,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:MultipleAssign x:Key="GB" sap:VirtualizedContainerService.HintSize="479,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
+                <ui:MultipleAssign x:Key="GB" sap:VirtualizedContainerService.HintSize="479,147" sap2010:WorkflowViewState.IdRef="MultipleAssign_10">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_51">
@@ -743,18 +744,25 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
             </Sequence>
           </If.Then>
           <If.Else>
-            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="553,174" sap2010:WorkflowViewState.IdRef="Sequence_187">
+            <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="531,165" sap2010:WorkflowViewState.IdRef="Sequence_187">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Throw DisplayName="Throw BRE Single Name in Full Name" Exception="[new BusinessRuleException(&quot;Single name provided and email is empty, cannot perform search.&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_11" />
+              <Assign sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_49">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Boolean">[out_SearchByEmail]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                </Assign.Value>
+              </Assign>
             </Sequence>
           </If.Else>
         </If>
       </Sequence>
-      <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="621,85" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Extracted are &quot; + FirstName + LastName]">
+      <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="621,84" sap2010:WorkflowViewState.IdRef="LogMessage_6" Message="[&quot;Extracted are &quot; + FirstName + LastName]">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -762,7 +770,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:LogMessage>
-      <Switch x:TypeArguments="x:String" DisplayName="Switch Country add processing" Expression="[Country]" sap:VirtualizedContainerService.HintSize="621,195" sap2010:WorkflowViewState.IdRef="Switch`1_24">
+      <Switch x:TypeArguments="x:String" DisplayName="Switch Country add processing" Expression="[Country]" sap:VirtualizedContainerService.HintSize="621,418" sap2010:WorkflowViewState.IdRef="Switch`1_24">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -845,7 +853,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
             <InArgument x:TypeArguments="x:String" xml:space="preserve">FR01 </InArgument>
           </Assign.Value>
         </Assign>
-        <Assign x:Key="DE" DisplayName="Assign DE input" sap:VirtualizedContainerService.HintSize="458,81" sap2010:WorkflowViewState.IdRef="Assign_20">
+        <Assign x:Key="DE" DisplayName="Assign DE input" sap:VirtualizedContainerService.HintSize="457,82" sap2010:WorkflowViewState.IdRef="Assign_20">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[Parameter]</OutArgument>
           </Assign.To>
@@ -853,7 +861,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
             <InArgument x:TypeArguments="x:String" xml:space="preserve">DE01 </InArgument>
           </Assign.Value>
         </Assign>
-        <Assign x:Key="GB" DisplayName="Assign EN input" sap:VirtualizedContainerService.HintSize="457,81" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign x:Key="GB" DisplayName="Assign EN input" sap:VirtualizedContainerService.HintSize="458,82" sap2010:WorkflowViewState.IdRef="Assign_21">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[Parameter]</OutArgument>
           </Assign.To>
@@ -916,7 +924,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="SAPWeb\RetrieveAccountBasedonPostalCodeUK\IdentifyVendor.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="SAPWeb\RetrieveAccountBasedonPostalCodeUK\IdentifyVendor.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_Vendor">[Vendor]</InArgument>
           <InArgument x:TypeArguments="ui:UiElement" x:Key="in_Window">[io_SAPWebWindow]</InArgument>
@@ -932,7 +940,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           <InArgument x:TypeArguments="x:String" x:Key="in_Country">[Country]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="SAPWeb\RetrieveAccountDE\IdentifyVendor.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="SAPWeb\RetrieveAccountDE\IdentifyVendor.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_Vendor">[Vendor]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_Name">[FirstName]</InArgument>
@@ -946,7 +954,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Switch>
-    <If Condition="[AccountIdentified]" DisplayName="If account identified, click it" sap:VirtualizedContainerService.HintSize="723,662" sap2010:WorkflowViewState.IdRef="If_27">
+    <If Condition="[AccountIdentified]" DisplayName="If account identified, click it" sap:VirtualizedContainerService.HintSize="655,660" sap2010:WorkflowViewState.IdRef="If_27">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -977,7 +985,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_75">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_75">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -986,14 +994,14 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Else>
     </If>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch country customer related messages" Expression="[Country]" sap:VirtualizedContainerService.HintSize="723,412" sap2010:WorkflowViewState.IdRef="Switch`1_22">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch country customer related messages" Expression="[Country]" sap:VirtualizedContainerService.HintSize="655,407" sap2010:WorkflowViewState.IdRef="Switch`1_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="ExtractCustomerOrderRelatedMessages - Invoke Workflow File (SAPWeb\ExtractCustomerOrderRelatedMessages.xaml)" sap:VirtualizedContainerService.HintSize="468,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="SAPWeb\ExtractCustomerOrderRelatedMessages.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="ExtractCustomerOrderRelatedMessages - Invoke Workflow File (SAPWeb\ExtractCustomerOrderRelatedMessages.xaml)" sap:VirtualizedContainerService.HintSize="468,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_39" UnSafe="False" WorkflowFileName="SAPWeb\ExtractCustomerOrderRelatedMessages.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InOutArgument x:TypeArguments="ui:UiElement" x:Key="io_Window">[io_SAPWebWindow]</InOutArgument>
           <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Succes">[Success]</OutArgument>
@@ -1019,7 +1027,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           <InArgument x:TypeArguments="x:Boolean" x:Key="in_SelectAccount">True</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <Sequence x:Key="GB" sap:VirtualizedContainerService.HintSize="468,342" sap2010:WorkflowViewState.IdRef="Sequence_105">
+      <Sequence x:Key="GB" sap:VirtualizedContainerService.HintSize="468,248" sap2010:WorkflowViewState.IdRef="Sequence_105">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1043,14 +1051,14 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </ui:InvokeWorkflowFile>
       </Sequence>
     </Switch>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch Country process customer related messages" Expression="[Country]" sap:VirtualizedContainerService.HintSize="723,2881" sap2010:WorkflowViewState.IdRef="Switch`1_4">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch Country process customer related messages" Expression="[Country]" sap:VirtualizedContainerService.HintSize="655,216" sap2010:WorkflowViewState.IdRef="Switch`1_4">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If x:Key="FR" Condition="[Success]" sap:VirtualizedContainerService.HintSize="683,2614" sap2010:WorkflowViewState.IdRef="If_1">
+      <If x:Key="FR" Condition="[Success]" sap:VirtualizedContainerService.HintSize="683,182" sap2010:WorkflowViewState.IdRef="If_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1406,7 +1414,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </Sequence>
         </If.Else>
       </If>
-      <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="683,1471" sap2010:WorkflowViewState.IdRef="Sequence_84">
+      <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="683,1261" sap2010:WorkflowViewState.IdRef="Sequence_84">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1634,15 +1642,15 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </If>
       </Sequence>
     </Switch>
-    <If Condition="[Success]" DisplayName="If the extraction was a success" sap:VirtualizedContainerService.HintSize="723,1562" sap2010:WorkflowViewState.IdRef="If_72">
+    <If Condition="[Success]" DisplayName="If the extraction was a success" sap:VirtualizedContainerService.HintSize="655,1552" sap2010:WorkflowViewState.IdRef="If_72">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="604,1301" sap2010:WorkflowViewState.IdRef="Sequence_179">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="604,1293" sap2010:WorkflowViewState.IdRef="Sequence_179">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[CustomerOrderRelatedMessagesPresent]" DisplayName="If the customer order related message is present" sap:VirtualizedContainerService.HintSize="570,1241" sap2010:WorkflowViewState.IdRef="If_54">
+          <If Condition="[CustomerOrderRelatedMessagesPresent]" DisplayName="If the customer order related message is present" sap:VirtualizedContainerService.HintSize="570,1233" sap2010:WorkflowViewState.IdRef="If_54">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1650,13 +1658,13 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,989" sap2010:WorkflowViewState.IdRef="Sequence_147">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="536,983" sap2010:WorkflowViewState.IdRef="Sequence_147">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[System.Text.RegularExpressions.Regex.Matches(CustomerOrderRelatedMessages, &quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}&quot;).Count &gt; 1]" DisplayName="If there are more email matches, then throw BRE, else extract the email" sap:VirtualizedContainerService.HintSize="502,511" sap2010:WorkflowViewState.IdRef="If_58">
+                <If Condition="[System.Text.RegularExpressions.Regex.Matches(CustomerOrderRelatedMessages, &quot;[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}&quot;).Cast(Of Match).Select(Function(m) m.Value.ToLower).Distinct().ToList().Count &gt; 1]" DisplayName="If there are more email matches, then throw BRE, else extract the email" sap:VirtualizedContainerService.HintSize="502,508" sap2010:WorkflowViewState.IdRef="If_58">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1664,24 +1672,24 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,174" sap2010:WorkflowViewState.IdRef="Sequence_151">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,173" sap2010:WorkflowViewState.IdRef="Sequence_151">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           <x:Boolean x:Key="IsPinned">False</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Throw DisplayName="Throw BRE More than one email address in the Customer order related message" Exception="[new BusinessRuleException(&quot;More than one email address in the Customer order related message&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_8" />
+                      <Throw DisplayName="Throw BRE More than one email address in the Customer order related message" Exception="[new BusinessRuleException(&quot;More than one email address in the Customer order related message&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_8" />
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_152">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_152">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Assign additionaldata b email ONLY if there is one match" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_42">
+                      <Assign DisplayName="Assign additionaldata b email ONLY if there is one match" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_42">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">[AdditionalDataBEmail]</OutArgument>
                         </Assign.To>
@@ -1698,7 +1706,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                     </Sequence>
                   </If.Else>
                 </If>
-                <If Condition="[CustomerOrderRelatedMessages.ToUpper.Trim.Contains(&quot;EDI&quot;)]" DisplayName="If EDI is present in the message" sap:VirtualizedContainerService.HintSize="502,418" sap2010:WorkflowViewState.IdRef="If_73">
+                <If Condition="[CustomerOrderRelatedMessages.ToUpper.Trim.Contains(&quot;EDI&quot;)]" DisplayName="If EDI is present in the message" sap:VirtualizedContainerService.HintSize="502,415" sap2010:WorkflowViewState.IdRef="If_73">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1706,13 +1714,13 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,166" sap2010:WorkflowViewState.IdRef="Sequence_181">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="468,165" sap2010:WorkflowViewState.IdRef="Sequence_181">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign DisplayName="Change sales group" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="Assign_45">
+                      <Assign DisplayName="Change sales group" sap:VirtualizedContainerService.HintSize="434,105" sap2010:WorkflowViewState.IdRef="Assign_45">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:Boolean">[ChangeSalesGroup]</OutArgument>
                         </Assign.To>
@@ -1723,7 +1731,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,90" sap2010:WorkflowViewState.IdRef="Sequence_182">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="468,89" sap2010:WorkflowViewState.IdRef="Sequence_182">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1735,7 +1743,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,90" sap2010:WorkflowViewState.IdRef="Sequence_157">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="536,89" sap2010:WorkflowViewState.IdRef="Sequence_157">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1748,7 +1756,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="604,90" sap2010:WorkflowViewState.IdRef="Sequence_180">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="604,89" sap2010:WorkflowViewState.IdRef="Sequence_180">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1757,8 +1765,8 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Else>
     </If>
-    <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="723,175" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Procesed customer related messages: &#xA;Ignored Bill To: &quot; + If(IsNothing(ignoreBillTo),&quot;&quot;,ignoreBillTo.ToString) + &quot;&#xA;Exact Price Match: &quot; + If(IsNothing(ExactPriceMatch),&quot;&quot;,ExactPriceMatch.ToString) + &quot;&#xA;Email Additional Data B: &quot; + If(IsNothing(AdditionalDataBEmail),&quot;&quot;,AdditionalDataBEmail.ToString) + &quot;&#xA;Overwrite Account: &quot; + If(IsNothing(OverwriteAccount),&quot;&quot;,OverwriteAccount .ToString) + &quot;&#xA;New Account &quot; + If(IsNothing(NewAccount),&quot;&quot;,NewAccount .ToString) + &quot;&#xA;&quot;]" />
-    <If Condition="[OverwriteAccount]" DisplayName="If overwrite account" sap:VirtualizedContainerService.HintSize="723,286" sap2010:WorkflowViewState.IdRef="If_33">
+    <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="655,173" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Procesed customer related messages: &#xA;Ignored Bill To: &quot; + If(IsNothing(ignoreBillTo),&quot;&quot;,ignoreBillTo.ToString) + &quot;&#xA;Exact Price Match: &quot; + If(IsNothing(ExactPriceMatch),&quot;&quot;,ExactPriceMatch.ToString) + &quot;&#xA;Email Additional Data B: &quot; + If(IsNothing(AdditionalDataBEmail),&quot;&quot;,AdditionalDataBEmail.ToString) + &quot;&#xA;Overwrite Account: &quot; + If(IsNothing(OverwriteAccount),&quot;&quot;,OverwriteAccount .ToString) + &quot;&#xA;New Account &quot; + If(IsNothing(NewAccount),&quot;&quot;,NewAccount .ToString) + &quot;&#xA;&quot;]" />
+    <If Condition="[OverwriteAccount]" DisplayName="If overwrite account" sap:VirtualizedContainerService.HintSize="655,487" sap2010:WorkflowViewState.IdRef="If_33">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1766,10 +1774,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,25" sap2010:WorkflowViewState.IdRef="Sequence_89">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,228" sap2010:WorkflowViewState.IdRef="Sequence_89">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -1782,7 +1790,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_90">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_90">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1791,14 +1799,14 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Else>
     </If>
-    <Sequence DisplayName="Sequence select contact person" sap:VirtualizedContainerService.HintSize="723,1288" sap2010:WorkflowViewState.IdRef="Sequence_50">
+    <Sequence DisplayName="Sequence select contact person" sap:VirtualizedContainerService.HintSize="655,1687" sap2010:WorkflowViewState.IdRef="Sequence_50">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[String.IsNullOrEmpty(Vendor) and String.IsNullOrEmpty(Email)]" DisplayName="If no vendor name or email" sap:VirtualizedContainerService.HintSize="450,435" sap2010:WorkflowViewState.IdRef="If_19">
+      <If Condition="[String.IsNullOrEmpty(Vendor) and String.IsNullOrEmpty(Email)]" DisplayName="If no vendor name or email" sap:VirtualizedContainerService.HintSize="450,432" sap2010:WorkflowViewState.IdRef="If_19">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1806,17 +1814,17 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="Sequence_51">
+          <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_51">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Throw DisplayName="Throw contact person does not exist" Exception="[New BusinessRuleException(&quot;Contact Person does not exist&quot;)]" sap:VirtualizedContainerService.HintSize="382,114" sap2010:WorkflowViewState.IdRef="Throw_7" />
+            <Throw DisplayName="Throw contact person does not exist" Exception="[New BusinessRuleException(&quot;Contact Person does not exist&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_7" />
           </Sequence>
         </If.Then>
         <If.Else>
-          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90" sap2010:WorkflowViewState.IdRef="Sequence_52">
+          <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_52">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1825,7 +1833,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[not String.IsNullOrEmpty(LastName) and LastName.Length &gt; 2]" DisplayName="If Vendor is not empty" sap:VirtualizedContainerService.HintSize="450,488" sap2010:WorkflowViewState.IdRef="If_20">
+      <If Condition="[not String.IsNullOrEmpty(LastName) and LastName.Length &gt; 2]" DisplayName="If Vendor is not empty" sap:VirtualizedContainerService.HintSize="450,487" sap2010:WorkflowViewState.IdRef="If_20">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1859,10 +1867,10 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </Sequence>
         </If.Else>
       </If>
-      <If Condition="[not String.IsNullOrEmpty(FirstName) and not CustomerIdentified and FirstName.Length&gt;2]" DisplayName="If no rows found and First Name not empty" sap:VirtualizedContainerService.HintSize="450,84" sap2010:WorkflowViewState.IdRef="If_28">
+      <If Condition="[not String.IsNullOrEmpty(FirstName) and not CustomerIdentified and FirstName.Length&gt;2]" DisplayName="If no rows found and First Name not empty" sap:VirtualizedContainerService.HintSize="450,487" sap2010:WorkflowViewState.IdRef="If_28">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -1957,7 +1965,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence x:Key="FR" DisplayName="France logic for creating a contact" sap:VirtualizedContainerService.HintSize="484,233" sap2010:WorkflowViewState.IdRef="Sequence_137">
+            <Sequence x:Key="FR" DisplayName="France logic for creating a contact" sap:VirtualizedContainerService.HintSize="484,352" sap2010:WorkflowViewState.IdRef="Sequence_137">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Boolean" Name="ConfirmButtonError" />
               </Sequence.Variables>
@@ -2165,7 +2173,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
               </If>
             </Sequence>
             <x:Null x:Key="DE" />
-            <Sequence x:Key="GB" DisplayName="GB logic for creating a contact person" sap:VirtualizedContainerService.HintSize="552,241" sap2010:WorkflowViewState.IdRef="Sequence_159">
+            <Sequence x:Key="GB" DisplayName="GB logic for creating a contact person" sap:VirtualizedContainerService.HintSize="552,360" sap2010:WorkflowViewState.IdRef="Sequence_159">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2398,15 +2406,15 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Else>
     </If>
-    <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="655,88" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Create Sales Order and open CRM" />
-    <Switch x:TypeArguments="x:String" DisplayName="Switch country create sales order" Expression="[Country]" sap:VirtualizedContainerService.HintSize="655,407" sap2010:WorkflowViewState.IdRef="Switch`1_12">
+    <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="655,89" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Create Sales Order and open CRM" />
+    <Switch x:TypeArguments="x:String" DisplayName="Switch country create sales order" Expression="[Country]" sap:VirtualizedContainerService.HintSize="655,216" sap2010:WorkflowViewState.IdRef="Switch`1_12">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" sap:VirtualizedContainerService.HintSize="457,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="SAPWeb\CreateSalesOrder.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="SAPWeb\CreateSalesOrder.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SAPWeb">[io_SAPWebWindow]</InArgument>
           <OutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktop">[io_SAPDesktopWindow]</OutArgument>
@@ -2416,7 +2424,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           <InArgument x:TypeArguments="x:Boolean" x:Key="in_ChangeSalesGroup">[ChangeSalesGroup]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" sap:VirtualizedContainerService.HintSize="484,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="SAPWeb\CreateSalesOrder.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" sap:VirtualizedContainerService.HintSize="484,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="SAPWeb\CreateSalesOrder.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="ui:UiElement" x:Key="in_SAPWeb">[io_SAPWebWindow]</InArgument>
           <OutArgument x:TypeArguments="ui:Window" x:Key="io_SAPDesktop">[io_SAPDesktopWindow]</OutArgument>
@@ -2744,15 +2752,15 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </Sequence>
     </Switch>
-    <If Condition="[not String.IsNullOrEmpty(ForTheAttentionOF)]" DisplayName="If FAO not empty" sap:VirtualizedContainerService.HintSize="723,526" sap2010:WorkflowViewState.IdRef="If_40">
+    <If Condition="[not String.IsNullOrEmpty(ForTheAttentionOF)]" DisplayName="If FAO not empty" sap:VirtualizedContainerService.HintSize="655,518" sap2010:WorkflowViewState.IdRef="If_40">
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="531,265" sap2010:WorkflowViewState.IdRef="Sequence_109">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="531,259" sap2010:WorkflowViewState.IdRef="Sequence_109">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Switch x:TypeArguments="x:String" DisplayName="Switch country for the attention of" Expression="[Country]" sap:VirtualizedContainerService.HintSize="497,205" sap2010:WorkflowViewState.IdRef="Switch`1_16">
+          <Switch x:TypeArguments="x:String" DisplayName="Switch country for the attention of" Expression="[Country]" sap:VirtualizedContainerService.HintSize="497,199" sap2010:WorkflowViewState.IdRef="Switch`1_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2817,7 +2825,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="531,90" sap2010:WorkflowViewState.IdRef="Sequence_110">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="531,89" sap2010:WorkflowViewState.IdRef="Sequence_110">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -2826,14 +2834,14 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </Sequence>
       </If.Else>
     </If>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch country additional data b" Expression="[Country]" sap:VirtualizedContainerService.HintSize="723,221" sap2010:WorkflowViewState.IdRef="Switch`1_18">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch country additional data b" Expression="[Country]" sap:VirtualizedContainerService.HintSize="655,216" sap2010:WorkflowViewState.IdRef="Switch`1_18">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="SAPDesktop\AdditionalDataB.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="SAPDesktop\AdditionalDataB.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_ServiceExecutant">[ServiceExecutant]</InArgument>
           <InArgument x:TypeArguments="x:String" x:Key="in_CostCenter">[CostCenter]</InArgument>
@@ -2851,7 +2859,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="SAPDesktop\AdditionalDataB.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="DE" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="SAPDesktop\AdditionalDataB.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_ServiceExecutant">
             <Literal x:TypeArguments="x:String" Value="" />
@@ -2869,7 +2877,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           <InArgument x:TypeArguments="x:String" x:Key="in_BuyerReference">[ProjectReference]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" sap:VirtualizedContainerService.HintSize="458,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="SAPDesktop\AdditionalDataB.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" sap:VirtualizedContainerService.HintSize="458,145" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="SAPDesktop\AdditionalDataB.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:String" x:Key="in_ServiceExecutant">
             <Literal x:TypeArguments="x:String" Value="" />
@@ -2890,14 +2898,14 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Switch>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch country add items and quantities" Expression="[Country]" sap:VirtualizedContainerService.HintSize="723,412" sap2010:WorkflowViewState.IdRef="Switch`1_20">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch country add items and quantities" Expression="[Country]" sap:VirtualizedContainerService.HintSize="655,407" sap2010:WorkflowViewState.IdRef="Switch`1_20">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="AddItemsandQuantities - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml)" sap:VirtualizedContainerService.HintSize="458,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="FR" DisplayName="AddItemsandQuantities - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml)" sap:VirtualizedContainerService.HintSize="458,55" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">2</InArgument>
           <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">00:00:05</InArgument>
@@ -2917,7 +2925,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
           <InArgument x:TypeArguments="x:Boolean" x:Key="in_ExactPriceMatch">[ExactPriceMatch]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="AddItemsandQuantities - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml)" sap:VirtualizedContainerService.HintSize="458,57" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" x:Key="GB" DisplayName="AddItemsandQuantities - Invoke Workflow File (SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml)" sap:VirtualizedContainerService.HintSize="458,55" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="SAPDesktop\AddItemsAndQuantities\AddItemsandQuantities.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <InArgument x:TypeArguments="x:Int32" x:Key="in_intNumOfRetries">2</InArgument>
           <InArgument x:TypeArguments="x:TimeSpan" x:Key="in_tsRetryInterval">00:00:05</InArgument>
@@ -2958,7 +2966,7 @@ JsonObject("Buyer Contact Name").ToString.Split("@"c)(0).Split("."c)(1)]</InArgu
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
     </Switch>
-    <If Condition="[not String.IsNullOrEmpty(OrderNumber)]" DisplayName="If order saved" sap:VirtualizedContainerService.HintSize="723,563" sap2010:WorkflowViewState.IdRef="If_17">
+    <If Condition="[not String.IsNullOrEmpty(OrderNumber)]" DisplayName="If order saved" sap:VirtualizedContainerService.HintSize="655,562" sap2010:WorkflowViewState.IdRef="If_17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
