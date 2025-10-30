@@ -139,7 +139,7 @@
       <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UpdateShipTo" sap:VirtualizedContainerService.HintSize="1126,16485" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UpdateShipTo" sap:VirtualizedContainerService.HintSize="1126,16678" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="OriginalCompanyName" />
       <Variable x:TypeArguments="x:String" Name="OriginalStreet" />
@@ -155,7 +155,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="UST - Log Message - START" sap:VirtualizedContainerService.HintSize="1126,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START Update Ship To ---&quot;]" />
-    <If Condition="[not string.IsNullOrWhiteSpace(in_ShipTo)]" DisplayName="UST - If Ship to was not found on invoice, leave as is " sap:VirtualizedContainerService.HintSize="1126,16125" sap2010:WorkflowViewState.IdRef="If_22">
+    <If Condition="[not string.IsNullOrWhiteSpace(in_ShipTo)]" DisplayName="UST - If Ship to was not found on invoice, leave as is " sap:VirtualizedContainerService.HintSize="1126,16318" sap2010:WorkflowViewState.IdRef="If_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,26 +163,26 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1092,15731" sap2010:WorkflowViewState.IdRef="Sequence_48">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="1092,15924" sap2010:WorkflowViewState.IdRef="Sequence_48">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="UST - Use Application: SAP DesktopApp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1058,15671" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SApDesktopWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="UST - Use Application: SAP DesktopApp" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1058,15864" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_SApDesktopWindow]" InteractionMode="Simulate" OpenMode="Never" ScopeGuid="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence sap:VirtualizedContainerService.HintSize="1024,15511" sap2010:WorkflowViewState.IdRef="Sequence_52">
+                <Sequence sap:VirtualizedContainerService.HintSize="1024,15704" sap2010:WorkflowViewState.IdRef="Sequence_52">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="UST - Do" sap:VirtualizedContainerService.HintSize="990,14116" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Sequence DisplayName="UST - Do" sap:VirtualizedContainerService.HintSize="990,14309" sap2010:WorkflowViewState.IdRef="Sequence_32">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="ExtractedCountry" />
                       <Variable x:TypeArguments="sd:DataTable" Name="ExtractDataTable" />
@@ -646,7 +646,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </uix:NGetText>
-                    <If Condition="[in_Country.Equals(ExtractedCountry)]" DisplayName="If country match" sap:VirtualizedContainerService.HintSize="814,6939" sap2010:WorkflowViewState.IdRef="If_23">
+                    <If Condition="[in_Country.Equals(ExtractedCountry)]" DisplayName="If country match" sap:VirtualizedContainerService.HintSize="814,7132" sap2010:WorkflowViewState.IdRef="If_23">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -654,7 +654,7 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <If.Then>
-                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="774,6596" sap2010:WorkflowViewState.IdRef="Sequence_53">
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="774,6789" sap2010:WorkflowViewState.IdRef="Sequence_53">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -707,7 +707,7 @@ in_VendorName.Equals(OriginalCompanyName.ToUpper) And in_StreetAddress.Equals(Or
 in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.ToUpper) )]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[not isMatch]" DisplayName="If address has to be updated" sap:VirtualizedContainerService.HintSize="740,6189" sap2010:WorkflowViewState.IdRef="If_24">
+                          <If Condition="[not isMatch]" DisplayName="If address has to be updated" sap:VirtualizedContainerService.HintSize="740,6382" sap2010:WorkflowViewState.IdRef="If_24">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -715,23 +715,23 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="706,5939" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="706,6132" sap2010:WorkflowViewState.IdRef="Sequence_56">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <ui:LogMessage DisplayName="Log Message 4" sap:VirtualizedContainerService.HintSize="664,175" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="Info" Message="[&quot;No match for address, start updating it&quot;]" />
-                                <If Condition="[in_UpdateJustStreet]" DisplayName="If update just street" sap:VirtualizedContainerService.HintSize="664,5704" sap2010:WorkflowViewState.IdRef="If_38">
+                                <If Condition="[in_UpdateJustStreet]" DisplayName="If update just street" sap:VirtualizedContainerService.HintSize="664,5897" sap2010:WorkflowViewState.IdRef="If_38">
                                   <If.Then>
-                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="630,533" sap2010:WorkflowViewState.IdRef="Sequence_87">
+                                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="630,726" sap2010:WorkflowViewState.IdRef="Sequence_87">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:LogMessage DisplayName="Log Message 5" sap:VirtualizedContainerService.HintSize="382,175" sap2010:WorkflowViewState.IdRef="LogMessage_33" Level="Info" Message="[&quot;Update just street and number&quot;]" />
-                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,250" sap2010:WorkflowViewState.IdRef="NTypeInto_38" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_StreetAddress]" Version="V3">
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,250" sap2010:WorkflowViewState.IdRef="NTypeInto_38" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[in_StreetAddress.ToUpper]" Version="V3">
                                         <uix:NTypeInto.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="157, 164, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" Guid="4fef4294-a055-4ca8-bab5-4552821d5460" InformativeScreenshot="92c97c8972a68c293cfb915b75f6fd37.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                         </uix:NTypeInto.Target>
@@ -742,7 +742,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </uix:NTypeInto>
-                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into House Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="NTypeInto_39" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
+                                      <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into House Number" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,241" sap2010:WorkflowViewState.IdRef="NTypeInto_39" InteractionMode="HardwareEvents" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Version="V3">
                                         <uix:NTypeInto.Target>
                                           <uix:TargetAnchorable DesignTimeRectangle="388, 164, 55, 20" ElementType="InputBox" FullSelectorArgument="&lt;sap id='usr/subGCS_ADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' /&gt;" FuzzySelectorArgument="&lt;sap id='usr/subGCS_ADDRESS:SAPLSZA1:0300/subCOUNTRY_SCREEN:SAPLSZA1:0301/txtADDR1_DATA-HOUSE_NUM1' matching:id='fuzzy' fuzzylevel:id='0.0' /&gt;" Guid="f61391d6-b95b-4877-9c0d-8279c351089c" ImageBase64="" InformativeScreenshot="3c9e385af6f6921a6f790ea8c2159894.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#*' title='Doc.address for the Ship-to party ( Document header )' idx='*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                         </uix:NTypeInto.Target>
@@ -753,7 +753,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                         </uix:NTypeInto.Text>
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
@@ -863,7 +863,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                               </If.Else>
                                             </If>
                                           </Switch.Default>
-                                          <If x:Key="FR" Condition="[in_StreetAddress.Length &gt; 34]" DisplayName="If Length exceeds value" sap:VirtualizedContainerService.HintSize="458,25" sap2010:WorkflowViewState.IdRef="If_46">
+                                          <If x:Key="FR" Condition="[in_StreetAddress.Length &gt; 34]" DisplayName="If Length exceeds value" sap:VirtualizedContainerService.HintSize="536,25" sap2010:WorkflowViewState.IdRef="If_46">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -959,7 +959,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                               </Sequence>
                                             </If.Else>
                                           </If>
-                                          <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="536,377" sap2010:WorkflowViewState.IdRef="Sequence_125">
+                                          <Sequence x:Key="DE" sap:VirtualizedContainerService.HintSize="536,258" sap2010:WorkflowViewState.IdRef="Sequence_125">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1107,7 +1107,7 @@ in_PostalCode.Equals(OriginalPostCode.ToUpper) And in_City.Equals(OriginalCity.T
                                           </If>
                                         </Switch>
                                         <ui:Comment DisplayName="Comment RT" sap:VirtualizedContainerService.HintSize="562,88" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Find Vendor Name" />
-                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="562,250" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[Street1]" Version="V3">
+                                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="None" DisplayName="UST - Type Into 'Street address'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="562,250" sap2010:WorkflowViewState.IdRef="NTypeInto_22" ScopeIdentifier="4d8c6f48-6f60-4929-96a1-61390e045a35" Text="[Street1.ToUpper]" Version="V3">
                                           <uix:NTypeInto.Target>
                                             <uix:TargetAnchorable DesignTimeRectangle="157, 164, 230, 20" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" FuzzySelectorArgument="&lt;sap tooltip='Street Name                                                                                                                         ' /&gt;" Guid="4fef4294-a055-4ca8-bab5-4552821d5460" InformativeScreenshot="92c97c8972a68c293cfb915b75f6fd37.png" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='#32770' title='Address*' idx='*' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                                           </uix:NTypeInto.Target>
