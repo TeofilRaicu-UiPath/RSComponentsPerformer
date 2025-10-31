@@ -108,22 +108,22 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1446,3976" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="889,4679" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="UST - Log Message - START" sap:VirtualizedContainerService.HintSize="656,173" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START For the attention of ---&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="656,3616" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="UST - Log Message - START" sap:VirtualizedContainerService.HintSize="584,175" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- START For the attention of ---&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="584,4315" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Create Account Order: Header Data" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="618,3356" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V2">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Create Account Order: Header Data" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="582,3448" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V2">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="584,3089" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,3139" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="ForTheAttentionOf" />
                 </Sequence.Variables>
@@ -132,12 +132,12 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Texts'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="550,189" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Texts'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="514,190" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable ContentHash="BhYCBaWXQUyv5WJ53YFMfg" DesignTimeRectangle="792, 227, 59, 22" FullSelectorArgument="&lt;sap text='Texts' /&gt;" Guid="98634df3-3403-4101-8f07-99b531168599" InformativeScreenshot="b3cffc9317b5c7917068007dd05f47ea.png" Reference="4SKUAodOREupFn91SuqyNg/XsCMZO-VzkiDt_sh8GVzKw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <If Condition="[in_GoToEnd]" DisplayName="If go to the end of text" sap:VirtualizedContainerService.HintSize="550,1633" sap2010:WorkflowViewState.IdRef="If_1">
+                <If Condition="[in_GoToEnd]" DisplayName="If go to the end of text" sap:VirtualizedContainerService.HintSize="514,1613" sap2010:WorkflowViewState.IdRef="If_1">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -145,19 +145,19 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="516,1374" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="512,1384" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="482,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Update First Section, add data at the end&quot;]" />
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="482,189" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
+                      <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="478,177" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Update First Section, add data at the end&quot;]" />
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,190" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="Z1vGRcFvh0CZK5wBCRIJGA" DesignTimeRectangle="347, 664, 20, 22" ElementType="Button" FullSelectorArgument="&lt;sap tooltip='Next Text Type' type='GuiButton' /&gt;" Guid="0dc8a671-bffa-4c4f-89db-34a5e6020975" InformativeScreenshot="65c9cf4d8c18b95a75c071763e11f367.png" Reference="4SKUAodOREupFn91SuqyNg/THjrEZ346E6xzp4fn-fikw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
                       </uix:NClick>
-                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Prev Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="482,225" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
+                      <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Prev Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,227" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
                         <uix:NClick.Target>
                           <uix:TargetAnchorable ContentHash="aRbAtJ3kG0qYLep9H9Cb5Q" DesignTimeRectangle="325, 654, 20, 22" ElementType="Button" FullSelectorArgument="&lt;sap tooltip='PreviousTextType' type='GuiButton' /&gt;" Guid="cbc76fbc-d15d-4481-b223-fbfedd3038ac" InformativeScreenshot="27be16dc2fc9e3fc19479f189e40cc48.png" Reference="4SKUAodOREupFn91SuqyNg/5D2-HA9uh0-NnPuSw4DWnA" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                         </uix:NClick.Target>
@@ -172,7 +172,7 @@
                           </uix:VerifyExecutionOptions>
                         </uix:NClick.VerifyOptions>
                       </uix:NClick>
-                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="482,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V5">
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,249" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V5">
                         <uix:NKeyboardShortcuts.VerifyOptions>
                           <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                             <uix:VerifyExecutionOptions.Retry>
@@ -184,7 +184,7 @@
                           </uix:VerifyExecutionOptions>
                         </uix:NKeyboardShortcuts.VerifyOptions>
                       </uix:NKeyboardShortcuts>
-                      <ui:MultipleAssign DisplayName="FTAO - Multiple Assign - combine input info into one var used in type into" sap:VirtualizedContainerService.HintSize="482,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                      <ui:MultipleAssign DisplayName="FTAO - Multiple Assign - combine input info into one var used in type into" sap:VirtualizedContainerService.HintSize="478,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
                         <ui:MultipleAssign.AssignOperations>
                           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -198,8 +198,8 @@
                           </scg:List>
                         </ui:MultipleAssign.AssignOperations>
                       </ui:MultipleAssign>
-                      <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="482,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[ForTheAttentionOf]" />
-                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="482,238" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
+                      <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="478,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[ForTheAttentionOf]" />
+                      <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="478,240" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
                         <uix:NKeyboardShortcuts.VerifyOptions>
                           <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                             <uix:VerifyExecutionOptions.Retry>
@@ -214,7 +214,7 @@
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="516,89" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="512,90" sap2010:WorkflowViewState.IdRef="Sequence_4">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -223,12 +223,12 @@
                     </Sequence>
                   </If.Else>
                 </If>
-                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="550,189" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
+                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next Text'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="514,190" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="4c14eac6-566e-4973-9a12-62ba38775bac" Version="V5">
                   <uix:NClick.Target>
                     <uix:TargetAnchorable ContentHash="Z1vGRcFvh0CZK5wBCRIJGA" DesignTimeRectangle="347, 664, 20, 22" ElementType="Button" FullSelectorArgument="&lt;sap tooltip='Next Text Type' type='GuiButton' /&gt;" Guid="0dc8a671-bffa-4c4f-89db-34a5e6020975" InformativeScreenshot="65c9cf4d8c18b95a75c071763e11f367.png" Reference="4SKUAodOREupFn91SuqyNg/THjrEZ346E6xzp4fn-fikw" ScopeSelectorArgument="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Create Account Order: Header Data' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                   </uix:NClick.Target>
                 </uix:NClick>
-                <ui:MultipleAssign DisplayName="FTAO - Multiple Assign - combine input info into one var used in type into" sap:VirtualizedContainerService.HintSize="550,148" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                <ui:MultipleAssign DisplayName="FTAO - Multiple Assign - combine input info into one var used in type into" sap:VirtualizedContainerService.HintSize="514,149" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
                   <ui:MultipleAssign.AssignOperations>
                     <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                       <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -242,9 +242,9 @@
                     </scg:List>
                   </ui:MultipleAssign.AssignOperations>
                 </ui:MultipleAssign>
-                <ui:LogMessage DisplayName="Log Message 2s" sap:VirtualizedContainerService.HintSize="550,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Update field: &quot; + ForTheAttentionOf]" />
-                <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="550,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[ForTheAttentionOf]" />
-                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="550,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V5">
+                <ui:LogMessage DisplayName="Log Message 2s" sap:VirtualizedContainerService.HintSize="514,177" sap2010:WorkflowViewState.IdRef="LogMessage_5" Message="[&quot;Update field: &quot; + ForTheAttentionOf]" />
+                <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="514,92" sap2010:WorkflowViewState.IdRef="SetToClipboard_2" Text="[ForTheAttentionOf.ToUpper]" />
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="514,249" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_3" Shortcuts="[d(hk)][k(pgdn)][u(hk)]" Version="V5">
                   <uix:NKeyboardShortcuts.VerifyOptions>
                     <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                       <uix:VerifyExecutionOptions.Retry>
@@ -256,7 +256,7 @@
                     </uix:VerifyExecutionOptions>
                   </uix:NKeyboardShortcuts.VerifyOptions>
                 </uix:NKeyboardShortcuts>
-                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="550,247" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
+                <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="514,249" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_4" Shortcuts="[d(hk)][d(ctrl)]v[u(ctrl)][u(hk)]" Version="V5">
                   <uix:NKeyboardShortcuts.VerifyOptions>
                     <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
                       <uix:VerifyExecutionOptions.Retry>
@@ -268,7 +268,7 @@
                     </uix:VerifyExecutionOptions>
                   </uix:NKeyboardShortcuts.VerifyOptions>
                 </uix:NKeyboardShortcuts>
-                <Assign DisplayName="Assign success" sap:VirtualizedContainerService.HintSize="550,107" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign DisplayName="Assign success" sap:VirtualizedContainerService.HintSize="514,168" sap2010:WorkflowViewState.IdRef="Assign_2">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[out_Success]</OutArgument>
                   </Assign.To>
@@ -296,13 +296,13 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="616,576" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="582,581" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MultipleAssign DisplayName="Multiple Assign output 2" sap:VirtualizedContainerService.HintSize="479,179" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+              <ui:MultipleAssign DisplayName="Multiple Assign output 2" sap:VirtualizedContainerService.HintSize="548,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
                 <ui:MultipleAssign.AssignOperations>
                   <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                     <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -324,14 +324,23 @@
                   </scg:List>
                 </ui:MultipleAssign.AssignOperations>
               </ui:MultipleAssign>
-              <ui:LogMessage DisplayName="Log Message Error" sap:VirtualizedContainerService.HintSize="479,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Could save for the attention of or order related messages&quot;]" />
-              <ui:LogMessage DisplayName="Log Message Error description" sap:VirtualizedContainerService.HintSize="479,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[exception.Message]" />
+              <ui:LogMessage DisplayName="Log Message Error" sap:VirtualizedContainerService.HintSize="548,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Could save for the attention of or order related messages&quot;]" />
+              <ui:LogMessage DisplayName="Log Message Error description" sap:VirtualizedContainerService.HintSize="548,166" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Error" Message="[exception.Message]" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
+      <TryCatch.Finally>
+        <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="582,90" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </Sequence>
+      </TryCatch.Finally>
     </TryCatch>
-    <ui:LogMessage DisplayName="UST - Log Message - END" sap:VirtualizedContainerService.HintSize="656,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- END For the attention of---&quot;]">
+    <ui:LogMessage DisplayName="UST - Log Message - END" sap:VirtualizedContainerService.HintSize="584,166" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;--- END For the attention of---&quot;]">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
