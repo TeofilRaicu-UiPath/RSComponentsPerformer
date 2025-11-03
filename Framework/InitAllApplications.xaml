@@ -47,6 +47,9 @@
       <x:String>UiPath.Shared.Activities</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -105,9 +108,11 @@
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1093,792" sap2010:WorkflowViewState.IdRef="Sequence_9">
+  <Sequence sap2010:Annotation.AnnotationText="Open applications used in the process and do necessary initialization procedures (e.g., login)." DisplayName="Initialize All Applications" sap:VirtualizedContainerService.HintSize="1022,4200.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_9">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="Success" />
       <Variable x:TypeArguments="x:String" Name="Message" />
@@ -118,8 +123,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAPLogin - Invoke Workflow File (SAPWeb\SAPLogin.xaml)" sap:VirtualizedContainerService.HintSize="450,177" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAPWeb\SAPLogin.xaml">
+    <ui:LogMessage DisplayName="Log message (Initialize applications)" sap:VirtualizedContainerService.HintSize="1022,176.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Trace" Message="[&quot;Opening applications...&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SAPLogin - Invoke Workflow File (SAPWeb\SAPLogin.xaml)" sap:VirtualizedContainerService.HintSize="1022,177.33333333333334" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="SAPWeb\SAPLogin.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Success">[Success]</OutArgument>
         <OutArgument x:TypeArguments="x:String" x:Key="out_Message">[Message]</OutArgument>
@@ -127,44 +132,227 @@
         <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">[in_Config]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="450,340" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[io_SAPWebWindow]" ScopeGuid="76791089-8407-4cc4-8367-0b86d958af7c" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Identify Account - [Interaction Center ]" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3365.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[io_SAPWebWindow]" ScopeGuid="76791089-8407-4cc4-8367-0b86d958af7c" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,91" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,3114" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'System'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="a258e067-d4d5-4fb8-b707-867142ec73b7" CvElementArea="18, 923, 262, 41" CvTextArea="27, 930, 72, 24" CvTextArgument="System" CvType="Button" DesignTimeRectangle="18, 923, 262, 39" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl id='th-l-table-navbar' tableRow='1' tag='TABLE' /&gt;&lt;webctrl aaname='System' class='th-lk' tableRow='1' tag='A' /&gt;" Guid="66c9752c-8bfa-4cd0-afda-e69dff1b91af" InformativeScreenshot="2e53c7efc569d34c00c4c44fddd41d94.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnRHhnMzNoSmJ3PT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'User Parameters'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="e1702c91-387c-412c-b0a2-ed720fd512f4" CvTextArea="312, 521, 149, 19" CvTextArgument="User Parameters" CvType="Text" DesignTimeRectangle="314, 521, 147, 22" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableRow='8' tag='TABLE' /&gt;&lt;webctrl aaname=' User Parameters' class='th-lk' tableRow='1' tag='A' id='C30_W115_V116_ZCTP_SU3' uipath-html-title='User Parameters' /&gt;" Guid="6f3e6a46-a39a-4efc-8be4-80cec009d688" InformativeScreenshot="7081d0740907cec4f08e1a9228f6cf8b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnWXg3RjJkcUVRPT0=)' title='Identify Account - [Interaction Center ]' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'ParametersParameters'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="fc94914e-6b08-4042-9e72-372f4a92c715" DesignTimeRectangle="516, 637, 116, 34" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[0]/usr/tabsTABSTRIP1/tabpPARAM' /&gt;" Guid="04fdf8b7-fb50-4232-81fe-e00bb0446307" InformativeScreenshot="05937bc59f4621f3842734cf5cf8db9b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnWXg3RjJkcUVRPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'UCF_Button C102_toolbar…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="e31d5af6-1913-40d7-b988-56918f307ada" DesignTimeRectangle="570, 723, 49, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[0]/usr/tabsTABSTRIP1/tabpPARAM/ssubMAINAREA:SAPLSUID_MAINTENANCE:1104/cntlG_PARAMETER_CONTAINER/shellcont/shell/tbar/btn&amp;amp;FIND' id='C102_toolbar_btn7' /&gt;" Guid="0bf9161d-c028-4072-903c-670a2aa7765d" InformativeScreenshot="7ff031e9b847ef6766663aab04b23ac8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnWXg3RjJkcUVRPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" ClipboardMode="Never" DisplayName="Type Into 'UCF_SuggestBox M1:46:::…'" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,292.6666666666667" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Text="Z_CIC_SOFF" Version="V5">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="20abb0a7-47ed-454b-a673-8d7218382512" DesignTimeRectangle="950, 644, 370, 31" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[1]/usr/txtGS_SEARCH-VALUE' /&gt;" Guid="a506db95-e186-48c7-84e1-aeb4ab51f982" InformativeScreenshot="1f227b9f48d0cc3df48ebf4bb06c0feb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnWXg3RjJkcUVRPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'UCF_Button M1:37::btn[0]'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="e8410793-e9e1-4197-8721-45562e99071a" DesignTimeRectangle="1411, 896, 49, 32" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[1]/tbar[0]/btn[0]' /&gt;" Guid="598bfc0f-7da2-47be-9249-cf8310d1e789" InformativeScreenshot="9f6bac5618c0a4727954118a2e38ed3a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnWXg3RjJkcUVRPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'UCF_Button M1:37::btn[1…'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="0099670e-4027-4ef1-a0ba-90854fddf489" DesignTimeRectangle="1466, 916, 49, 33" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[1]/tbar[0]/btn[12]' /&gt;" Guid="cd14adf8-60ad-427f-9042-77def83e2eab" InformativeScreenshot="1014d8eecd62efdbdb7a7b2f46fe3016.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnWXg3RjJkcUVRPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NSetText DisplayName="Set Text 'FR01'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,196" sap2010:WorkflowViewState.IdRef="NSetText_1" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Text="GB01" Version="V5">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="1e2f2571-70bd-4627-b06a-dfcadc63641e" DesignTimeRectangle="679, 773, 644, 39" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[0]/usr/tabsTABSTRIP1/tabpPARAM/ssubMAINAREA:SAPLSUID_MAINTENANCE:1104/cntlG_PARAMETER_CONTAINER/shellcont/shell' /&gt;&lt;webctrl sapweb-colname='PARVA' sapweb-tablerow='15' /&gt;&lt;webctrl sapweb-type='GuiTextField' /&gt;" Guid="e68faca6-d35d-46d9-815c-6ccb1ca041b2" InformativeScreenshot="615b50c4d66f9f0aa4275fdac64cd03b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRBbUwwZkM2NEgtQ3VnZThxemY1ay1BPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NSetText DisplayName="Set Text 'FR01'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,196" sap2010:WorkflowViewState.IdRef="NSetText_2" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Text="GB01" Version="V5">
+              <uix:NSetText.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="1645e203-dc59-40fd-8020-c20b7eee074c" DesignTimeRectangle="679, 822, 644, 21" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[0]/usr/tabsTABSTRIP1/tabpPARAM/ssubMAINAREA:SAPLSUID_MAINTENANCE:1104/cntlG_PARAMETER_CONTAINER/shellcont/shell' /&gt;&lt;webctrl sapweb-colname='PARVA' sapweb-tablerow='16' /&gt;&lt;webctrl sapweb-type='GuiTextField' /&gt;" Guid="6c1f0853-1b89-4353-909d-ef70144e3c40" InformativeScreenshot="4b953431d22aa0508a9f89125b23829f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRBbUwwZkM2NEgtQ3VnZThxemY1ay1BPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NSetText.Target>
+            </uix:NSetText>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="13038e0c-9a36-49e5-889f-9aca0c4f1663" DesignTimeRectangle="693, 468, 64, 33" ElementType="Button" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame2' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='myActionIframe' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl sapweb-id='wnd[0]/tbar[0]/btn[11]' /&gt;" Guid="5c8298f0-0c31-4782-94bb-72d136dcf0c2" InformativeScreenshot="bc565bf08dfd64edf83ef8bf9bf265a4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnaFN1aHlFS1ZnPT0=)' title='User Parameters - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Account Identification'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_8" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="baef4055-202e-480f-a258-b45004547fc0" CvTextArea="27, 423, 208, 19" CvTextArgument="Account Identification" CvType="Text" DesignTimeRectangle="18, 416, 262, 39" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_600_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl id='th-l-table-navbar' tableRow='1' tag='TABLE' /&gt;&lt;webctrl class='th-lk' tableRow='1' tag='A' /&gt;" Guid="3d7538b4-3990-4be9-ba38-f31cb26d772c" InformativeScreenshot="c0ec05cd118babaeed3a8a8c89462946.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(ZT1VbEJCUWs5VU1UTTNYMTlmTkY5Zk1USTRCanFLdXpveUgtQ3VnaFN1aHlFS1ZnPT0=)' title='System Work Centre - [Interaction Center ]' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State 'OK'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="954,532" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Timeout="2" Version="V5">
+              <uix:NCheckState.IfExists>
+                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,285.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,222.66666666666666" sap2010:WorkflowViewState.IdRef="NClick_9" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="76791089-8407-4cc4-8367-0b86d958af7c" Version="V5">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="8a51b8de-b9ca-480a-a9c7-cd81a0b0262e" CvElementArea="1064, 257, 107, 52" CvTextArea="1103, 273, 28, 18" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1067, 260, 102, 48" ElementType="Button" FullSelectorArgument="&lt;ctrl name='vcp1ascs.ebs.ecomp.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" Guid="eeb98c1c-23d1-4a53-81df-ab4d9ea00bfc" InformativeScreenshot="3293f0de90ae8da9e7930075d5fa81c0.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='User Parameters - [Interaction Center ] - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                    </uix:NClick.Target>
+                    <uix:NClick.VerifyOptions>
+                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                        <uix:VerifyExecutionOptions.Retry>
+                          <InArgument x:TypeArguments="x:Boolean" />
+                        </uix:VerifyExecutionOptions.Retry>
+                        <uix:VerifyExecutionOptions.Timeout>
+                          <InArgument x:TypeArguments="x:Double" />
+                        </uix:VerifyExecutionOptions.Timeout>
+                      </uix:VerifyExecutionOptions>
+                    </uix:NClick.VerifyOptions>
+                  </uix:NClick>
+                </Sequence>
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,93.33333333333333" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </Sequence>
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="8a51b8de-b9ca-480a-a9c7-cd81a0b0262e" CvElementArea="1064, 257, 107, 52" CvTextArea="1103, 273, 28, 18" CvTextArgument="OK" CvType="Button" DesignTimeRectangle="1067, 260, 102, 48" ElementType="Button" FullSelectorArgument="&lt;ctrl name='vcp1ascs.ebs.ecomp.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" Guid="b15fbcdf-b44e-4fbd-89a8-9852b65eaa9a" InformativeScreenshot="b0f23e8fc77cb257819abee52bcde200.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='User Parameters - [Interaction Center ] - Work - Microsoft​ Edge' /&gt;" SearchSteps="Selector, CV" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
       <uix:NApplicationCard.TargetApp>
-        <uix:TargetApp Area="45, 40, 1902, 961" BrowserType="Edge" ContentHash="nmWML2oyUESFQlyRu8cmdA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="c3e444443c094715b8100e4a8acae7cd.jpg" Reference="LwYOhlgeok64kz6xgXYPNA/PK9T8d-ykE60NkyRKjCQHA" Selector="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account - [Interaction Center ]' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(*==)/bc/bsp/sap/crm_ui_start/default.htm" Version="V2" />
+        <uix:TargetApp Area="45, 40, 1902, 961" BrowserType="Edge" ContentHash="nmWML2oyUESFQlyRu8cmdA" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="c3e444443c094715b8100e4a8acae7cd.jpg" Selector="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account - [Interaction Center ]' /&gt;" Url="https://vcp1ascs.ebs.ecomp.com/sap(*==)/bc/bsp/sap/crm_ui_start/default.htm" Version="V2" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <If Condition="[not Success]" DisplayName="If not logged in" sap:VirtualizedContainerService.HintSize="450,48" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[not Success]" DisplayName="If not logged in" sap:VirtualizedContainerService.HintSize="1022,428" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="Sequence_10">
+        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,174.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_10">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Throw Exception="[New Exception(&quot;Could Not Log into SAP Web&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <Throw Exception="[New Exception(&quot;Could Not Log into SAP Web&quot;)]" sap:VirtualizedContainerService.HintSize="382,114.66666666666667" sap2010:WorkflowViewState.IdRef="Throw_1" />
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,89" sap2010:WorkflowViewState.IdRef="Sequence_11">
+        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,90.66666666666667" sap2010:WorkflowViewState.IdRef="Sequence_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
