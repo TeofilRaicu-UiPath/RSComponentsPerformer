@@ -1,0 +1,6 @@
+{
+  "Name": "PO Processing Perfomer",
+  "ProjectType": "Process",
+  "Description": "PO Processing Perfomer",
+  "MainFile": "Main.xaml"
+}
