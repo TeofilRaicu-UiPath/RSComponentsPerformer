@@ -116,7 +116,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="668.6666666666666,4006.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1094.6666666666667,4266.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ClientName" />
       <Variable x:TypeArguments="ui:Window" Name="SAPSessionWindow" />
@@ -127,19 +127,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch SAP Log in" sap:VirtualizedContainerService.HintSize="668.6666666666666,3984" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch SAP Log in" sap:VirtualizedContainerService.HintSize="1094.6666666666667,4244" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Name="SAPUsername" />
         <Variable x:TypeArguments="ss:SecureString" Name="SAPPassword" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="630,3722" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="1056,3982" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="596,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1022,180" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
@@ -161,7 +161,7 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <If Condition="[system.Environment.UserName = &quot;C0999718&quot;]" DisplayName="If user C0999718" sap:VirtualizedContainerService.HintSize="596,507.3333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[system.Environment.UserName = &quot;C0999718&quot;]" DisplayName="If user C0999718" sap:VirtualizedContainerService.HintSize="1022,536" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
@@ -180,13 +180,13 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,108" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,136.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PO_SAPCredentialName&quot;).toString]" CacheStrategy="None" DisplayName="Get Credential SAP" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="382,48" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SAPPassword]" Username="[SAPUsername]">
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PO_SAPCredentialName&quot;).toString]" CacheStrategy="None" DisplayName="Get Credential SAP" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="382,76.66666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SAPPassword]" Username="[SAPUsername]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -197,19 +197,19 @@
               </Sequence>
             </If.Else>
           </If>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="596,2773.3333333333335" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[SAPSessionWindow]" ScopeGuid="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3004.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[SAPSessionWindow]" ScopeGuid="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="562,2522" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="988,2753.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Log Off'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="528,1077.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Timeout="2" Version="V5">
+                  <uix:NCheckState DisplayName="Check App State 'Log Off'" EnableIfNotExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="954,1037.3333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Timeout="2" Version="V5">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,784" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -277,49 +277,129 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Client " EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="528,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Text="[ClientName]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Client " EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Text="[ClientName]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start" ContentHash="s6AfF3A6XUGLn5zqInradw" CvElementArea="1196, 282, 49, 18" CvTextArea="1198, 285, 20, 11" CvTextArgument="600" CvType="InputBox" DesignTimeRectangle="1198, 284, 46, 14" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl sapweb-lsid='sap-client' /&gt;" FuzzySelectorArgument="&lt;webctrl sapweb-lsid='sap-client' tag='INPUT' type='text' class='lsField__input' aaname='' /&gt;" Guid="d278c1a5-efd4-48a0-b1d2-fab7b534c4d3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAASCAYAAAAZk42HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEqSURBVEhL3Za/asMwEIf1NnokPVGWDNGcIZAtkJYWuvgZ8vcVVLqkbbqEjh4u+p0sxefY2Wq4/kAQzjZ8n+5EZOifpIhs90eaL5Y0mc5ULLCCOYdFUFitXyi8f9Dl8qtigRXMm93hJgK70+cX1XWtaoEZ7EUErdKazN4rUjlDxqTlqqYYE7ztrccPSt360BTHyaAIw2bK4MlaT4yG38YRPwF4rseKM5aYv/3OSBkU8baB6oQF++C5Gxk+xO873frjPBRx7n6ERKdYpHkmupNExhyvQREAFpDWbqsTEaPBM59GSN1oiZ1vQ2o77HlX0xmRB58le+pJWJ6psfJARFeECP7mv88/XNAUMIsrCi6NT69vqmTA+hyZxaURQQF2aJWGBdYsgRQR3SG6AjfRpqqF9WyKAAAAAElFTkSuQmCC" InformativeScreenshot="7327d276896f7b2d48adfd4b9e45c7ec.png" Reference="LwYOhlgeok64kz6xgXYPNA/Vw72a6HRxESkCGDzva4-9A" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="528,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Text="[SAPUsername]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Username" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Text="[SAPUsername]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start" CvElementArea="1196, 303, 119, 18" CvType="InputBox" DesignTimeRectangle="1198, 305, 116, 14" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;webctrl sapweb-lsid='sap-user' /&gt;" FuzzySelectorArgument="&lt;webctrl sapweb-lsid='sap-user' tag='INPUT' type='text' class='lsField__input' aaname='User - Input field - Empty - Required' /&gt;" Guid="4052b7da-5ab5-4d50-8372-8bfa5a844e02" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHgAAAASCAYAAACQCxruAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADaSURBVGhD7dnNCYUwEARgsQLvkphmNFXELsWfNjxYjId9TPApogW4ywzMwYWcvkNwUwhjOifwMAzSdZ1476WqKlZhYQfDaZoO1QN4HMfXA6zezvN8AUMdw5SSlGUp+76zCruuazaEJUxP4Lqu83DbNikKXsuaA0NYhhDyd9bEAM0DAqvPzfMxILD6ENh4CGw8BDYeAhsPgY2HwMbzAMZPMQZcdOjP66Ljv6rs+z6vKhmdAS4MYXlbVfKxwV6XZbmAESC3bSvOudcD7PfbNI3EGM+XJIQXrumI/ADk5t1fXn6FkQAAAABJRU5ErkJggg==" InformativeScreenshot="b1b8186b0d0f9f3e1dc0b6e2b8678f67.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Password" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="528,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" SecureText="[SAPPassword]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into Password" EmptyFieldMode="SingleLine" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,254.66666666666666" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" SecureText="[SAPPassword]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start" CvElementArea="1196, 324, 120, 18" CvType="InputBox" DesignTimeRectangle="1198, 326, 116, 14" DesignTimeScaleFactor="1" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl sapweb-lsid='sap-password' /&gt;" FuzzySelectorArgument="&lt;webctrl sapweb-lsid='sap-password' tag='INPUT' type='password' class='lsField__input' aaname='' /&gt;" Guid="894f5199-abe3-40e0-87ce-28900aa7fad3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHgAAAASCAYAAACQCxruAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC5SURBVGhD7dkxCsIwGMVxD9eT6CkKHbxBr+DgVGhnZzE36KQWuhRx6BAcM3z6bBvIEfJ4f3hL1h9Zkp0p6iJw5+52qC9WlI2W8WDYucequgIDtzpdrR9e5v1Hy3gwhCVMI/D+p/6cZgshaASDJW5yBMbVVlxtpgImTcDkCZg8AZMnYPIETJ6AyRMweQImLwHGU+X49v8DlX+wTJ4q8TB9PDshEwRDWCafDajVdyHFYNjeFlwUgRVjZl86qO9Mih7DQAAAAABJRU5ErkJggg==" InformativeScreenshot="37bfd7cbb2bd89f2601bbfbd3c973f78.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click log On" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="528,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click log On" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="954,191.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start" CvElementArea="1196, 366, 56, 19" CvTextArea="1208, 369, 37, 13" CvTextArgument="Log On" CvType="Button" DesignTimeRectangle="1197, 367, 55, 16" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl sapweb-lsid='LOGON_BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl sapweb-lsid='LOGON_BUTTON' tag='DIV' type='' class='lsButton lsButton--base lsTbarBtnStd urInlineMetricTop urNoUserSelect urBtnRadius lsButton--active lsButton--hoverable lsButton--focusable lsButton--up lsButton--design-emphasized lsButton--default' aaname='' check:innerText='Log On' /&gt;" Guid="85790b55-c85f-4885-951f-c70223310b33" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADsAAAAUCAYAAAAz30VQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK0SURBVFhH5ZfbSxRRHMf3L5AICcKCSWmHRAgkWELoISJ1vTysOA+mPSX5EIS4oQ9rmlKB7lkljUzKxJ4iosvOlESQPvQkFcWWD7sQdKGg6EJQ5Cz8OpeZcc6cM1vs+rLuDz5w5vu77O+7Mws7ASihKF2zk4nzUB3cCYFAoKghHibROcvVejhmidG6Q2G4/OAVLKaBw/z4uCiZiJ+13LFwzFYHd8DKs5fw83dW4M+vL0XJnmCF5Y6FY5bcfv3Fdylr7+8XJcSTOzizD1M/pMgGJVvx76N1RJormOsHnN8fQR2+Jq/7BznN3lz5KmXt7S2BZAtepCUmzRXEQh3epQLiT2wtBu3E8NAlvu4/yGn2yvJnKeabBQG9GZttjkpz6cHtdB5BHUSOTnuIXhkCrTIA2ry3FwHCuruHMh/CfSHQ7bPVz2YdgbS71gXJu4MzG1/8JMXMXBDQm/AHNfWIublaPKsWdHrdAxqeq8159KUIqLbu7nXXC/o2QEv4TOdYZ996Rk6zQ7c/SDFXRwT0Rmy2sUvQ0wPlnE7q1IFeT30voF14yVm+11ztYstL9XJAj/B5tgbvWgM61f3mMHKaPXXjnZRsKipgNODlG9oEPdO/ldNJndrf7anvZkvO8L22Tuo5fUbF+6lgeM++cxj5mX1+XMCox8vXh8XcdBWeVQUGvQ6zOzXt0Y397DEmuruXQOu2ADJsjc1Qox2uvD2/A5DiMweTn9mnRwWMw9gs7nGjTbFcpq/M0dS+iNijKKCRJa16geQ++mXIZmSnFKwpYNDrCDPrM4f0uiNvswVBzZQBSkpyG4ivWfJ3sXP0Hpy8+lrg23J74YzxLxi7T4TldRuI79/FCTQKyt6D0Ba7C8cupjhSdzqLksTYacsdC+4+J8bPbJpXvMT4sOVqPfiHepNHCZkF+AuSaDeHKDqZzwAAAABJRU5ErkJggg==" InformativeScreenshot="5ccf76ca79e26f415c41b7a1c50678cb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NCheckState DisplayName="Check App State 'Log Off'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="528,426.6666666666667" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Timeout="10" Version="V3">
+                  <uix:NCheckState DisplayName="Check App State 'You are already logged …'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="954,698" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Timeout="10" Version="V5">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,371.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,229.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V5">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="e4e7c04e-d2b3-441e-b7c3-506e9f07c357" DesignTimeRectangle="976, 686, 93, 23" FullSelectorArgument="&lt;webctrl sapweb-lsid='SESSION_QUERY_CONTINUE_BUTTON' /&gt;" Guid="16a13ea2-eac4-4dca-8c1e-a3075bca69fe" InformativeScreenshot="60ee456dcc3970d2d8bf22bed3bdfe39.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon Status Check' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
+                          </uix:NClick.Target>
+                          <uix:NClick.VerifyOptions>
+                            <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                              <uix:VerifyExecutionOptions.Retry>
+                                <InArgument x:TypeArguments="x:Boolean" />
+                              </uix:VerifyExecutionOptions.Retry>
+                              <uix:VerifyExecutionOptions.Timeout>
+                                <InArgument x:TypeArguments="x:Double" />
+                              </uix:VerifyExecutionOptions.Timeout>
+                            </uix:VerifyExecutionOptions>
+                          </uix:NClick.VerifyOptions>
+                        </uix:NClick>
+                        <uix:NCheckState DisplayName="Check App State 'Log Off'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,79.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_4" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Timeout="10" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[New Exception(&quot;Log in unsuccesfull&quot;)]" sap:VirtualizedContainerService.HintSize="416,117.33333333333333" sap2010:WorkflowViewState.IdRef="Throw_2" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crmcmp_hdr/bspwdapplication.do?saprole=ZCTP_AGENT" CvTextArea="2051, 83, 49, 16" CvTextArgument="Log Off" CvType="Text" DesignTimeRectangle="2052, 83, 46, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' type='' tag='A' class='th-l-logofflink' aaname='Log Off' check:text='Log Off' /&gt;" Guid="d2b38e2d-ce3d-4611-a58f-75e40bd23b0b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAATCAYAAADSz14iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVEhL7VXBDYMwDGQbBmCYigW6Q6ZADIH64s0EfFiir4oXH168cAOxTQgphSpAqXqSP7bj88WO4sFJ0bYtNE0DdV1DVVVwWiEm/kK+DYOQRwp+cAVPFOjYAyVEoeTseMkm/AVcOB5DJj33RHC+n5R91oFCsMEwhTt6uAfNR01fcnTYzkkcJiQTkisQED3QQcjj0U1vI4RyyIxcfeSeiK2ECvZmFDAma4/q9b6birENF7FcyCRuNGPEuQlbs7Nc47rOJ6IKjldB9y0l7HGkENtO6yTT+IyQFTHnQvTbJ+i+pYSE4x77JG4UNOLUwCshfB7/hh5UQzvzuRCLcREzxxDNzUvzk3R2IgrvP8T1QpwDCV9N2DHcCcHd5pvC6dGubw2nE1EPWLOdptFhw9XaFz8iBOAJGfE36Y5qDFcAAAAASUVORK5CYII=" InformativeScreenshot="f5b55eabeeaf04a2af7071fca097a00c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Identify Account - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,180" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,142" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Throw Exception="[New Exception(&quot;Log in unsuccesfull&quot;)]" sap:VirtualizedContainerService.HintSize="416,117.33333333333333" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        <uix:NCheckState DisplayName="Check App State 'Log Off'" EnableIfExists="False" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="416,79.33333333333333" sap2010:WorkflowViewState.IdRef="NCheckState_5" ScopeIdentifier="416c01d3-306c-49a4-83d8-d6f02a335141" Timeout="10" Version="V3">
+                          <uix:NCheckState.IfExists>
+                            <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,105" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </Sequence>
+                          </uix:NCheckState.IfExists>
+                          <uix:NCheckState.IfNotExists>
+                            <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,177.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Throw Exception="[New Exception(&quot;Log in unsuccesfull&quot;)]" sap:VirtualizedContainerService.HintSize="416,117.33333333333333" sap2010:WorkflowViewState.IdRef="Throw_3" />
+                            </Sequence>
+                          </uix:NCheckState.IfNotExists>
+                          <uix:NCheckState.Target>
+                            <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crmcmp_hdr/bspwdapplication.do?saprole=ZCTP_AGENT" CvTextArea="2051, 83, 49, 16" CvTextArgument="Log Off" CvType="Text" DesignTimeRectangle="2052, 83, 46, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' type='' tag='A' class='th-l-logofflink' aaname='Log Off' check:text='Log Off' /&gt;" Guid="d2b38e2d-ce3d-4611-a58f-75e40bd23b0b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAATCAYAAADSz14iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVEhL7VXBDYMwDGQbBmCYigW6Q6ZADIH64s0EfFiir4oXH168cAOxTQgphSpAqXqSP7bj88WO4sFJ0bYtNE0DdV1DVVVwWiEm/kK+DYOQRwp+cAVPFOjYAyVEoeTseMkm/AVcOB5DJj33RHC+n5R91oFCsMEwhTt6uAfNR01fcnTYzkkcJiQTkisQED3QQcjj0U1vI4RyyIxcfeSeiK2ECvZmFDAma4/q9b6birENF7FcyCRuNGPEuQlbs7Nc47rOJ6IKjldB9y0l7HGkENtO6yTT+IyQFTHnQvTbJ+i+pYSE4x77JG4UNOLUwCshfB7/hh5UQzvzuRCLcREzxxDNzUvzk3R2IgrvP8T1QpwDCV9N2DHcCcHd5pvC6dGubw2nE1EPWLOdptFhw9XaFz8iBOAJGfE36Y5qDFcAAAAASUVORK5CYII=" InformativeScreenshot="f5b55eabeeaf04a2af7071fca097a00c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Identify Account - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                          </uix:NCheckState.Target>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </uix:NCheckState>
                       </Sequence>
                     </uix:NCheckState.IfNotExists>
                     <uix:NCheckState.Target>
-                      <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crmcmp_hdr/bspwdapplication.do?saprole=ZCTP_AGENT" CvTextArea="2051, 83, 49, 16" CvTextArgument="Log Off" CvType="Text" DesignTimeRectangle="2052, 83, 46, 15" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl tag='IFRAME' parentid='APP_FRAME_ANCHOR' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='HeaderFrame' tag='FRAME' /&gt;&lt;webctrl id='LOGOFF' type='' tag='A' class='th-l-logofflink' aaname='Log Off' check:text='Log Off' /&gt;" Guid="d2b38e2d-ce3d-4611-a58f-75e40bd23b0b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADIAAAATCAYAAADSz14iAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE1SURBVEhL7VXBDYMwDGQbBmCYigW6Q6ZADIH64s0EfFiir4oXH168cAOxTQgphSpAqXqSP7bj88WO4sFJ0bYtNE0DdV1DVVVwWiEm/kK+DYOQRwp+cAVPFOjYAyVEoeTseMkm/AVcOB5DJj33RHC+n5R91oFCsMEwhTt6uAfNR01fcnTYzkkcJiQTkisQED3QQcjj0U1vI4RyyIxcfeSeiK2ECvZmFDAma4/q9b6birENF7FcyCRuNGPEuQlbs7Nc47rOJ6IKjldB9y0l7HGkENtO6yTT+IyQFTHnQvTbJ+i+pYSE4x77JG4UNOLUwCshfB7/hh5UQzvzuRCLcREzxxDNzUvzk3R2IgrvP8T1QpwDCV9N2DHcCcHd5pvC6dGubw2nE1EPWLOdptFhw9XaFz8iBOAJGfE36Y5qDFcAAAAASUVORK5CYII=" InformativeScreenshot="f5b55eabeeaf04a2af7071fca097a00c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Identify Account - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap/bc/bsp/sap/crm_ui_start/default.htm" DesignTimeRectangle="976, 395, 476, 52" FullSelectorArgument="&lt;webctrl sapweb-lsid='m1' visibleinnertext='You are already logged on to the system in the following sessions:' /&gt;" Guid="88045d10-9d57-45ee-8ab5-4c8376f43fd1" InformativeScreenshot="2db63bfd21232e217e99cf5d6252cbab.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Logon Status Check' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NCheckState.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </uix:NCheckState>
                 </Sequence>
               </ActivityAction>
@@ -328,7 +408,7 @@
               <uix:TargetApp Area="249, 0, 2116, 1032" BrowserType="Edge" ContentHash="2eyJPxURBUOuFESWaVvvow" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABmSURBVDhP7Y5LEgARDEQdPUdzM5M30SMUq9l6VY38WsoFrP2TH2ZDOd7VZjm11oa+JpegCajDbNJRkZthGQIDupWfhoP4OaNmGQHv2GAhu4s1ZrPNzx0vYpIVzSl+c0fGwFmXM6U8DSnzrdHcr9MAAAAASUVORK5CYII=" InformativeScreenshot="72a3a19a391347481619bd95481f5426.jpg" Reference="Tg06y7sWMkScSA3OILUEwA/yc1FfEMr00KtdE0ADoqchQ" Selector="&lt;html app='msedge.exe' title='Logon' /&gt;" Url="[SAPUrl]" />
             </uix:NApplicationCard.TargetApp>
           </uix:NApplicationCard>
-          <ui:MultipleAssign DisplayName="Multiple Assign success" sap:VirtualizedContainerService.HintSize="596,201.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+          <ui:MultipleAssign DisplayName="Multiple Assign success" sap:VirtualizedContainerService.HintSize="1022,201.33333333333334" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
             <ui:MultipleAssign.AssignOperations>
               <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -361,7 +441,7 @@
         </Sequence>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="634.6666666666666,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1060.6666666666667,23.333333333333332" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -372,7 +452,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="628.6666666666666,474.6666666666667" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence sap:VirtualizedContainerService.HintSize="1054.6666666666667,510" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
