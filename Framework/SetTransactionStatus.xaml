@@ -478,7 +478,7 @@
                   <av:Size x:Key="ShapeSize">110,70</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="486,1499" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence sap2010:Annotation.AnnotationText="If a system exception occurs during the process, the transaction item's status is updated as Failed (Exception Type: Application)." DisplayName="System Exception" sap:VirtualizedContainerService.HintSize="556,1661" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="QueueRetry" />
                   <Variable x:TypeArguments="x:String" Name="ScreenshotPath" />
@@ -490,7 +490,7 @@
                     <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message (Consecutive exceptions)" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Consecutive system exception counter is &quot; + io_ConsecutiveSystemExceptions.ToString + &quot;.&quot;]">
+                <ui:LogMessage DisplayName="Log Message (Consecutive exceptions)" sap:VirtualizedContainerService.HintSize="522,57" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Info" Message="[&quot;Consecutive system exception counter is &quot; + io_ConsecutiveSystemExceptions.ToString + &quot;.&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -498,9 +498,9 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="452,756" sap2010:WorkflowViewState.IdRef="TryCatch_13">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="522,918" sap2010:WorkflowViewState.IdRef="TryCatch_13">
                   <TryCatch.Try>
-                    <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="450,402" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                    <Sequence DisplayName="Try" sap:VirtualizedContainerService.HintSize="520,564" sap2010:WorkflowViewState.IdRef="Sequence_28">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:String" Name="strUsername" />
                         <Variable x:TypeArguments="ss:SecureString" Name="sstrPassword" />
@@ -512,7 +512,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <uda:QueryEntityRecords x:TypeArguments="p:PurchaseOrderAttachments" ContinueOnError="False" DisplayName="Query Entity Records sttachments" EntityId="79b7c448-a08c-f011-b3cd-002248a1642d" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="416,174" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[AttachmentRecord]" QueriedEntityId="79b7c448-a08c-f011-b3cd-002248a1642d" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100" TotalRecords="[totalRecords]">
+                      <uda:QueryEntityRecords x:TypeArguments="p:PurchaseOrderAttachments" ContinueOnError="False" DisplayName="Query Entity Records sttachments" EntityId="79b7c448-a08c-f011-b3cd-002248a1642d" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="486,174" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[AttachmentRecord]" QueriedEntityId="79b7c448-a08c-f011-b3cd-002248a1642d" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100" TotalRecords="[totalRecords]">
                         <uda:QueryEntityRecords.FilterArguments>
                           <uda:FilterArgument FilterActivityType="{x:Null}">
                             <uda:FilterArgument.Filter>
@@ -535,17 +535,34 @@
                           </scg:List>
                         </uda:QueryEntityRecords.FilterValues>
                       </uda:QueryEntityRecords>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Helpers\Outlook\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Helpers\Outlook\SendEmail.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Destination">[in_Config("PO_Exception_Mail_Destination").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Subject">["PO could not be completed." + in_TransactionItem.Reference.ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_Body">["Purchase Order "+AttachmentRecord.Item(0).PONumber.ToString+" could not be completed by the robot, please process it manually."]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_AppID">[in_Config("Microsoft365_ApplicationID").toString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_TennantId">[in_Config("Microsoft365_TenantID").toString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_SenderAccount">[in_Config("PO_Exception_Mail_Sender").ToString]</InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAssetName">[in_Config("Microsoft365_CredentialName").ToString]</InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                      </ui:InvokeWorkflowFile>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,330" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,228" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SendEmail - Invoke Workflow File (Helpers\Outlook\SendEmail.xaml)" sap:VirtualizedContainerService.HintSize="416,168" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="Helpers\Outlook\SendEmail.xaml">
+                              <ui:InvokeWorkflowFile.Arguments>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Destination">[in_Config("PO_Exception_Mail_Destination").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Subject">["PO could not be completed." + in_TransactionItem.Reference.ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_Body">["Purchase Order "+AttachmentRecord.Item(0).PONumber.ToString+" could not be completed by the robot, please process it manually."]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_AppID">[in_Config("Microsoft365_ApplicationID").toString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_TennantId">[in_Config("Microsoft365_TenantID").toString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_SenderAccount">[in_Config("PO_Exception_Mail_Sender").ToString]</InArgument>
+                                <InArgument x:TypeArguments="x:String" x:Key="in_CredentialAssetName">[in_Config("Microsoft365_CredentialName").ToString]</InArgument>
+                              </ui:InvokeWorkflowFile.Arguments>
+                            </ui:InvokeWorkflowFile>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
                     </Sequence>
                   </TryCatch.Try>
                   <TryCatch.Catches>
@@ -554,7 +571,7 @@
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="520,90" sap2010:WorkflowViewState.IdRef="Sequence_29">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -565,7 +582,7 @@
                     </Catch>
                   </TryCatch.Catches>
                   <TryCatch.Finally>
-                    <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="450,90" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                    <Sequence DisplayName="Finally" sap:VirtualizedContainerService.HintSize="520,90" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -574,7 +591,7 @@
                     </Sequence>
                   </TryCatch.Finally>
                 </TryCatch>
-                <Assign DisplayName="Assign QueryRetry" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign DisplayName="Assign QueryRetry" sap:VirtualizedContainerService.HintSize="522,57" sap2010:WorkflowViewState.IdRef="Assign_10">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:Boolean">[QueueRetry]</OutArgument>
                   </Assign.To>
@@ -588,7 +605,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </Assign>
-                <TryCatch sap2010:Annotation.AnnotationText="Take a screenshot of the current state of the screen to facilitate debugging." DisplayName="Try taking screenshot" sap:VirtualizedContainerService.HintSize="452,102" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                <TryCatch sap2010:Annotation.AnnotationText="Take a screenshot of the current state of the screen to facilitate debugging." DisplayName="Try taking screenshot" sap:VirtualizedContainerService.HintSize="522,102" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -621,7 +638,7 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <If Condition="[QueueRetry]" DisplayName="If TransactionItem is a QueueItem (System Exception)" sap:VirtualizedContainerService.HintSize="452,57" sap2010:WorkflowViewState.IdRef="If_6">
+                <If Condition="[QueueRetry]" DisplayName="If TransactionItem is a QueueItem (System Exception)" sap:VirtualizedContainerService.HintSize="522,57" sap2010:WorkflowViewState.IdRef="If_6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>

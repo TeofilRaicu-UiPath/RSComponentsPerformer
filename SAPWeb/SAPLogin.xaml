@@ -116,7 +116,7 @@
       <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1094.6666666666667,4266.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1058,4795" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ClientName" />
       <Variable x:TypeArguments="ui:Window" Name="SAPSessionWindow" />
@@ -127,13 +127,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch SAP Log in" sap:VirtualizedContainerService.HintSize="1094.6666666666667,4244" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch SAP Log in" sap:VirtualizedContainerService.HintSize="1058,4772" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="x:String" Name="SAPUsername" />
         <Variable x:TypeArguments="ss:SecureString" Name="SAPPassword" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1056,3982" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1056,4077" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -161,15 +161,15 @@
               </scg:List>
             </ui:MultipleAssign.AssignOperations>
           </ui:MultipleAssign>
-          <If Condition="[system.Environment.UserName = &quot;C0999718&quot;]" DisplayName="If user C0999718" sap:VirtualizedContainerService.HintSize="1022,536" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[system.Environment.UserName = &quot;C0999718&quot;]" DisplayName="If user C0999718" sap:VirtualizedContainerService.HintSize="1022,593" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
-              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,227.33333333333334" sap2010:WorkflowViewState.IdRef="Sequence_10">
+              <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="450,227" sap2010:WorkflowViewState.IdRef="Sequence_10">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="PO_SAPCredential_Robot" CacheStrategy="None" DisplayName="Get Credential SAP" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="382,167.33333333333334" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[SAPPassword]" Username="[SAPUsername]">
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="PO_SAPCredential_Robot" CacheStrategy="None" DisplayName="Get Credential SAP" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[SAPPassword]" Username="[SAPUsername]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -180,16 +180,16 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,136.66666666666666" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="450,227" sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PO_SAPCredentialName&quot;).toString]" CacheStrategy="None" DisplayName="Get Credential SAP" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="382,76.66666666666667" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SAPPassword]" Username="[SAPUsername]">
+                <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_Config(&quot;PO_SAPCredentialName&quot;).toString]" CacheStrategy="None" DisplayName="Get Credential SAP" FolderPath="Projects/CM PO Order Management" sap:VirtualizedContainerService.HintSize="416,167" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[SAPPassword]" Username="[SAPUsername]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
@@ -197,7 +197,7 @@
               </Sequence>
             </If.Else>
           </If>
-          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3004.6666666666665" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[SAPSessionWindow]" ScopeGuid="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V2" WindowResize="Maximize">
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Edge Logon" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1022,3043" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OutUiElement="[SAPSessionWindow]" ScopeGuid="416c01d3-306c-49a4-83d8-d6f02a335141" Version="V2" WindowResize="Maximize">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -452,7 +452,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="1054.6666666666667,510" sap2010:WorkflowViewState.IdRef="Sequence_4">
+            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1054.6666666666667,510" sap2010:WorkflowViewState.IdRef="Sequence_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

@@ -130,7 +130,7 @@
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1366,6016" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1330,5277" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ExtractedText" />
     </Sequence.Variables>
@@ -139,19 +139,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="1366,173" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Start extract customer related messages&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1366,5656" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <ui:LogMessage DisplayName="Log Message 1" sap:VirtualizedContainerService.HintSize="1330,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Start extract customer related messages&quot;]" />
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1330,4913" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_ContactPerson" />
       </TryCatch.Variables>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1328,5396" sap2010:WorkflowViewState.IdRef="Sequence_9">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1328,4086" sap2010:WorkflowViewState.IdRef="Sequence_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Assign DisplayName="Assign default customer related messages presence" sap:VirtualizedContainerService.HintSize="1294,114" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="Assign default customer related messages presence" sap:VirtualizedContainerService.HintSize="1294,175" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:Boolean">[out_CustomerOrderRelatedMessagesPresent]</OutArgument>
             </Assign.To>
@@ -159,36 +159,36 @@
               <InArgument x:TypeArguments="x:Boolean">False</InArgument>
             </Assign.Value>
           </Assign>
-          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Corporate Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1294,5222" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V2">
+          <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Corporate Account" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="1294,3851" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InUiElement="[io_Window]" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V2">
             <uix:NApplicationCard.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1260,5062" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1260,3690" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckState DisplayName="Check App State 'Confirm'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1226,2498" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Timeout="20" Version="V5">
+                  <uix:NCheckState DisplayName="Check App State 'Confirm'" HealingAgentBehavior="Disabled" sap:VirtualizedContainerService.HintSize="1226,1125" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Timeout="20" Version="V5">
                     <uix:NCheckState.IfExists>
-                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="484,564" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="486,540" sap2010:WorkflowViewState.IdRef="Sequence_11">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:RetryScope ContinueOnError="False" DisplayName="Retry Clicking 'Confirm'" sap:VirtualizedContainerService.HintSize="450,502" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Info" RetryInterval="00:00:03">
+                        <ui:RetryScope ContinueOnError="False" DisplayName="Retry Clicking 'Confirm'" sap:VirtualizedContainerService.HintSize="452,478" sap2010:WorkflowViewState.IdRef="RetryScope_1" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Info" RetryInterval="00:00:03">
                           <ui:RetryScope.ActivityBody>
                             <ActivityAction>
-                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,276" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                              <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,278" sap2010:WorkflowViewState.IdRef="Sequence_28">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,216" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,218" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
                                   <uix:NClick.Target>
                                     <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="9Zd3jO_Ps0qcxnDN_X45KA" DesignTimeRectangle="214, 530, 46, 16" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl class='th-gr-tab' tableRow='1' tag='TABLE' idx='5' /&gt;&lt;webctrl tag='B' aaname='Confirm' /&gt;" Guid="ef5cb3c1-3bd0-4001-b392-a99d0597b282" ImageBase64="" InformativeScreenshot="9ea89d7e6c779ad1c84b656585585a04.png" Reference="2KckjEL3hkeLxhrpoo7qIg/WS4OmfX-Z0urI6HfdmZRQw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account *' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                   </uix:NClick.Target>
@@ -213,15 +213,15 @@
                       </Sequence>
                     </uix:NCheckState.IfExists>
                     <uix:NCheckState.IfNotExists>
-                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="688,2249" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="656,874" sap2010:WorkflowViewState.IdRef="Sequence_12">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="654,175" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Confirm button was not identified try to search for Z001 to check if only one exists&quot;]" />
-                        <If Condition="[in_SelectAccount]" DisplayName="If check values of the table" sap:VirtualizedContainerService.HintSize="654,2012" sap2010:WorkflowViewState.IdRef="If_9">
+                        <ui:LogMessage DisplayName="Log Message 2" sap:VirtualizedContainerService.HintSize="622,177" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Confirm button was not identified try to search for Z001 to check if only one exists&quot;]" />
+                        <If Condition="[in_SelectAccount]" DisplayName="If check values of the table" sap:VirtualizedContainerService.HintSize="622,635" sap2010:WorkflowViewState.IdRef="If_9">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -229,19 +229,19 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <If.Then>
-                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,1676" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="620,330" sap2010:WorkflowViewState.IdRef="Sequence_15">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_ContactPerson]" DisplayName="SCP - Extract Contact person results" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0 Url' ReferenceIdx='1' Name='Column-0 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Actions' ReferenceIdx='2' Name='Actions'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Actions Url' ReferenceIdx='3' Name='Actions Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Contact Person' ReferenceIdx='4' Name='Contact Person'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Customer Group' ReferenceIdx='5' Name='Customer Group'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Currency' ReferenceIdx='6' Name='Currency'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Last Name' ReferenceIdx='7' Name='Last Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Function' ReferenceIdx='8' Name='Function'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Telephone' ReferenceIdx='9' Name='Telephone'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Extension' ReferenceIdx='10' Name='Extension'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='E-Mail Address' ReferenceIdx='11' Name='E-Mail Address'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' name2='Column-0 Url' attr2='href' /&gt;&lt;column name='Actions' attr='fulltext' name2='Actions Url' attr2='href' /&gt;&lt;column name='Contact Person' attr='fulltext' /&gt;&lt;column name='Customer Group' attr='fulltext' /&gt;&lt;column name='Currency' attr='fulltext' /&gt;&lt;column name='Last Name' attr='fulltext' /&gt;&lt;column name='Function' attr='fulltext' /&gt;&lt;column name='Telephone' attr='fulltext' /&gt;&lt;column name='Extension' attr='fulltext' /&gt;&lt;column name='E-Mail Address' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="586,189" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
+                              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_ContactPerson]" DisplayName="SCP - Extract Contact person results" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0' ReferenceIdx='0' Name='Column-0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column-0 Url' ReferenceIdx='1' Name='Column-0 Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Actions' ReferenceIdx='2' Name='Actions'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Actions Url' ReferenceIdx='3' Name='Actions Url'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Contact Person' ReferenceIdx='4' Name='Contact Person'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Customer Group' ReferenceIdx='5' Name='Customer Group'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Currency' ReferenceIdx='6' Name='Currency'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Last Name' ReferenceIdx='7' Name='Last Name'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Function' ReferenceIdx='8' Name='Function'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Telephone' ReferenceIdx='9' Name='Telephone'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Extension' ReferenceIdx='10' Name='Extension'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='E-Mail Address' ReferenceIdx='11' Name='E-Mail Address'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='Column-0' attr='fulltext' name2='Column-0 Url' attr2='href' /&gt;&lt;column name='Actions' attr='fulltext' name2='Actions Url' attr2='href' /&gt;&lt;column name='Contact Person' attr='fulltext' /&gt;&lt;column name='Customer Group' attr='fulltext' /&gt;&lt;column name='Currency' attr='fulltext' /&gt;&lt;column name='Last Name' attr='fulltext' /&gt;&lt;column name='Function' attr='fulltext' /&gt;&lt;column name='Telephone' attr='fulltext' /&gt;&lt;column name='Extension' attr='fulltext' /&gt;&lt;column name='E-Mail Address' attr='fulltext' /&gt;&lt;/extract-table&gt;" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="586,190" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
                                 <uix:NExtractData.Target>
                                   <uix:TargetAnchorable BrowserURL="https://vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" DesignTimeRectangle="211, 649, 1117, 49" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl aaname=' Actions *' tableRow='1' tag='TABLE' idx='4' /&gt;" Guid="1a10c739-e6ef-48e0-aae9-2d67e624026f" InformativeScreenshot="8728b3d46081fe0958fff1fd4e9982a0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" />
                                 </uix:NExtractData.Target>
                               </uix:NExtractData>
-                              <If Condition="[dt_ContactPerson.RowCount &gt; 0]" DisplayName="If result is not empty" sap:VirtualizedContainerService.HintSize="586,1427" sap2010:WorkflowViewState.IdRef="If_7">
+                              <If Condition="[dt_ContactPerson.RowCount &gt; 0]" DisplayName="If result is not empty" sap:VirtualizedContainerService.HintSize="524,1319" sap2010:WorkflowViewState.IdRef="If_7">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -249,14 +249,14 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="552,1093" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                  <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="522,1038" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[(&#xA;    From row In dt_ContactPerson.AsEnumerable()&#xA;    Where row.Field(Of String)(5).Contains(&quot;Z001&quot;)&#xA;    Select row&#xA;).Count = 1]" DisplayName="If only one row contains Z001" sap:VirtualizedContainerService.HintSize="518,1033" sap2010:WorkflowViewState.IdRef="If_8">
+                                    <If Condition="[(&#xA;    From row In dt_ContactPerson.AsEnumerable()&#xA;    Where row.Field(Of String)(5).Contains(&quot;Z001&quot;)&#xA;    Select row&#xA;).Count = 1]" DisplayName="If only one row contains Z001" sap:VirtualizedContainerService.HintSize="488,978" sap2010:WorkflowViewState.IdRef="If_8">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,23 +264,23 @@
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
                                       <If.Then>
-                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="484,699" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="486,674" sap2010:WorkflowViewState.IdRef="Sequence_24">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Z001 was identified&quot;]" />
-                                          <ui:RetryScope ContinueOnError="False" DisplayName="Retry Clicking 'Confirm'" sap:VirtualizedContainerService.HintSize="450,464" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Info" RetryInterval="00:00:03">
+                                          <ui:LogMessage DisplayName="Log Message 3" sap:VirtualizedContainerService.HintSize="452,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Warn" Message="[&quot;Z001 was identified&quot;]" />
+                                          <ui:RetryScope ContinueOnError="False" DisplayName="Retry Clicking 'Confirm'" sap:VirtualizedContainerService.HintSize="452,439" sap2010:WorkflowViewState.IdRef="RetryScope_2" LogRetriedExceptions="True" NumberOfRetries="3" RetriedExceptionsLogLevel="Info" RetryInterval="00:00:03">
                                             <ui:RetryScope.ActivityBody>
                                               <ActivityAction>
-                                                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="416,240" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,241" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="382,180" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
+                                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirm'" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="416,181" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" Version="V5">
                                                     <uix:NClick.Target>
                                                       <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" CVScreenId="ad8e9f91-bb53-42d3-b7ba-e5c0639a1a59" DesignTimeRectangle="240, 664, 52, 15" ElementType="Text" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl aaname=' Actions*' tableRow='1' tag='TABLE' idx='2' /&gt;&lt;webctrl tableCol='4' tag='TD' innertext='Z001' /&gt;&lt;nav up='1' /&gt;&lt;webctrl class='th-lk' tag='A' aaname='Confirm* ' /&gt;" Guid="9cfaaac0-3445-4c3c-9a76-3afa90d7c166" InformativeScreenshot="097f408e59379da5e14d162f06e231b2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account*' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                                                     </uix:NClick.Target>
@@ -295,26 +295,26 @@
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
-                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="484,173" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="486,174" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <Throw Exception="[New BusinessRuleException(&quot;Row contains multiple Z001 Accounts&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_6" />
+                                          <Throw Exception="[New BusinessRuleException(&quot;Row contains multiple Z001 Accounts&quot;)]" sap:VirtualizedContainerService.HintSize="452,114" sap2010:WorkflowViewState.IdRef="Throw_6" />
                                         </Sequence>
                                       </If.Else>
                                     </If>
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="552,173" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                                  <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="522,174" sap2010:WorkflowViewState.IdRef="Sequence_27">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Throw Exception="[New BusinessRuleException(&quot;Result search is empty&quot;)]" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="Throw_7" />
+                                    <Throw Exception="[New BusinessRuleException(&quot;Result search is empty&quot;)]" sap:VirtualizedContainerService.HintSize="488,114" sap2010:WorkflowViewState.IdRef="Throw_7" />
                                   </Sequence>
                                 </If.Else>
                               </If>
@@ -337,7 +337,7 @@
                       <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="9Zd3jO_Ps0qcxnDN_X45KA" DesignTimeRectangle="214, 530, 46, 16" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl class='th-gr-tab' tableRow='1' tag='TABLE' idx='5' /&gt;&lt;webctrl tag='B' aaname='Confirm' /&gt;" Guid="ef5cb3c1-3bd0-4001-b392-a99d0597b282" ImageBase64="" InformativeScreenshot="9ea89d7e6c779ad1c84b656585585a04.png" Reference="2KckjEL3hkeLxhrpoo7qIg/WS4OmfX-Z0urI6HfdmZRQw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Identify Account *' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NCheckState.Target>
                   </uix:NCheckState>
-                  <uix:NGetText DisplayName="Get Text Customer Information" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1226,189" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" TextString="[ExtractedText]" Version="V5">
+                  <uix:NGetText DisplayName="Get Text Customer Information" HealingAgentBehavior="SameAsCard" sap:VirtualizedContainerService.HintSize="1226,190" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="50cfdd94-4b77-4cdc-b234-462f6be9a227" TextString="[ExtractedText]" Version="V5">
                     <uix:NGetText.Target>
                       <uix:TargetAnchorable BrowserURL="vcp1ascs.ebs.ecomp.com/sap(bD1lbiZjPTYwMCZkPW1pbg==)/bc/bsp/sap/crm_ui_start/default.htm" ContentHash="YbeuMXejE0q3GZkcj8ELpw" DesignTimeRectangle="198, 314, 1669, 600" FullSelectorArgument="&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl name='s_*_ZCTP_AGENT_*' tag='IFRAME' /&gt;&lt;webctrl id='CRMApplicationFrame' tag='IFRAME' /&gt;&lt;webctrl id='FRAME_APPLICATION' tag='IFRAME' /&gt;&lt;webctrl id='WorkAreaFrame1' tag='FRAME' /&gt;&lt;webctrl tableCol='2' tableRow='1' tag='TABLE' /&gt;&lt;webctrl id='ifrm' tableRow='8' tag='IFRAME' /&gt;&lt;webctrl tag='BODY' /&gt;" Guid="55d0003c-2878-4f9b-b075-c44b62d4814e" ImageBase64="" InformativeScreenshot="e6e0360ca26d9ddd964f8e6b1d0bf043.png" Reference="2KckjEL3hkeLxhrpoo7qIg/ycPBUMnPMESDdP2bNw6fZw" ScopeSelectorArgument="&lt;html app='msedge.exe' htmlwindowname='WID(*=)' title='Corporate Account: * - [Interaction Center ]' /&gt;" SearchSteps="Selector" Version="V6" Visibility="Interactive" WaitForReadyArgument="Interactive" />
                     </uix:NGetText.Target>
@@ -502,7 +502,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="1224,633" sap2010:WorkflowViewState.IdRef="Sequence_10">
+            <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="1224,633" sap2010:WorkflowViewState.IdRef="Sequence_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -538,6 +538,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message 10" sap:VirtualizedContainerService.HintSize="1264,164" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;End extract customer related messages&quot;]" />
+    <ui:LogMessage DisplayName="Log Message 10" sap:VirtualizedContainerService.HintSize="1330,166" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="Info" Message="[&quot;End extract customer related messages&quot;]" />
   </Sequence>
 </Activity>

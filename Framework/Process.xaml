@@ -159,7 +159,7 @@
       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="889,23057" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Invoke major steps of the business process, which are usually implemented by multiple subworkflows.&#xA;&#xA;If a BusinessRuleException is thrown, the transaction is skipped. &#xA;If another kind of exception occurs, the current transaction can be retried. " DisplayName="Process" sap:VirtualizedContainerService.HintSize="889,23088" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Message" />
       <Variable x:TypeArguments="x:Boolean" Name="Success" />
@@ -238,7 +238,10 @@
         <OutArgument x:TypeArguments="x:String" x:Key="out_EmailDestination">[EmailInbox]</OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <Sequence DisplayName="Pre process extracted data" sap:VirtualizedContainerService.HintSize="685,7044" sap2010:WorkflowViewState.IdRef="Sequence_171">
+    <Sequence DisplayName="Pre process extracted data" sap:VirtualizedContainerService.HintSize="685,7075" sap2010:WorkflowViewState.IdRef="Sequence_171">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="SecondTradingTitle" />
+      </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -259,7 +262,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="621,769" sap2010:WorkflowViewState.IdRef="MultipleAssign_24">
+      <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="621,800" sap2010:WorkflowViewState.IdRef="MultipleAssign_24">
         <ui:MultipleAssign.AssignOperations>
           <scg:List x:TypeArguments="ui:AssignOperation" Capacity="32">
             <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
@@ -432,6 +435,14 @@
                 <InArgument x:TypeArguments="x:String">
                   <Literal x:TypeArguments="x:String" Value="" />
                 </InArgument>
+              </ui:AssignOperation.Value>
+            </ui:AssignOperation>
+            <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_84">
+              <ui:AssignOperation.To>
+                <OutArgument x:TypeArguments="x:String">[SecondTradingTitle]</OutArgument>
+              </ui:AssignOperation.To>
+              <ui:AssignOperation.Value>
+                <InArgument x:TypeArguments="x:String">[JsonObject("Second Trading Title").tostring]</InArgument>
               </ui:AssignOperation.Value>
             </ui:AssignOperation>
           </scg:List>
